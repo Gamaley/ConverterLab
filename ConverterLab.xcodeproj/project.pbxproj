@@ -1,0 +1,323 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		873F50EA1BF4AE9A00A6BA52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F50E91BF4AE9A00A6BA52 /* main.m */; };
+		873F50ED1BF4AE9A00A6BA52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F50EC1BF4AE9A00A6BA52 /* AppDelegate.m */; };
+		873F50F01BF4AE9A00A6BA52 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F50EF1BF4AE9A00A6BA52 /* ViewController.m */; };
+		873F50F31BF4AE9A00A6BA52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873F50F11BF4AE9A00A6BA52 /* Main.storyboard */; };
+		873F50F61BF4AE9A00A6BA52 /* ConverterLab.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 873F50F41BF4AE9A00A6BA52 /* ConverterLab.xcdatamodeld */; };
+		873F50F81BF4AE9A00A6BA52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 873F50F71BF4AE9A00A6BA52 /* Assets.xcassets */; };
+		873F50FB1BF4AE9A00A6BA52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873F50F91BF4AE9A00A6BA52 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		873F50E51BF4AE9900A6BA52 /* ConverterLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConverterLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		873F50E91BF4AE9A00A6BA52 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		873F50EB1BF4AE9A00A6BA52 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		873F50EC1BF4AE9A00A6BA52 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		873F50EE1BF4AE9A00A6BA52 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		873F50EF1BF4AE9A00A6BA52 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		873F50F21BF4AE9A00A6BA52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		873F50F51BF4AE9A00A6BA52 /* ConverterLab.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ConverterLab.xcdatamodel; sourceTree = "<group>"; };
+		873F50F71BF4AE9A00A6BA52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		873F50FA1BF4AE9A00A6BA52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		873F50FC1BF4AE9A00A6BA52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		873F50E21BF4AE9900A6BA52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		873F50DC1BF4AE9900A6BA52 = {
+			isa = PBXGroup;
+			children = (
+				873F50E71BF4AE9900A6BA52 /* ConverterLab */,
+				873F50E61BF4AE9900A6BA52 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		873F50E61BF4AE9900A6BA52 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				873F50E51BF4AE9900A6BA52 /* ConverterLab.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		873F50E71BF4AE9900A6BA52 /* ConverterLab */ = {
+			isa = PBXGroup;
+			children = (
+				873F50EB1BF4AE9A00A6BA52 /* AppDelegate.h */,
+				873F50EC1BF4AE9A00A6BA52 /* AppDelegate.m */,
+				873F50EE1BF4AE9A00A6BA52 /* ViewController.h */,
+				873F50EF1BF4AE9A00A6BA52 /* ViewController.m */,
+				873F50F11BF4AE9A00A6BA52 /* Main.storyboard */,
+				873F50F71BF4AE9A00A6BA52 /* Assets.xcassets */,
+				873F50F91BF4AE9A00A6BA52 /* LaunchScreen.storyboard */,
+				873F50FC1BF4AE9A00A6BA52 /* Info.plist */,
+				873F50F41BF4AE9A00A6BA52 /* ConverterLab.xcdatamodeld */,
+				873F50E81BF4AE9A00A6BA52 /* Supporting Files */,
+			);
+			path = ConverterLab;
+			sourceTree = "<group>";
+		};
+		873F50E81BF4AE9A00A6BA52 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				873F50E91BF4AE9A00A6BA52 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		873F50E41BF4AE9900A6BA52 /* ConverterLab */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 873F50FF1BF4AE9A00A6BA52 /* Build configuration list for PBXNativeTarget "ConverterLab" */;
+			buildPhases = (
+				873F50E11BF4AE9900A6BA52 /* Sources */,
+				873F50E21BF4AE9900A6BA52 /* Frameworks */,
+				873F50E31BF4AE9900A6BA52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ConverterLab;
+			productName = ConverterLab;
+			productReference = 873F50E51BF4AE9900A6BA52 /* ConverterLab.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		873F50DD1BF4AE9900A6BA52 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = Vlad;
+				TargetAttributes = {
+					873F50E41BF4AE9900A6BA52 = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 38RMNWSM28;
+					};
+				};
+			};
+			buildConfigurationList = 873F50E01BF4AE9900A6BA52 /* Build configuration list for PBXProject "ConverterLab" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 873F50DC1BF4AE9900A6BA52;
+			productRefGroup = 873F50E61BF4AE9900A6BA52 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				873F50E41BF4AE9900A6BA52 /* ConverterLab */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		873F50E31BF4AE9900A6BA52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				873F50FB1BF4AE9A00A6BA52 /* LaunchScreen.storyboard in Resources */,
+				873F50F81BF4AE9A00A6BA52 /* Assets.xcassets in Resources */,
+				873F50F31BF4AE9A00A6BA52 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		873F50E11BF4AE9900A6BA52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				873F50F61BF4AE9A00A6BA52 /* ConverterLab.xcdatamodeld in Sources */,
+				873F50F01BF4AE9A00A6BA52 /* ViewController.m in Sources */,
+				873F50ED1BF4AE9A00A6BA52 /* AppDelegate.m in Sources */,
+				873F50EA1BF4AE9A00A6BA52 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		873F50F11BF4AE9A00A6BA52 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				873F50F21BF4AE9A00A6BA52 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		873F50F91BF4AE9A00A6BA52 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				873F50FA1BF4AE9A00A6BA52 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		873F50FD1BF4AE9A00A6BA52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		873F50FE1BF4AE9A00A6BA52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		873F51001BF4AE9A00A6BA52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ConverterLab/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = VG.ConverterLab;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		873F51011BF4AE9A00A6BA52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ConverterLab/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = VG.ConverterLab;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		873F50E01BF4AE9900A6BA52 /* Build configuration list for PBXProject "ConverterLab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				873F50FD1BF4AE9A00A6BA52 /* Debug */,
+				873F50FE1BF4AE9A00A6BA52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		873F50FF1BF4AE9A00A6BA52 /* Build configuration list for PBXNativeTarget "ConverterLab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				873F51001BF4AE9A00A6BA52 /* Debug */,
+				873F51011BF4AE9A00A6BA52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		873F50F41BF4AE9A00A6BA52 /* ConverterLab.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				873F50F51BF4AE9A00A6BA52 /* ConverterLab.xcdatamodel */,
+			);
+			currentVersion = 873F50F51BF4AE9A00A6BA52 /* ConverterLab.xcdatamodel */;
+			path = ConverterLab.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 873F50DD1BF4AE9900A6BA52 /* Project object */;
+}
