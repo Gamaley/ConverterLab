@@ -41,29 +41,66 @@
         
              Region *aRegion = [NSEntityDescription insertNewObjectForEntityForName:@"Region" inManagedObjectContext:[VGDataManager sharedManager].managedObjectContext];
         
+             City *aCity = [NSEntityDescription insertNewObjectForEntityForName:@"City" inManagedObjectContext:[VGDataManager sharedManager].managedObjectContext];
+        
+        
         NSArray *banksArray = [responseObject objectForKey:@"organizations"];
-        NSArray *citiesArray = [responseObject objectForKey:@"cities"];
-        NSArray *regionsArray = [responseObject objectForKey:@"regions"];
+       // NSDictionary *citiesArray = [responseObject objectForKey:@"cities"];
+       // NSDictionary *regionsArray = [responseObject objectForKey:@"regions"];
         
-//        for (NSDictionary* i in regionsArray) {
-//            
-//           
-//            
-//            
-//        }
+       // NSString* cityNameID = [[banksArray objectAtIndex:0] valueForKey:@"cityId"];
+       // NSString *cityName = [citiesArray valueForKey:cityNameID];
         
-        NSLog(@"%@",responseObject);
+        
+//        NSMutableArray *regionNames = [[NSMutableArray alloc] init]; //[[regionsArray objectAtIndex:0]allValues ];
+        
+        for (NSDictionary* i in [responseObject objectForKey:@"organizations"]) {
+//
+//            NSString *cityName = [[responseObject objectForKey:@"cities"] valueForKey:[i valueForKey:@"cityId"]];
+//            NSString *region = [[responseObject objectForKey:@"regions"] valueForKey:[i valueForKey:@"regionId"]];
+//            NSString *link = [i valueForKey:@"link"];
+     //       NSDecimalNumber *phoneNumber = [i valueForKey:@"phone"];
+       //     NSString* str = [i valueForKey:@"phone"];
+//            NSString *address = [i valueForKey:@"address"];
+//            NSString *title = [i valueForKey:@"title"];
+//            
+         //   NSLog(@"d");
+//          //  [regionNames addObject:[i allValues]];
+//    
+      }
+        
+       // NSLog(@"%@",responseObject);
         
         if (success) {
             
-            Bank *aBank = [NSEntityDescription insertNewObjectForEntityForName:@"Bank" inManagedObjectContext:[VGDataManager sharedManager].managedObjectContext];
-            City *aCity = [NSEntityDescription insertNewObjectForEntityForName:@"City" inManagedObjectContext:[VGDataManager sharedManager].managedObjectContext];
+            for (NSDictionary* i in [responseObject objectForKey:@"organizations"]) {
+                
+                Bank *aBank = [NSEntityDescription insertNewObjectForEntityForName:@"Bank" inManagedObjectContext:[VGDataManager sharedManager].managedObjectContext];
+                
+                aBank.city = [[responseObject objectForKey:@"cities"] valueForKey:[i valueForKey:@"cityId"]];
+                aBank.region = [[responseObject objectForKey:@"regions"] valueForKey:[i valueForKey:@"regionId"]];
+                aBank.link = [i valueForKey:@"link"];
+                
+                if (![[i valueForKey:@"phone"] isEqual:[NSNull null]]) {
+                   //NSLog(@"%@",str);
+                     aBank.phone = [i valueForKey:@"phone"];
+                }
+                //[i valueForKey:@"phone"];
+                aBank.address = [i valueForKey:@"address"];
+                aBank.title = [i valueForKey:@"title"];
+                
+                
+                NSError* error = nil;
+                if (![[VGDataManager sharedManager].managedObjectContext save:&error]) {
+                    NSLog(@"%@",[error localizedDescription]);
+                }
+                
+            }
+            
+      
+            
        
-            
-           // aBank.cities = aCity;
-            
-            [aRegion addCitiesObject:aCity];
-            [aCity addBanksObject:aBank];
+       
             
             success(banksArray);
         }

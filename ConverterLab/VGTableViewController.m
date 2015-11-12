@@ -27,6 +27,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSArray* pathArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    NSString* docunentDirectory = [pathArray objectAtIndex:0];
+    
     [self getBanksFromServer];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     //[UITabBar appearance].tintColor = [UIColor redColor];//[UIColor colorWithRed:255 green:54 blue:212 alpha:1];

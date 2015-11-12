@@ -13,9 +13,12 @@
 
 @implementation Bank (CoreDataProperties)
 
-@dynamic link;
 @dynamic address;
+@dynamic city;
+@dynamic link;
 @dynamic phone;
+@dynamic region;
+@dynamic title;
 @dynamic cities;
 
 @end

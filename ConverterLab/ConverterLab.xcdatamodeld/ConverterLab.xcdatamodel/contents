@@ -2,8 +2,11 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="15B42" minimumToolsVersion="Automatic">
     <entity name="Bank" representedClassName="Bank" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="phone" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="region" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="cities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="City" inverseName="banks" inverseEntity="City" syncable="YES"/>
     </entity>
     <entity name="City" representedClassName="City" syncable="YES">
@@ -16,8 +19,8 @@
         <relationship name="cities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="City" inverseName="region" inverseEntity="City" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Bank" positionX="34" positionY="-99" width="128" height="103"/>
-        <element name="City" positionX="-209" positionY="-27" width="128" height="88"/>
+        <element name="Bank" positionX="16" positionY="-133" width="128" height="148"/>
+        <element name="City" positionX="-225" positionY="-90" width="128" height="88"/>
         <element name="Region" positionX="-441" positionY="5" width="128" height="73"/>
     </elements>
 </model>

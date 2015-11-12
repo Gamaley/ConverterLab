@@ -15,9 +15,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Bank (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSString *link;
 @property (nullable, nonatomic, retain) NSString *address;
-@property (nullable, nonatomic, retain) NSDecimalNumber *phone;
+@property (nullable, nonatomic, retain) NSString *city;
+@property (nullable, nonatomic, retain) NSString *link;
+@property (nullable, nonatomic, retain) NSString *phone;
+@property (nullable, nonatomic, retain) NSString *region;
+@property (nullable, nonatomic, retain) NSString *title;
 @property (nullable, nonatomic, retain) NSSet<City *> *cities;
 
 @end

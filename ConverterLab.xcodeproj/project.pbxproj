@@ -39,8 +39,8 @@
 		873F51681BF4FEF200A6BA52 /* Region.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F515E1BF4FEF200A6BA52 /* Region.m */; };
 		873F51691BF4FEF200A6BA52 /* City+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F51601BF4FEF200A6BA52 /* City+CoreDataProperties.m */; };
 		873F516A1BF4FEF200A6BA52 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F51621BF4FEF200A6BA52 /* City.m */; };
-		873F516B1BF4FEF200A6BA52 /* Bank+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F51641BF4FEF200A6BA52 /* Bank+CoreDataProperties.m */; };
-		873F516C1BF4FEF200A6BA52 /* Bank.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F51661BF4FEF200A6BA52 /* Bank.m */; };
+		873F517D1BF5158C00A6BA52 /* Bank+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F517A1BF5158C00A6BA52 /* Bank+CoreDataProperties.m */; };
+		873F517E1BF5158C00A6BA52 /* Bank.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F517C1BF5158C00A6BA52 /* Bank.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,10 +107,10 @@
 		873F51601BF4FEF200A6BA52 /* City+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "City+CoreDataProperties.m"; path = "CoreData/Entities/City+CoreDataProperties.m"; sourceTree = "<group>"; };
 		873F51611BF4FEF200A6BA52 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = City.h; path = CoreData/Entities/City.h; sourceTree = "<group>"; };
 		873F51621BF4FEF200A6BA52 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = City.m; path = CoreData/Entities/City.m; sourceTree = "<group>"; };
-		873F51631BF4FEF200A6BA52 /* Bank+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bank+CoreDataProperties.h"; path = "CoreData/Entities/Bank+CoreDataProperties.h"; sourceTree = "<group>"; };
-		873F51641BF4FEF200A6BA52 /* Bank+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Bank+CoreDataProperties.m"; path = "CoreData/Entities/Bank+CoreDataProperties.m"; sourceTree = "<group>"; };
-		873F51651BF4FEF200A6BA52 /* Bank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bank.h; path = CoreData/Entities/Bank.h; sourceTree = "<group>"; };
-		873F51661BF4FEF200A6BA52 /* Bank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bank.m; path = CoreData/Entities/Bank.m; sourceTree = "<group>"; };
+		873F51791BF5158C00A6BA52 /* Bank+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bank+CoreDataProperties.h"; path = "CoreData/Entities/Bank+CoreDataProperties.h"; sourceTree = "<group>"; };
+		873F517A1BF5158C00A6BA52 /* Bank+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Bank+CoreDataProperties.m"; path = "CoreData/Entities/Bank+CoreDataProperties.m"; sourceTree = "<group>"; };
+		873F517B1BF5158C00A6BA52 /* Bank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bank.h; path = CoreData/Entities/Bank.h; sourceTree = "<group>"; };
+		873F517C1BF5158C00A6BA52 /* Bank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bank.m; path = CoreData/Entities/Bank.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -342,10 +342,10 @@
 		873F516F1BF4FF1100A6BA52 /* Organization */ = {
 			isa = PBXGroup;
 			children = (
-				873F51631BF4FEF200A6BA52 /* Bank+CoreDataProperties.h */,
-				873F51641BF4FEF200A6BA52 /* Bank+CoreDataProperties.m */,
-				873F51651BF4FEF200A6BA52 /* Bank.h */,
-				873F51661BF4FEF200A6BA52 /* Bank.m */,
+				873F51791BF5158C00A6BA52 /* Bank+CoreDataProperties.h */,
+				873F517A1BF5158C00A6BA52 /* Bank+CoreDataProperties.m */,
+				873F517B1BF5158C00A6BA52 /* Bank.h */,
+				873F517C1BF5158C00A6BA52 /* Bank.m */,
 			);
 			name = Organization;
 			sourceTree = "<group>";
@@ -429,9 +429,9 @@
 				873F50F61BF4AE9A00A6BA52 /* ConverterLab.xcdatamodeld in Sources */,
 				873F510C1BF4C23500A6BA52 /* VGCustomTableViewCell.m in Sources */,
 				873F513D1BF4DB8A00A6BA52 /* UIWebView+AFNetworking.m in Sources */,
-				873F516B1BF4FEF200A6BA52 /* Bank+CoreDataProperties.m in Sources */,
+				873F517D1BF5158C00A6BA52 /* Bank+CoreDataProperties.m in Sources */,
 				873F51531BF4DB9800A6BA52 /* AFHTTPSessionManager.m in Sources */,
-				873F516C1BF4FEF200A6BA52 /* Bank.m in Sources */,
+				873F517E1BF5158C00A6BA52 /* Bank.m in Sources */,
 				873F50F01BF4AE9A00A6BA52 /* VGTableViewController.m in Sources */,
 				873F51541BF4DB9800A6BA52 /* AFNetworkReachabilityManager.m in Sources */,
 				873F51691BF4FEF200A6BA52 /* City+CoreDataProperties.m in Sources */,
@@ -602,6 +602,7 @@
 				873F51011BF4AE9A00A6BA52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
