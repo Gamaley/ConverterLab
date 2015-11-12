@@ -1,25 +1,149 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="h5k-7a-6q0">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Converter Lab-->
+        <scene sceneID="bHT-1l-zUW">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <tableViewController id="s7N-cD-8to" customClass="VGTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="206" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qrz-lJ-R1f">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="206" id="tW9-qz-Vmn" customClass="VGCustomTableViewCell">
+                                <rect key="frame" x="0.0" y="92" width="320" height="206"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tW9-qz-Vmn" id="y99-jp-rxr">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="206"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <tabBar contentMode="scaleAspectFit" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBN-RG-Gbw">
+                                            <rect key="frame" x="0.0" y="157" width="320" height="49"/>
+                                            <animations/>
+                                            <items>
+                                                <tabBarItem tag="1" title="" image="ic_link_unactive" selectedImage="ic_link_floating" id="38y-0F-Nko" userLabel="safari">
+                                                    <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                                                </tabBarItem>
+                                                <tabBarItem tag="2" title="" image="ic_mark_unactive" selectedImage="ic_mark_floating" id="04x-GM-e5J" userLabel="map">
+                                                    <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                                                </tabBarItem>
+                                                <tabBarItem tag="3" title="" image="ic_phone_unactive" selectedImage="ic_phone_floating" id="ciW-UJ-6OR" userLabel="call">
+                                                    <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                                                </tabBarItem>
+                                                <tabBarItem tag="4" title="" image="ic_dots_unactive" selectedImage="ic_dots_active" id="R0b-GS-RdP" userLabel="more">
+                                                    <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                                                </tabBarItem>
+                                            </items>
+                                            <color key="barTintColor" red="0.64893211253777616" green="0.72286133571497813" blue="0.76678898358585856" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="s7N-cD-8to" id="FAq-9y-uUM"/>
+                                            </connections>
+                                        </tabBar>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Приват-Банк" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mrt-XT-S6Q">
+                                            <rect key="frame" x="18" y="15" width="283" height="25"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Закарпатская область" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tDn-yd-hjb">
+                                            <rect key="frame" x="18" y="48" width="283" height="16"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ужгород" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xk-Gd-g3X">
+                                            <rect key="frame" x="18" y="72" width="283" height="14"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="тел.: 050-876-3344" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EuE-GV-YYZ">
+                                            <rect key="frame" x="19" y="106" width="283" height="16"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Адрес: ул. Джамбула 30а" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcC-43-jiR">
+                                            <rect key="frame" x="19" y="123" width="283" height="16"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="HBN-RG-Gbw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="y99-jp-rxr" secondAttribute="top" constant="60" id="0bO-Gk-ke9"/>
+                                        <constraint firstItem="HBN-RG-Gbw" firstAttribute="leading" secondItem="y99-jp-rxr" secondAttribute="leading" id="7p1-IF-Bdm"/>
+                                        <constraint firstAttribute="trailing" secondItem="HBN-RG-Gbw" secondAttribute="trailing" id="o9t-7u-vIs"/>
+                                        <constraint firstAttribute="bottom" secondItem="HBN-RG-Gbw" secondAttribute="bottom" id="rXf-BM-VkP"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <color key="tintColor" red="1" green="0.045686961805750048" blue="0.44277876952949424" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="callTabBarItem" destination="ciW-UJ-6OR" id="8nr-Cl-doS"/>
+                                    <outlet property="linkTabBarItem" destination="38y-0F-Nko" id="jnZ-Ap-c7B"/>
+                                    <outlet property="mapTabBarItem" destination="04x-GM-e5J" id="2W2-yG-kbB"/>
+                                    <outlet property="moreTabBarItem" destination="R0b-GS-RdP" id="ylY-WO-eSh"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="s7N-cD-8to" id="jft-M4-3iH"/>
+                            <outlet property="delegate" destination="s7N-cD-8to" id="Qyr-BF-lEI"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Converter Lab" id="uSB-NX-AbK">
+                        <barButtonItem key="rightBarButtonItem" image="ic_search" id="fxj-0S-S96">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QWg-5r-Id5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="529" y="416"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SjJ-c5-oCf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h5k-7a-6q0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QtS-sA-yO7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <color key="barTintColor" red="0.13833252876668772" green="0.21562384507463295" blue="0.24792850378787878" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="s7N-cD-8to" kind="relationship" relationship="rootViewController" id="VrE-fd-4Zv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tzq-0d-y1U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="96" y="416.5333333333333"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_dots_active" width="28" height="8"/>
+        <image name="ic_dots_unactive" width="28" height="8"/>
+        <image name="ic_link_floating" width="24" height="12"/>
+        <image name="ic_link_unactive" width="26" height="14"/>
+        <image name="ic_mark_floating" width="14" height="20"/>
+        <image name="ic_mark_unactive" width="16" height="22"/>
+        <image name="ic_phone_floating" width="18" height="18"/>
+        <image name="ic_phone_unactive" width="20" height="20"/>
+        <image name="ic_search" width="20" height="20"/>
+    </resources>
 </document>
