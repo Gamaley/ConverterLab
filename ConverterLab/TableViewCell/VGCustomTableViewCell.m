@@ -14,6 +14,11 @@
 @property (weak, nonatomic) IBOutlet UITabBarItem *mapTabBarItem;
 @property (weak, nonatomic) IBOutlet UITabBarItem *callTabBarItem;
 @property (weak, nonatomic) IBOutlet UITabBarItem *moreTabBarItem;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *regionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *cityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+@property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
 
 @end
 
@@ -21,6 +26,12 @@
 @implementation VGCustomTableViewCell
 
 - (void)awakeFromNib {
+    
+    self.titleLabel.text = self.titleString;
+    self.regionLabel.text = self.regionString;
+    self.cityLabel.text = self.cityString;
+    self.addressLabel.text = self.addressString;
+    self.phoneLabel.text = self.phoneString;
     
     // Initialization code
     //

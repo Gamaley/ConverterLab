@@ -10,6 +10,10 @@
 
 @interface VGCustomTableViewCell : UITableViewCell
 
-
+@property (strong, nonatomic) NSString *titleString;
+@property (strong, nonatomic) NSString *regionString;
+@property (strong, nonatomic) NSString *cityString;
+@property (strong, nonatomic) NSString *addressString;
+@property (strong, nonatomic) NSString *phoneString;
 
 @end

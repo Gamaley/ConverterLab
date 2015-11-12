@@ -9,20 +9,20 @@
         <scene sceneID="bHT-1l-zUW">
             <objects>
                 <tableViewController id="s7N-cD-8to" customClass="VGTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="206" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qrz-lJ-R1f">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="219" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qrz-lJ-R1f">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="206" id="tW9-qz-Vmn" customClass="VGCustomTableViewCell">
-                                <rect key="frame" x="0.0" y="92" width="320" height="206"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="219" id="tW9-qz-Vmn" customClass="VGCustomTableViewCell">
+                                <rect key="frame" x="0.0" y="92" width="320" height="219"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tW9-qz-Vmn" id="y99-jp-rxr">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="206"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="219"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <tabBar contentMode="scaleAspectFit" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBN-RG-Gbw">
+                                        <tabBar contentMode="scaleAspectFit" misplaced="YES" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBN-RG-Gbw">
                                             <rect key="frame" x="0.0" y="157" width="320" height="49"/>
                                             <animations/>
                                             <items>
@@ -89,10 +89,15 @@
                                 <animations/>
                                 <color key="tintColor" red="1" green="0.045686961805750048" blue="0.44277876952949424" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
+                                    <outlet property="addressLabel" destination="EcC-43-jiR" id="lcn-6A-8jH"/>
                                     <outlet property="callTabBarItem" destination="ciW-UJ-6OR" id="8nr-Cl-doS"/>
+                                    <outlet property="cityLabel" destination="8xk-Gd-g3X" id="L4d-fi-xLM"/>
                                     <outlet property="linkTabBarItem" destination="38y-0F-Nko" id="jnZ-Ap-c7B"/>
                                     <outlet property="mapTabBarItem" destination="04x-GM-e5J" id="2W2-yG-kbB"/>
                                     <outlet property="moreTabBarItem" destination="R0b-GS-RdP" id="ylY-WO-eSh"/>
+                                    <outlet property="phoneLabel" destination="EuE-GV-YYZ" id="CV1-oH-erS"/>
+                                    <outlet property="regionLabel" destination="tDn-yd-hjb" id="bSj-JY-XQz"/>
+                                    <outlet property="titleLabel" destination="Mrt-XT-S6Q" id="MQa-v2-70M"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
