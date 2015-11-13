@@ -15,15 +15,23 @@
 #import "VGDataManager.h"
 
 
-@interface VGTableViewController () <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
+@interface VGTableViewController () <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate,UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) UISearchBar* searchBar;
+@property (strong, nonatomic) UISearchController* searchController;
+@property (strong,nonatomic) NSString* searchString;
 
 @end
 
 @implementation VGTableViewController
 
+
+-(IBAction)showSearchBar:(id)sender {
+    [self getSearchBar];
+    
+}
 
 
 -(NSManagedObjectContext*) managedObjectContext {
@@ -47,6 +55,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
     
     NSArray* pathArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     
@@ -97,6 +107,7 @@
     cell.cityString = aBank.city;
     cell.phoneString = aBank.phone;
     cell.addressString = aBank.address;
+    cell.linkString = aBank.link;
     [cell awakeFromNib];
 
 }
@@ -133,8 +144,15 @@
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES];
     
+    if (self.searchController.isActive) {
+        NSString *titleString = self.searchController.searchBar.text;
+        NSString *regionString = self.searchController.searchBar.text;
+        NSPredicate* predicate = [NSPredicate predicateWithFormat:@"city contains[cd] %@ OR title contains[cd] %@ OR region contains[cd] %@",self.searchController.searchBar.text, titleString,regionString];
+        [fetchRequest setPredicate:predicate];
+    }
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES];
     [fetchRequest setSortDescriptors:@[sortDescriptor]];
     
     // Edit the section name key path and cache name if appropriate.
@@ -152,6 +170,50 @@
     }
     
     return _fetchedResultsController;
+}
+
+
+
+-(void)getSearchBar
+{
+    if (!self.searchBar) {
+        self.searchBar = [[UISearchBar alloc] init];
+        
+        self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+        self.searchController.searchResultsUpdater = self;
+        self.searchController.searchBar.delegate = self;
+        self.searchController.dimsBackgroundDuringPresentation = NO;
+        self.searchController.searchBar.barTintColor = self.navigationController.navigationBar.barTintColor;
+        self.searchController.searchBar.barStyle = UISearchBarStyleMinimal;
+    }
+    
+    self.tableView.tableHeaderView = self.searchController.searchBar;
+}
+
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    [self.tableView reloadData];
+}
+
+
+#pragma mark - UISearchBarDelegate
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    self.fetchedResultsController = nil;
+    [self.searchController setActive:NO];
+    [self fetchedResultsController];
+    self.tableView.tableHeaderView = nil;
+    [self.tableView reloadData];
+    [searchBar setShowsCancelButton:NO animated:YES];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    self.fetchedResultsController = nil;
+    [self fetchedResultsController];
+    self.searchString = searchText;
+    NSLog(@"%@",self.searchString);
+    [self.tableView reloadData];
+    
 }
 
 @end
