@@ -107,6 +107,7 @@
                                         </button>
                                     </subviews>
                                     <animations/>
+                                    <color key="backgroundColor" white="0.99285567434210531" alpha="0.52750211148648651" colorSpace="calibratedWhite"/>
                                     <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                                     <constraints>
                                         <constraint firstItem="HBN-RG-Gbw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="y99-jp-rxr" secondAttribute="top" constant="60" id="0bO-Gk-ke9"/>
@@ -150,12 +151,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QWg-5r-Id5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="529" y="416"/>
+            <point key="canvasLocation" x="512" y="416"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="AmT-f2-mnx">
             <objects>
-                <viewController id="xKX-vm-FNE" sceneMemberID="viewController">
+                <viewController id="xKX-vm-FNE" customClass="VGMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="st4-kT-Gr3"/>
                         <viewControllerLayoutGuide type="bottom" id="vSb-nA-S3x"/>
@@ -167,6 +168,9 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="r1G-l6-5Lz">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <animations/>
+                                <connections>
+                                    <outlet property="delegate" destination="xKX-vm-FNE" id="mQ9-Tu-sxp"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <animations/>
@@ -179,6 +183,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EoY-Sn-Xd7"/>
+                    <connections>
+                        <outlet property="mapview" destination="r1G-l6-5Lz" id="hMK-77-v0e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oou-Cn-6KP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

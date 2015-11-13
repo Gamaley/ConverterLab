@@ -49,7 +49,7 @@
             NSMutableSet *citySet = [[NSMutableSet alloc] init];
              NSMutableSet *regionSet = [[NSMutableSet alloc] init];
             
-            City *aCity = [NSEntityDescription insertNewObjectForEntityForName:@"City" inManagedObjectContext:[VGDataManager sharedManager].managedObjectContext];
+           // City *aCity = [NSEntityDescription insertNewObjectForEntityForName:@"City" inManagedObjectContext:[VGDataManager sharedManager].managedObjectContext];
          
             
             for (NSDictionary* i in [responseObject objectForKey:@"organizations"]) {

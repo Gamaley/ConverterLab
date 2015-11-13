@@ -29,7 +29,10 @@
 
 
 -(IBAction)showSearchBar:(id)sender {
+    
+    [UIView animateWithDuration:0.3 animations:^{
     [self getSearchBar];
+    }];
     
 }
 
@@ -65,12 +68,11 @@
     //[self getBanksFromServer];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     //[UITabBar appearance].tintColor = [UIColor redColor];//[UIColor colorWithRed:255 green:54 blue:212 alpha:1];
-      // self.tableView.co // Do any additional setup after loading the view, typically from a nib.
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
@@ -94,9 +96,7 @@
     }
     
     [self configureCell:cell atIndexPath:indexPath];
-    
-   // cell.delegate = self;
-    //[self configureCell:cell atIndexPath:indexPath];
+
     return  cell;
 }
 
@@ -136,14 +136,9 @@
     }
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    // Edit the entity name as appropriate.
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Bank" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
-    
-    // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
-    
-    // Edit the sort key as appropriate.
     
     if (self.searchController.isActive) {
         NSString *titleString = self.searchController.searchBar.text;
@@ -155,16 +150,12 @@
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES];
     [fetchRequest setSortDescriptors:@[sortDescriptor]];
     
-    // Edit the section name key path and cache name if appropriate.
-    // nil for section name key path means "no sections".
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil/*@"Master"*/];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
     
     NSError *error = nil;
     if (![self.fetchedResultsController performFetch:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
@@ -187,7 +178,9 @@
         self.searchController.searchBar.barStyle = UISearchBarStyleMinimal;
     }
     
-    self.tableView.tableHeaderView = self.searchController.searchBar;
+       self.tableView.tableHeaderView = self.searchController.searchBar;
+
+    
 }
 
 

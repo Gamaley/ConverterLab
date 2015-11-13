@@ -20,7 +20,6 @@
 		873F511C1BF4DA1100A6BA52 /* VGServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F511B1BF4DA1100A6BA52 /* VGServerManager.m */; };
 		873F51361BF4DB8A00A6BA52 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F51251BF4DB8A00A6BA52 /* AFNetworkActivityIndicatorManager.m */; };
 		873F51371BF4DB8A00A6BA52 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F51271BF4DB8A00A6BA52 /* UIActivityIndicatorView+AFNetworking.m */; };
-		873F51381BF4DB8A00A6BA52 /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F51291BF4DB8A00A6BA52 /* UIAlertView+AFNetworking.m */; };
 		873F51391BF4DB8A00A6BA52 /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F512B1BF4DB8A00A6BA52 /* UIButton+AFNetworking.m */; };
 		873F513A1BF4DB8A00A6BA52 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F512E1BF4DB8A00A6BA52 /* UIImageView+AFNetworking.m */; };
 		873F513B1BF4DB8A00A6BA52 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F51311BF4DB8A00A6BA52 /* UIProgressView+AFNetworking.m */; };
@@ -41,6 +40,7 @@
 		873F516A1BF4FEF200A6BA52 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F51621BF4FEF200A6BA52 /* City.m */; };
 		873F517D1BF5158C00A6BA52 /* Bank+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F517A1BF5158C00A6BA52 /* Bank+CoreDataProperties.m */; };
 		873F517E1BF5158C00A6BA52 /* Bank.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F517C1BF5158C00A6BA52 /* Bank.m */; };
+		873F51821BF625BB00A6BA52 /* VGMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F51811BF625BB00A6BA52 /* VGMapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,7 +67,6 @@
 		873F51261BF4DB8A00A6BA52 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "Libs/UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
 		873F51271BF4DB8A00A6BA52 /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "Libs/UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
 		873F51281BF4DB8A00A6BA52 /* UIAlertView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+AFNetworking.h"; path = "Libs/UIKit+AFNetworking/UIAlertView+AFNetworking.h"; sourceTree = "<group>"; };
-		873F51291BF4DB8A00A6BA52 /* UIAlertView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+AFNetworking.m"; path = "Libs/UIKit+AFNetworking/UIAlertView+AFNetworking.m"; sourceTree = "<group>"; };
 		873F512A1BF4DB8A00A6BA52 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "Libs/UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
 		873F512B1BF4DB8A00A6BA52 /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "Libs/UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
 		873F512C1BF4DB8A00A6BA52 /* UIImage+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+AFNetworking.h"; path = "Libs/UIKit+AFNetworking/UIImage+AFNetworking.h"; sourceTree = "<group>"; };
@@ -111,6 +110,8 @@
 		873F517A1BF5158C00A6BA52 /* Bank+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Bank+CoreDataProperties.m"; path = "CoreData/Entities/Bank+CoreDataProperties.m"; sourceTree = "<group>"; };
 		873F517B1BF5158C00A6BA52 /* Bank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bank.h; path = CoreData/Entities/Bank.h; sourceTree = "<group>"; };
 		873F517C1BF5158C00A6BA52 /* Bank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bank.m; path = CoreData/Entities/Bank.m; sourceTree = "<group>"; };
+		873F51801BF625BB00A6BA52 /* VGMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VGMapViewController.h; path = MapViewController/VGMapViewController.h; sourceTree = "<group>"; };
+		873F51811BF625BB00A6BA52 /* VGMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VGMapViewController.m; path = MapViewController/VGMapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +189,7 @@
 		873F51081BF4B3BE00A6BA52 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				873F517F1BF6257600A6BA52 /* MapViewController */,
 				873F51071BF4B3A400A6BA52 /* MainTableViewController */,
 			);
 			name = ViewControllers;
@@ -290,7 +292,6 @@
 				873F51261BF4DB8A00A6BA52 /* UIActivityIndicatorView+AFNetworking.h */,
 				873F51271BF4DB8A00A6BA52 /* UIActivityIndicatorView+AFNetworking.m */,
 				873F51281BF4DB8A00A6BA52 /* UIAlertView+AFNetworking.h */,
-				873F51291BF4DB8A00A6BA52 /* UIAlertView+AFNetworking.m */,
 				873F512A1BF4DB8A00A6BA52 /* UIButton+AFNetworking.h */,
 				873F512B1BF4DB8A00A6BA52 /* UIButton+AFNetworking.m */,
 				873F512C1BF4DB8A00A6BA52 /* UIImage+AFNetworking.h */,
@@ -348,6 +349,15 @@
 				873F517C1BF5158C00A6BA52 /* Bank.m */,
 			);
 			name = Organization;
+			sourceTree = "<group>";
+		};
+		873F517F1BF6257600A6BA52 /* MapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				873F51801BF625BB00A6BA52 /* VGMapViewController.h */,
+				873F51811BF625BB00A6BA52 /* VGMapViewController.m */,
+			);
+			name = MapViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,11 +446,11 @@
 				873F51541BF4DB9800A6BA52 /* AFNetworkReachabilityManager.m in Sources */,
 				873F51691BF4FEF200A6BA52 /* City+CoreDataProperties.m in Sources */,
 				873F51511BF4DB9800A6BA52 /* AFHTTPRequestOperation.m in Sources */,
+				873F51821BF625BB00A6BA52 /* VGMapViewController.m in Sources */,
 				873F51571BF4DB9800A6BA52 /* AFURLRequestSerialization.m in Sources */,
 				873F51561BF4DB9800A6BA52 /* AFURLConnectionOperation.m in Sources */,
 				873F51591BF4DB9800A6BA52 /* AFURLSessionManager.m in Sources */,
 				873F50ED1BF4AE9A00A6BA52 /* AppDelegate.m in Sources */,
-				873F51381BF4DB8A00A6BA52 /* UIAlertView+AFNetworking.m in Sources */,
 				873F51391BF4DB8A00A6BA52 /* UIButton+AFNetworking.m in Sources */,
 				873F51361BF4DB8A00A6BA52 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				873F513A1BF4DB8A00A6BA52 /* UIImageView+AFNetworking.m in Sources */,
