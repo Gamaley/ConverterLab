@@ -20,12 +20,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-//    [[VGServerManager sharedManager] getBankOnSuccess:^(NSArray *banks) {
-//        //[self viewWillAppear:YES];
-//    } onFailure:^(NSError *error) {
-//        
-//    }];
-    
     return YES;
 }
 

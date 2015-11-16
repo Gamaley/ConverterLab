@@ -12,6 +12,7 @@
 #import "Region.h"
 #import "Bank.h"
 #import "VGDataManager.h"
+#import "Reachability.h"
 
 
 
@@ -41,6 +42,13 @@
     static NSString *getBanksJSON = @"http://resources.finance.ua/ru/public/currency-cash.json";
     
     AFHTTPRequestOperationManager* manager = [AFHTTPRequestOperationManager manager];
+
+    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
+    
+    if (networkStatus == NotReachable) {
+        return;
+    }
     
 //    NSError *error = nil;
 //    NSPersistentStore *store = [[NSPersistentStore alloc] initWithPersistentStoreCoordinator:[VGDataManager sharedManager].persistentStoreCoordinator configurationName:nil URL:[[VGDataManager sharedManager] applicationDocumentsDirectory] options:nil];
@@ -49,11 +57,11 @@
 //    error = nil;
 //    [[NSFileManager defaultManager] removeItemAtPath:store.URL.path error:&error];
     
+     [[VGDataManager sharedManager] deleteEntitiesFromDataBase];
+    
+    
     [manager GET:getBanksJSON parameters:nil success:^(AFHTTPRequestOperation* operation, id responseObject) {
         
-        
-        NSArray *banksArray = [responseObject objectForKey:@"organizations"];
-      
         
         if (success) {
             
@@ -68,9 +76,7 @@
 
                 Bank *aBank = [NSEntityDescription insertNewObjectForEntityForName:@"Bank" inManagedObjectContext:[VGDataManager sharedManager].managedObjectContext];
               
-                
 
-                
                 
                 aBank.city = [[responseObject objectForKey:@"cities"] valueForKey:[i valueForKey:@"cityId"]];
                 aBank.region = [[responseObject objectForKey:@"regions"] valueForKey:[i valueForKey:@"regionId"]];
@@ -108,7 +114,6 @@
                     
                 }
                 
-
                 
                 NSError* error = nil;
                 if (![[VGDataManager sharedManager].managedObjectContext save:&error]) {
@@ -121,7 +126,7 @@
      
         
             
-            success(banksArray);
+           // success(banksArray);
         }
         
         

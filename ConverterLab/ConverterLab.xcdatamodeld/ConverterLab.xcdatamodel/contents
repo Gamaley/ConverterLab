@@ -7,16 +7,16 @@
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="region" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="cities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="City" inverseName="banks" inverseEntity="City" syncable="YES"/>
+        <relationship name="cities" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="City" inverseName="banks" inverseEntity="City" syncable="YES"/>
     </entity>
     <entity name="City" representedClassName="City" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="banks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bank" inverseName="cities" inverseEntity="Bank" syncable="YES"/>
-        <relationship name="region" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Region" inverseName="cities" inverseEntity="Region" syncable="YES"/>
+        <relationship name="banks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Bank" inverseName="cities" inverseEntity="Bank" syncable="YES"/>
+        <relationship name="region" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Region" inverseName="cities" inverseEntity="Region" syncable="YES"/>
     </entity>
     <entity name="Region" representedClassName="Region" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="cities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="City" inverseName="region" inverseEntity="City" syncable="YES"/>
+        <relationship name="cities" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="City" inverseName="region" inverseEntity="City" syncable="YES"/>
     </entity>
     <elements>
         <element name="Bank" positionX="16" positionY="-133" width="128" height="148"/>

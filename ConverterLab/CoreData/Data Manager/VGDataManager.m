@@ -8,6 +8,7 @@
 
 #import "VGDataManager.h"
 
+
 @implementation VGDataManager
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -90,9 +91,9 @@
 }
 
 -(void) deleteEntitiesFromDataBase {
-    NSFetchRequest *regionRequest = [[NSFetchRequest alloc] initWithEntityName:@"Bank"];
+    NSFetchRequest *bankRequest = [[NSFetchRequest alloc] initWithEntityName:@"Bank"];
     
-        NSBatchDeleteRequest *delete = [[NSBatchDeleteRequest alloc] initWithFetchRequest:regionRequest];
+        NSBatchDeleteRequest *delete = [[NSBatchDeleteRequest alloc] initWithFetchRequest:bankRequest];
         NSError *error = nil;
         NSPersistentStoreCoordinator *persistentStoreCoordinator = [VGDataManager sharedManager].persistentStoreCoordinator;
         [persistentStoreCoordinator executeRequest:delete withContext:[VGDataManager sharedManager].managedObjectContext error:&error];

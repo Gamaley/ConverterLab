@@ -20,9 +20,9 @@
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (strong, nonatomic) UISearchBar* searchBar;
-@property (strong, nonatomic) UISearchController* searchController;
-@property (strong,nonatomic) NSString* searchString;
+@property (strong, nonatomic) UISearchBar *searchBar;
+@property (strong, nonatomic) UISearchController *searchController;
+@property (strong, nonatomic) NSString *searchString;
 
 @end
 
@@ -51,6 +51,13 @@
 
 #pragma mark - UIViewController
 
+-(void)loadView {
+    [super loadView];
+    [[VGServerManager sharedManager] getBankOnSuccess:^(NSArray *banks) {} onFailure:^(NSError *error) {
+        NSLog(@"s");
+    }];
+}
+
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
    // [self getBanksFromServer];
@@ -61,7 +68,6 @@
     [super viewDidLoad];
     
     
-
     
     NSArray* pathArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString* docunentDirectory = [pathArray objectAtIndex:0];
@@ -123,6 +129,9 @@
 #pragma mark - Private
 
 - (void)configureCell:(VGCustomTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    
     Bank *aBank = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.titleString = aBank.title;
     cell.regionString = aBank.region;
@@ -215,5 +224,44 @@
     [self.tableView reloadData];
     
 }
+
+#pragma mark - NSFetchedResultsControllerDelegate
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView beginUpdates];
+}
+
+
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
+       atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
+      newIndexPath:(NSIndexPath *)newIndexPath {
+    
+    UITableView *tableView = self.tableView;
+    
+    switch(type) {
+        case NSFetchedResultsChangeInsert:
+            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeUpdate:
+            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            break;
+            
+        case NSFetchedResultsChangeMove:
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView endUpdates];
+}
+
 
 @end
