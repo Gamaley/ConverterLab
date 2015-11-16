@@ -9,14 +9,16 @@
 #import "VGTableViewController.h"
 #import "VGServerManager.h"
 #import "VGCustomTableViewCell.h"
+#import "VGMapViewController.h"
 #import "City.h"
 #import "Region.h"
 #import "Bank.h"
 #import "VGDataManager.h"
+#import "VGMapAnnotation.h"
 
 
 
-@interface VGTableViewController () <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate,UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating>
+@interface VGTableViewController () <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate,UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating,VGCustomTableViewCellDelegate>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
@@ -45,34 +47,23 @@
 }
 
 
-#pragma mark - VGServerManager
-
-
-
 #pragma mark - UIViewController
 
 -(void)loadView {
     [super loadView];
-    [[VGServerManager sharedManager] getBankOnSuccess:^(NSArray *banks) {} onFailure:^(NSError *error) {
-        NSLog(@"s");
-    }];
+    [[VGServerManager sharedManager] getBankOnSuccess:^(NSArray *banks) {} onFailure:^(NSError *error) {}];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-   // [self getBanksFromServer];
     [self.tableView reloadData];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    
     NSArray* pathArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString* docunentDirectory = [pathArray objectAtIndex:0];
-    
-    //[self getBanksFromServer];
     
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     
@@ -94,21 +85,19 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     static NSString* Identifier = @"Cell";
-    
     VGCustomTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:Identifier];
     
     if (!cell) {
         cell = [[VGCustomTableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:Identifier];
     }
-    
+    cell.delegate = self;
     [self configureCell:cell atIndexPath:indexPath];
-
-    return  cell;
+    return cell;
 }
 
 
+#warning Удалить UITabBarDelegate didSelectItem
 
 #pragma mark - UITabBarDelegate
 
@@ -128,9 +117,24 @@
 
 #pragma mark - Private
 
+
+-(void) cellOpenMapAnnotation: (VGCustomTableViewCell*) cell {
+    VGMapAnnotation *annotation = [[VGMapAnnotation alloc] init];
+    
+    NSIndexPath* noteIndex = [self.tableView indexPathForCell:cell];
+    Bank* bank = [self.fetchedResultsController objectAtIndexPath:noteIndex];
+    NSString* address = [NSString stringWithFormat:@"%@ %@",bank.city, bank.address];
+    VGMapViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"VGMapViewController"];
+    annotation.coordinate = [annotation getLocationFromAddressString:address];
+    annotation.title = bank.title;
+    annotation.subtitle = bank.address;
+    vc.mapAnnotation = annotation;
+    
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+
 - (void)configureCell:(VGCustomTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    
-    
     
     Bank *aBank = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.titleString = aBank.title;
@@ -220,7 +224,6 @@
     self.fetchedResultsController = nil;
     [self fetchedResultsController];
     self.searchString = searchText;
-    NSLog(@"%@",self.searchString);
     [self.tableView reloadData];
     
 }
@@ -230,8 +233,6 @@
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView beginUpdates];
 }
-
-
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
        atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type

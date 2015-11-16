@@ -43,7 +43,6 @@
                                                     <state key="highlighted" image="ic_mark_active"/>
                                                     <connections>
                                                         <action selector="mapButtonAction:" destination="tW9-qz-Vmn" eventType="touchUpInside" id="iYO-K8-c3t"/>
-                                                        <segue destination="xKX-vm-FNE" kind="push" id="L7V-zA-2lS"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZmJ-H3-o0d">
@@ -159,7 +158,7 @@
         <!--Map View Controller-->
         <scene sceneID="AmT-f2-mnx">
             <objects>
-                <viewController id="xKX-vm-FNE" customClass="VGMapViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VGMapViewController" id="xKX-vm-FNE" customClass="VGMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="st4-kT-Gr3"/>
                         <viewControllerLayoutGuide type="bottom" id="vSb-nA-S3x"/>

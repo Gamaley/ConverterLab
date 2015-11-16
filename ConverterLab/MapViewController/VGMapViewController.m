@@ -8,61 +8,68 @@
 
 #import "VGMapViewController.h"
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import "VGMapAnnotation.h"
 
-@interface VGMapViewController () <MKMapViewDelegate>
+@interface VGMapViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
 
 @property (weak,nonatomic) IBOutlet MKMapView *mapview;
-
+@property (strong, nonatomic)  CLLocationManager *locationManager;
 @end
 
 @implementation VGMapViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.locationManager = [[CLLocationManager alloc] init];
+    [self.locationManager requestAlwaysAuthorization];
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+
+    [self.mapview setVisibleMapRect:[self getZoomMapRect] animated:YES];
+    [self.mapview addAnnotation:self.mapAnnotation];
+    
+    [self.locationManager startUpdatingLocation];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - Private
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(MKMapRect) getZoomMapRect {
+    CLLocationCoordinate2D coor = self.mapAnnotation.coordinate;
+    MKMapPoint center = MKMapPointForCoordinate(coor);
+    
+    static double delta = 20000;
+    MKMapRect mapRect = MKMapRectMake(center.x - delta, center.y - delta, delta * 2, delta * 2);
+    
+    return mapRect;
 }
-*/
+
 
 #pragma mark - MKMapViewDelegate
 
-- (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated {
-    NSLog(@"regionWillChangeAnimated");
+- (nullable MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
+    if ([annotation isKindOfClass:[MKUserLocation class]]) {
+        return nil;
+    }
     
-}
-
-
-- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
-    NSLog(@"regionDidChangeAnimated");
-}
-
-- (void)mapViewWillStartLoadingMap:(MKMapView *)mapView {
-    NSLog(@"mapViewWillStartLoadingMap");
-}
-
-- (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView {
-    NSLog(@"mapViewDidFinishLoadingMap");}
-
-- (void)mapViewDidFailLoadingMap:(MKMapView *)mapView withError:(NSError *)error {
-    NSLog(@"mapViewDidFailLoadingMap");}
-
-- (void)mapViewWillStartRenderingMap:(MKMapView *)mapView NS_AVAILABLE(10_9, 7_0) {
-    NSLog(@"mapViewWillStartRenderingMap");}
-- (void)mapViewDidFinishRenderingMap:(MKMapView *)mapView fullyRendered:(BOOL)fullyRendered NS_AVAILABLE(10_9, 7_0) {
-    NSLog(@"mapViewDidFinishRenderingMap");
+    static NSString *identifier = @"Annotation";
+    
+    MKPinAnnotationView *pin = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+    
+    if (!pin) {
+        pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+        pin.pinTintColor = [MKPinAnnotationView greenPinColor];
+        pin.animatesDrop = YES;
+        pin.canShowCallout = YES;
+    } else {
+        pin.annotation = annotation;
+    }
+    return pin;
 }
 
 @end

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		872540F91BFA0C2E0046508C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 872540F81BFA0C2E0046508C /* SystemConfiguration.framework */; };
 		872541011BFA11090046508C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 872541001BFA11090046508C /* Reachability.m */; };
+		872541031BFA23190046508C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 872541021BFA23190046508C /* CoreLocation.framework */; };
+		872541071BFA3A450046508C /* VGMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 872541061BFA3A450046508C /* VGMapAnnotation.m */; };
 		873F50EA1BF4AE9A00A6BA52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F50E91BF4AE9A00A6BA52 /* main.m */; };
 		873F50ED1BF4AE9A00A6BA52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F50EC1BF4AE9A00A6BA52 /* AppDelegate.m */; };
 		873F50F01BF4AE9A00A6BA52 /* VGTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F50EF1BF4AE9A00A6BA52 /* VGTableViewController.m */; };
@@ -49,6 +51,9 @@
 		872540F81BFA0C2E0046508C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		872540FF1BFA11090046508C /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Libs/Reachability/Reachability.h; sourceTree = "<group>"; };
 		872541001BFA11090046508C /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = Libs/Reachability/Reachability.m; sourceTree = "<group>"; };
+		872541021BFA23190046508C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		872541051BFA3A450046508C /* VGMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VGMapAnnotation.h; path = "Map Annotation/VGMapAnnotation.h"; sourceTree = "<group>"; };
+		872541061BFA3A450046508C /* VGMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VGMapAnnotation.m; path = "Map Annotation/VGMapAnnotation.m"; sourceTree = "<group>"; };
 		873F50E51BF4AE9900A6BA52 /* ConverterLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConverterLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		873F50E91BF4AE9A00A6BA52 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		873F50EB1BF4AE9A00A6BA52 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -124,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				872541031BFA23190046508C /* CoreLocation.framework in Frameworks */,
 				872540F91BFA0C2E0046508C /* SystemConfiguration.framework in Frameworks */,
 				873F51051BF4B0AA00A6BA52 /* MapKit.framework in Frameworks */,
 			);
@@ -139,6 +145,15 @@
 				872541001BFA11090046508C /* Reachability.m */,
 			);
 			name = Reachability;
+			sourceTree = "<group>";
+		};
+		872541041BFA39FE0046508C /* MapAnnotation */ = {
+			isa = PBXGroup;
+			children = (
+				872541051BFA3A450046508C /* VGMapAnnotation.h */,
+				872541061BFA3A450046508C /* VGMapAnnotation.m */,
+			);
+			name = MapAnnotation;
 			sourceTree = "<group>";
 		};
 		873F50DC1BF4AE9900A6BA52 = {
@@ -160,6 +175,7 @@
 		873F50E71BF4AE9900A6BA52 /* ConverterLab */ = {
 			isa = PBXGroup;
 			children = (
+				872541041BFA39FE0046508C /* MapAnnotation */,
 				873F51181BF4D9AE00A6BA52 /* Network */,
 				873F51121BF4D79E00A6BA52 /* CoreData */,
 				873F51111BF4D75A00A6BA52 /* Libs */,
@@ -222,6 +238,7 @@
 		873F51111BF4D75A00A6BA52 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				872541021BFA23190046508C /* CoreLocation.framework */,
 				872540FE1BFA10F00046508C /* Reachability */,
 				872540F81BFA0C2E0046508C /* SystemConfiguration.framework */,
 				873F51231BF4DB6F00A6BA52 /* UIKit+AFNetworking */,
@@ -455,6 +472,7 @@
 			files = (
 				873F50F61BF4AE9A00A6BA52 /* ConverterLab.xcdatamodeld in Sources */,
 				873F510C1BF4C23500A6BA52 /* VGCustomTableViewCell.m in Sources */,
+				872541071BFA3A450046508C /* VGMapAnnotation.m in Sources */,
 				873F513D1BF4DB8A00A6BA52 /* UIWebView+AFNetworking.m in Sources */,
 				873F517D1BF5158C00A6BA52 /* Bank+CoreDataProperties.m in Sources */,
 				873F51531BF4DB9800A6BA52 /* AFHTTPSessionManager.m in Sources */,

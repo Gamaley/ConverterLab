@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class VGMapAnnotation;
+
 
 @interface VGMapViewController : UIViewController
 
+@property (strong, nonatomic) VGMapAnnotation *mapAnnotation;
 
 @end

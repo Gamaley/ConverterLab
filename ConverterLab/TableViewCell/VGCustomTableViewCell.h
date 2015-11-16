@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol VGCustomTableViewCellDelegate;
+
 @interface VGCustomTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) NSString *titleString;
@@ -16,5 +18,14 @@
 @property (strong, nonatomic) NSString *addressString;
 @property (strong, nonatomic) NSString *phoneString;
 @property (strong, nonatomic) NSString *linkString;
+
+@property (weak, nonatomic) id <VGCustomTableViewCellDelegate> delegate;
+
+@end
+
+
+@protocol VGCustomTableViewCellDelegate <NSObject>
+
+-(void) cellOpenMapAnnotation: (VGCustomTableViewCell*) cell;
 
 @end

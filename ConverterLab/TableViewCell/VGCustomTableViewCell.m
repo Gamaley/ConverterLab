@@ -7,6 +7,8 @@
 //
 
 #import "VGCustomTableViewCell.h"
+#import "VGMapViewController.h"
+#import "VGTableViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface VGCustomTableViewCell ()
@@ -39,9 +41,7 @@
     self.cityLabel.text = self.cityString;
     self.addressLabel.text = self.addressString;
     self.phoneLabel.text = [NSString stringWithFormat:@"тел.: +38%@", self.phoneString];
-    
-    // Initialization code
-    //
+
 }
 
 -(IBAction)linkButtonAction:(UIButton *)sender {
@@ -49,7 +49,7 @@
 }
 
 -(IBAction)mapButtonAction:(UIButton *)sender {
-    
+    [self.delegate cellOpenMapAnnotation:self];
 }
 
 -(IBAction)callButtonAction:(UIButton *)sender {
@@ -64,5 +64,6 @@
     [super setSelected:selected animated:animated];
 
 }
+
 
 @end
