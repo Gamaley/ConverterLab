@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "VGDataManager.h"
+#import "VGServerManager.h"
+
 
 @interface AppDelegate ()
 
@@ -17,6 +19,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+//    [[VGServerManager sharedManager] getBankOnSuccess:^(NSArray *banks) {
+//        //[self viewWillAppear:YES];
+//    } onFailure:^(NSError *error) {
+//        
+//    }];
+    
     return YES;
 }
 

@@ -30,7 +30,6 @@
 
 
 - (NSURL *)applicationDocumentsDirectory {
-    // The directory the application uses to store the Core Data store file. This code uses a directory named "VG.ConverterLab" in the application's documents directory.
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
@@ -53,7 +52,9 @@
     // Create the coordinator and store
     
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+    
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"ConverterLab.sqlite"];
+    
     NSError *error = nil;
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
@@ -88,6 +89,17 @@
     return _managedObjectContext;
 }
 
+-(void) deleteEntitiesFromDataBase {
+    NSFetchRequest *regionRequest = [[NSFetchRequest alloc] initWithEntityName:@"Bank"];
+    
+        NSBatchDeleteRequest *delete = [[NSBatchDeleteRequest alloc] initWithFetchRequest:regionRequest];
+        NSError *error = nil;
+        NSPersistentStoreCoordinator *persistentStoreCoordinator = [VGDataManager sharedManager].persistentStoreCoordinator;
+        [persistentStoreCoordinator executeRequest:delete withContext:[VGDataManager sharedManager].managedObjectContext error:&error];
+    
+   
+}
+
 #pragma mark - Core Data Saving support
 
 - (void)saveContext {
@@ -105,3 +117,11 @@
 
 
 @end
+
+
+
+//NSURL *deleteStoreURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"ConverterLab.sqlite"];
+//if ([[NSFileManager defaultManager] fileExistsAtPath:deleteStoreURL.path]) {
+//    NSError *error = nil;
+//    [[NSFileManager defaultManager] removeItemAtPath:deleteStoreURL.path error:&error];
+//}

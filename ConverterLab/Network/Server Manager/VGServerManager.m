@@ -28,7 +28,13 @@
     return manager;
 }
 
-
+//-(void) deleteEntitiesFromDataBase {
+//    NSFetchRequest *regionRequest = [[NSFetchRequest alloc] initWithEntityName:@"Region"];
+//    NSBatchDeleteRequest *delete = [[NSBatchDeleteRequest alloc] initWithFetchRequest:regionRequest];
+//    NSError *error = nil;
+//    NSPersistentStoreCoordinator *persistentStoreCoordinator = [VGDataManager sharedManager].persistentStoreCoordinator;
+//    [persistentStoreCoordinator executeRequest:delete withContext:[VGDataManager sharedManager].managedObjectContext error:&error];
+//}
 
 -(void) getBankOnSuccess:(void(^)(NSArray* banks)) success onFailure:(void(^)(NSError* error)) failure {
     
@@ -36,9 +42,14 @@
     
     AFHTTPRequestOperationManager* manager = [AFHTTPRequestOperationManager manager];
     
+//    NSError *error = nil;
+//    NSPersistentStore *store = [[NSPersistentStore alloc] initWithPersistentStoreCoordinator:[VGDataManager sharedManager].persistentStoreCoordinator configurationName:nil URL:[[VGDataManager sharedManager] applicationDocumentsDirectory] options:nil];
+//    [[VGDataManager sharedManager].persistentStoreCoordinator removePersistentStore:store error:&error];
+//    
+//    error = nil;
+//    [[NSFileManager defaultManager] removeItemAtPath:store.URL.path error:&error];
     
     [manager GET:getBanksJSON parameters:nil success:^(AFHTTPRequestOperation* operation, id responseObject) {
-        
         
         
         NSArray *banksArray = [responseObject objectForKey:@"organizations"];
@@ -46,22 +57,19 @@
         
         if (success) {
             
+            //[[VGDataManager sharedManager] deleteEntitiesFromDataBase];
+            
             NSMutableSet *citySet = [[NSMutableSet alloc] init];
              NSMutableSet *regionSet = [[NSMutableSet alloc] init];
             
-           // City *aCity = [NSEntityDescription insertNewObjectForEntityForName:@"City" inManagedObjectContext:[VGDataManager sharedManager].managedObjectContext];
-         
             
             for (NSDictionary* i in [responseObject objectForKey:@"organizations"]) {
                 
-//                Region *aRegion = [NSEntityDescription insertNewObjectForEntityForName:@"Region" inManagedObjectContext:[VGDataManager sharedManager].managedObjectContext];
-//                City *aCity = [NSEntityDescription insertNewObjectForEntityForName:@"City" inManagedObjectContext:[VGDataManager sharedManager].managedObjectContext];
+
                 Bank *aBank = [NSEntityDescription insertNewObjectForEntityForName:@"Bank" inManagedObjectContext:[VGDataManager sharedManager].managedObjectContext];
               
                 
-//                aCity.name = [[responseObject objectForKey:@"cities"] valueForKey:[i valueForKey:@"cityId"]];
-//                aRegion.name = [[responseObject objectForKey:@"regions"] valueForKey:[i valueForKey:@"regionId"]];
-                
+
                 
                 
                 aBank.city = [[responseObject objectForKey:@"cities"] valueForKey:[i valueForKey:@"cityId"]];
@@ -96,16 +104,11 @@
                     
                     aRegion.name = aBank.region;
                     [aRegion addCities:aBank.cities];
-                    
-                    //[aRegion addCitiesObject:[aBank.cities ];
-                    //[aBank addCitiesObject:aRegion];
+ 
                     
                 }
                 
-                
-//                [aRegion addCitiesObject:aCity];
-//                [aBank addCitiesObject:aCity];
-                
+
                 
                 NSError* error = nil;
                 if (![[VGDataManager sharedManager].managedObjectContext save:&error]) {
@@ -115,16 +118,7 @@
             }
             
       
-            
-//            Bank *aBank = [NSEntityDescription insertNewObjectForEntityForName:@"Bank" inManagedObjectContext:[VGDataManager sharedManager].managedObjectContext];
-//            
-//            aBank.cities = citySet;
-//            
-//            NSError* error = nil;
-//            if (![[VGDataManager sharedManager].managedObjectContext save:&error]) {
-//                NSLog(@"%@",[error localizedDescription]);
-//            }
-            
+     
         
             
             success(banksArray);
@@ -191,4 +185,28 @@
 
 //                [citySet addObject:aCity.name];
 //                [regionSet addObject:aRegion.name];
+
+//                Region *aRegion = [NSEntityDescription insertNewObjectForEntityForName:@"Region" inManagedObjectContext:[VGDataManager sharedManager].managedObjectContext];
+//                City *aCity = [NSEntityDescription insertNewObjectForEntityForName:@"City" inManagedObjectContext:[VGDataManager sharedManager].managedObjectContext];
+  // City *aCity = [NSEntityDescription insertNewObjectForEntityForName:@"City" inManagedObjectContext:[VGDataManager sharedManager].managedObjectContext];
+
+
+//[aRegion addCitiesObject:[aBank.cities ];
+//[aBank addCitiesObject:aRegion];
+
+
+//            Bank *aBank = [NSEntityDescription insertNewObjectForEntityForName:@"Bank" inManagedObjectContext:[VGDataManager sharedManager].managedObjectContext];
+//
+//            aBank.cities = citySet;
+//
+//            NSError* error = nil;
+//            if (![[VGDataManager sharedManager].managedObjectContext save:&error]) {
+//                NSLog(@"%@",[error localizedDescription]);
+//            }
+//                aCity.name = [[responseObject objectForKey:@"cities"] valueForKey:[i valueForKey:@"cityId"]];
+//                aRegion.name = [[responseObject objectForKey:@"regions"] valueForKey:[i valueForKey:@"regionId"]];
+
+//                [aRegion addCitiesObject:aCity];
+//                [aBank addCitiesObject:aCity];
+
 

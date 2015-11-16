@@ -7,6 +7,7 @@
 //
 
 #import "VGCustomTableViewCell.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface VGCustomTableViewCell ()
 
@@ -19,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *cityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 @property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
+@property (weak, nonatomic) IBOutlet UIView *shadowView;
 
 @end
 
@@ -26,6 +28,11 @@
 @implementation VGCustomTableViewCell
 
 - (void)awakeFromNib {
+    
+    self.shadowView.layer.masksToBounds = NO;
+    self.shadowView.layer.shadowOffset = CGSizeMake(-2, 4);
+    self.shadowView.layer.shadowRadius = 3;
+    self.shadowView.layer.shadowOpacity = 0.5;
     
     self.titleLabel.text = self.titleString;
     self.regionLabel.text = self.regionString;

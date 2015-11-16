@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="h5k-7a-6q0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="h5k-7a-6q0">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
         <!--Converter Lab-->
         <scene sceneID="bHT-1l-zUW">
             <objects>
                 <tableViewController id="s7N-cD-8to" customClass="VGTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="206" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qrz-lJ-R1f">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="206" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qrz-lJ-R1f">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
@@ -20,46 +20,85 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="206"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tW9-qz-Vmn" id="y99-jp-rxr">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="205"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="206"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <tabBar contentMode="scaleAspectFit" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBN-RG-Gbw">
-                                            <rect key="frame" x="0.0" y="156" width="320" height="49"/>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vqV-vk-Nfo">
+                                            <rect key="frame" x="8" y="8" width="304" height="189"/>
+                                            <subviews>
+                                                <tabBar contentMode="scaleAspectFit" fixedFrame="YES" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBN-RG-Gbw">
+                                                    <rect key="frame" x="0.0" y="140" width="304" height="49"/>
+                                                    <animations/>
+                                                    <items/>
+                                                    <color key="barTintColor" red="0.64893211253777616" green="0.72286133571497813" blue="0.76678898358585856" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="s7N-cD-8to" id="FAq-9y-uUM"/>
+                                                    </connections>
+                                                </tabBar>
+                                                <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrr-HX-bmW">
+                                                    <rect key="frame" x="80" y="140" width="69" height="49"/>
+                                                    <animations/>
+                                                    <state key="normal" image="ic_mark_unactive"/>
+                                                    <state key="selected" image="ic_mark_active"/>
+                                                    <state key="highlighted" image="ic_mark_active"/>
+                                                    <connections>
+                                                        <action selector="mapButtonAction:" destination="tW9-qz-Vmn" eventType="touchUpInside" id="iYO-K8-c3t"/>
+                                                        <segue destination="xKX-vm-FNE" kind="push" id="L7V-zA-2lS"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZmJ-H3-o0d">
+                                                    <rect key="frame" x="0.0" y="140" width="72" height="49"/>
+                                                    <animations/>
+                                                    <state key="normal" image="ic_link_unactive"/>
+                                                    <state key="selected" image="ic_link_floating"/>
+                                                    <state key="highlighted" image="ic_link_floating"/>
+                                                    <connections>
+                                                        <action selector="linkButtonAction:" destination="tW9-qz-Vmn" eventType="touchUpInside" id="0jD-O1-mVY"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2j-0G-iYF">
+                                                    <rect key="frame" x="157" y="140" width="74" height="50"/>
+                                                    <animations/>
+                                                    <state key="normal" image="ic_phone_unactive"/>
+                                                    <state key="selected" image="ic_phone_active"/>
+                                                    <state key="highlighted" image="ic_phone_active"/>
+                                                    <connections>
+                                                        <action selector="callButtonAction:" destination="tW9-qz-Vmn" eventType="touchUpInside" id="7ds-yY-4PU"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQM-vK-fhF">
+                                                    <rect key="frame" x="232" y="140" width="72" height="49"/>
+                                                    <animations/>
+                                                    <state key="normal" image="ic_dots_unactive"/>
+                                                    <state key="selected" image="ic_dots_active"/>
+                                                    <state key="highlighted" image="ic_dots_active"/>
+                                                    <connections>
+                                                        <action selector="moreButtonAction:" destination="tW9-qz-Vmn" eventType="touchUpInside" id="RMV-8j-cgK"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
                                             <animations/>
-                                            <items/>
-                                            <color key="barTintColor" red="0.64893211253777616" green="0.72286133571497813" blue="0.76678898358585856" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <outlet property="delegate" destination="s7N-cD-8to" id="FAq-9y-uUM"/>
-                                            </connections>
-                                        </tabBar>
-                                        <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQM-vK-fhF">
-                                            <rect key="frame" x="240" y="156" width="80" height="49"/>
-                                            <animations/>
-                                            <state key="normal" image="ic_dots_unactive"/>
-                                            <state key="selected" image="ic_dots_active"/>
-                                            <connections>
-                                                <action selector="moreButtonAction:" destination="tW9-qz-Vmn" eventType="touchUpInside" id="RMV-8j-cgK"/>
-                                            </connections>
-                                        </button>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Приват-Банк" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mrt-XT-S6Q">
                                             <rect key="frame" x="18" y="15" width="283" height="25"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.72381756756756754" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Закарпатская область" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tDn-yd-hjb">
                                             <rect key="frame" x="18" y="48" width="283" height="16"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.71225717905405406" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ужгород" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xk-Gd-g3X">
                                             <rect key="frame" x="18" y="72" width="283" height="14"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.72041279560810811" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="тел.: 050-876-3344" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EuE-GV-YYZ">
@@ -74,47 +113,10 @@
                                             <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZmJ-H3-o0d">
-                                            <rect key="frame" x="0.0" y="156" width="80" height="49"/>
-                                            <animations/>
-                                            <state key="normal" image="ic_link_unactive"/>
-                                            <state key="selected" image="ic_link_floating"/>
-                                            <state key="highlighted" image="ic_link_floating"/>
-                                            <connections>
-                                                <action selector="linkButtonAction:" destination="tW9-qz-Vmn" eventType="touchUpInside" id="0jD-O1-mVY"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrr-HX-bmW">
-                                            <rect key="frame" x="88" y="156" width="69" height="49"/>
-                                            <animations/>
-                                            <state key="normal" image="ic_mark_unactive"/>
-                                            <state key="selected" image="ic_mark_active"/>
-                                            <state key="highlighted" image="ic_mark_floating"/>
-                                            <connections>
-                                                <action selector="mapButtonAction:" destination="tW9-qz-Vmn" eventType="touchUpInside" id="iYO-K8-c3t"/>
-                                                <segue destination="xKX-vm-FNE" kind="push" id="L7V-zA-2lS"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2j-0G-iYF">
-                                            <rect key="frame" x="165" y="156" width="74" height="50"/>
-                                            <animations/>
-                                            <state key="normal" image="ic_phone_unactive"/>
-                                            <state key="selected" image="ic_phone_active"/>
-                                            <state key="highlighted" image="ic_phone_floating"/>
-                                            <connections>
-                                                <action selector="callButtonAction:" destination="tW9-qz-Vmn" eventType="touchUpInside" id="7ds-yY-4PU"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <animations/>
-                                    <color key="backgroundColor" white="0.99285567434210531" alpha="0.52750211148648651" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
-                                    <constraints>
-                                        <constraint firstItem="HBN-RG-Gbw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="y99-jp-rxr" secondAttribute="top" constant="60" id="0bO-Gk-ke9"/>
-                                        <constraint firstItem="HBN-RG-Gbw" firstAttribute="leading" secondItem="y99-jp-rxr" secondAttribute="leading" id="7p1-IF-Bdm"/>
-                                        <constraint firstAttribute="trailing" secondItem="HBN-RG-Gbw" secondAttribute="trailing" id="o9t-7u-vIs"/>
-                                        <constraint firstAttribute="bottom" secondItem="HBN-RG-Gbw" secondAttribute="bottom" id="rXf-BM-VkP"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <color key="tintColor" red="1" green="0.045686961805750048" blue="0.44277876952949424" alpha="1" colorSpace="calibratedRGB"/>
@@ -127,6 +129,7 @@
                                     <outlet property="moreButton" destination="oQM-vK-fhF" id="Klb-l3-NuP"/>
                                     <outlet property="phoneLabel" destination="EuE-GV-YYZ" id="CV1-oH-erS"/>
                                     <outlet property="regionLabel" destination="tDn-yd-hjb" id="bSj-JY-XQz"/>
+                                    <outlet property="shadowView" destination="vqV-vk-Nfo" id="b5R-6D-jhe"/>
                                     <outlet property="titleLabel" destination="Mrt-XT-S6Q" id="MQa-v2-70M"/>
                                 </connections>
                             </tableViewCell>
@@ -165,7 +168,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="r1G-l6-5Lz">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r1G-l6-5Lz">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <animations/>
                                 <connections>
@@ -221,10 +224,8 @@
         <image name="ic_link_floating" width="24" height="12"/>
         <image name="ic_link_unactive" width="26" height="14"/>
         <image name="ic_mark_active" width="16" height="22"/>
-        <image name="ic_mark_floating" width="14" height="20"/>
         <image name="ic_mark_unactive" width="16" height="22"/>
         <image name="ic_phone_active" width="20" height="20"/>
-        <image name="ic_phone_floating" width="18" height="18"/>
         <image name="ic_phone_unactive" width="20" height="20"/>
         <image name="ic_search" width="20" height="20"/>
     </resources>

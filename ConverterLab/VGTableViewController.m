@@ -15,6 +15,7 @@
 #import "VGDataManager.h"
 
 
+
 @interface VGTableViewController () <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate,UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
@@ -29,11 +30,9 @@
 
 
 -(IBAction)showSearchBar:(id)sender {
-    
     [UIView animateWithDuration:0.3 animations:^{
     [self getSearchBar];
     }];
-    
 }
 
 
@@ -46,28 +45,31 @@
 }
 
 
--(void) getBanksFromServer {
-    
-    [[VGServerManager sharedManager] getBankOnSuccess:^(NSArray *banks) {
-        
-    } onFailure:^(NSError *error) {
-        
-    }];
-    
+#pragma mark - VGServerManager
+
+
+
+#pragma mark - UIViewController
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+   // [self getBanksFromServer];
+    [self.tableView reloadData];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     
+
     
     NSArray* pathArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    
     NSString* docunentDirectory = [pathArray objectAtIndex:0];
     
     //[self getBanksFromServer];
+    
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
-    //[UITabBar appearance].tintColor = [UIColor redColor];//[UIColor colorWithRed:255 green:54 blue:212 alpha:1];
+    
 }
 
 
@@ -100,17 +102,7 @@
     return  cell;
 }
 
-- (void)configureCell:(VGCustomTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    Bank *aBank = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.titleString = aBank.title;
-    cell.regionString = aBank.region;
-    cell.cityString = aBank.city;
-    cell.phoneString = aBank.phone;
-    cell.addressString = aBank.address;
-    cell.linkString = aBank.link;
-    [cell awakeFromNib];
 
-}
 
 #pragma mark - UITabBarDelegate
 
@@ -126,6 +118,20 @@
         NSLog(@"44");
     }
 
+}
+
+#pragma mark - Private
+
+- (void)configureCell:(VGCustomTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    Bank *aBank = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.titleString = aBank.title;
+    cell.regionString = aBank.region;
+    cell.cityString = aBank.city;
+    cell.phoneString = aBank.phone;
+    cell.addressString = aBank.address;
+    cell.linkString = aBank.link;
+    [cell awakeFromNib];
+    
 }
 
 
@@ -183,6 +189,7 @@
     
 }
 
+#pragma mark - UISearchResultsUpdating
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
     [self.tableView reloadData];

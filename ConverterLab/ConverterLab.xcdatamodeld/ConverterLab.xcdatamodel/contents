@@ -11,7 +11,7 @@
     </entity>
     <entity name="City" representedClassName="City" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="banks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Bank" inverseName="cities" inverseEntity="Bank" syncable="YES"/>
+        <relationship name="banks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bank" inverseName="cities" inverseEntity="Bank" syncable="YES"/>
         <relationship name="region" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Region" inverseName="cities" inverseEntity="Region" syncable="YES"/>
     </entity>
     <entity name="Region" representedClassName="Region" syncable="YES">

@@ -18,5 +18,6 @@
 +(VGDataManager*) sharedManager;
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
+-(void) deleteEntitiesFromDataBase;
 
 @end
