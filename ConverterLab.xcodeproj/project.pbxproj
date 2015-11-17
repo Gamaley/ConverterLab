@@ -11,6 +11,7 @@
 		872541011BFA11090046508C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 872541001BFA11090046508C /* Reachability.m */; };
 		872541031BFA23190046508C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 872541021BFA23190046508C /* CoreLocation.framework */; };
 		872541071BFA3A450046508C /* VGMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 872541061BFA3A450046508C /* VGMapAnnotation.m */; };
+		8725410C1BFB4E290046508C /* VGDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8725410B1BFB4E290046508C /* VGDetailViewController.m */; };
 		873F50EA1BF4AE9A00A6BA52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F50E91BF4AE9A00A6BA52 /* main.m */; };
 		873F50ED1BF4AE9A00A6BA52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F50EC1BF4AE9A00A6BA52 /* AppDelegate.m */; };
 		873F50F01BF4AE9A00A6BA52 /* VGTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F50EF1BF4AE9A00A6BA52 /* VGTableViewController.m */; };
@@ -54,6 +55,8 @@
 		872541021BFA23190046508C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		872541051BFA3A450046508C /* VGMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VGMapAnnotation.h; path = "Map Annotation/VGMapAnnotation.h"; sourceTree = "<group>"; };
 		872541061BFA3A450046508C /* VGMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VGMapAnnotation.m; path = "Map Annotation/VGMapAnnotation.m"; sourceTree = "<group>"; };
+		8725410A1BFB4E290046508C /* VGDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VGDetailViewController.h; path = DetailViewController/VGDetailViewController.h; sourceTree = "<group>"; };
+		8725410B1BFB4E290046508C /* VGDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VGDetailViewController.m; path = DetailViewController/VGDetailViewController.m; sourceTree = "<group>"; };
 		873F50E51BF4AE9900A6BA52 /* ConverterLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConverterLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		873F50E91BF4AE9A00A6BA52 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		873F50EB1BF4AE9A00A6BA52 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -156,6 +159,24 @@
 			name = MapAnnotation;
 			sourceTree = "<group>";
 		};
+		872541081BFA5F050046508C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				873F50F11BF4AE9A00A6BA52 /* Main.storyboard */,
+				873F50F91BF4AE9A00A6BA52 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		872541091BFA5F220046508C /* DetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8725410A1BFB4E290046508C /* VGDetailViewController.h */,
+				8725410B1BFB4E290046508C /* VGDetailViewController.m */,
+			);
+			name = DetailViewController;
+			sourceTree = "<group>";
+		};
 		873F50DC1BF4AE9900A6BA52 = {
 			isa = PBXGroup;
 			children = (
@@ -182,9 +203,7 @@
 				873F51091BF4C1EE00A6BA52 /* CustomCell */,
 				873F51081BF4B3BE00A6BA52 /* ViewControllers */,
 				873F51061BF4B39700A6BA52 /* AppDelegate */,
-				873F50F11BF4AE9A00A6BA52 /* Main.storyboard */,
-				873F50F71BF4AE9A00A6BA52 /* Assets.xcassets */,
-				873F50F91BF4AE9A00A6BA52 /* LaunchScreen.storyboard */,
+				872541081BFA5F050046508C /* Storyboards */,
 				873F50E81BF4AE9A00A6BA52 /* Supporting Files */,
 			);
 			path = ConverterLab;
@@ -193,6 +212,7 @@
 		873F50E81BF4AE9A00A6BA52 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				873F50F71BF4AE9A00A6BA52 /* Assets.xcassets */,
 				873F50FC1BF4AE9A00A6BA52 /* Info.plist */,
 				873F50E91BF4AE9A00A6BA52 /* main.m */,
 			);
@@ -220,6 +240,7 @@
 		873F51081BF4B3BE00A6BA52 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				872541091BFA5F220046508C /* DetailViewController */,
 				873F517F1BF6257600A6BA52 /* MapViewController */,
 				873F51071BF4B3A400A6BA52 /* MainTableViewController */,
 			);
@@ -238,12 +259,12 @@
 		873F51111BF4D75A00A6BA52 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				873F51041BF4B0AA00A6BA52 /* MapKit.framework */,
+				872540F81BFA0C2E0046508C /* SystemConfiguration.framework */,
 				872541021BFA23190046508C /* CoreLocation.framework */,
 				872540FE1BFA10F00046508C /* Reachability */,
-				872540F81BFA0C2E0046508C /* SystemConfiguration.framework */,
 				873F51231BF4DB6F00A6BA52 /* UIKit+AFNetworking */,
 				873F51221BF4DB6400A6BA52 /* AFNetworking */,
-				873F51041BF4B0AA00A6BA52 /* MapKit.framework */,
 			);
 			name = Libs;
 			sourceTree = "<group>";
@@ -470,6 +491,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8725410C1BFB4E290046508C /* VGDetailViewController.m in Sources */,
 				873F50F61BF4AE9A00A6BA52 /* ConverterLab.xcdatamodeld in Sources */,
 				873F510C1BF4C23500A6BA52 /* VGCustomTableViewCell.m in Sources */,
 				872541071BFA3A450046508C /* VGMapAnnotation.m in Sources */,

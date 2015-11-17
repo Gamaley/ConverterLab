@@ -15,6 +15,8 @@
 #import "Bank.h"
 #import "VGDataManager.h"
 #import "VGMapAnnotation.h"
+#import "VGDetailViewController.h"
+#import "UIActivityIndicatorView+AFNetworking.h"
 
 
 
@@ -25,6 +27,7 @@
 @property (strong, nonatomic) UISearchBar *searchBar;
 @property (strong, nonatomic) UISearchController *searchController;
 @property (strong, nonatomic) NSString *searchString;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadIndicator;
 
 @end
 
@@ -61,7 +64,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self.loadIndicator startAnimating];
+    [self.loadIndicator setAnimatingWithStateOfTask:nil];
     NSArray* pathArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString* docunentDirectory = [pathArray objectAtIndex:0];
     
@@ -115,7 +119,15 @@
 
 }
 
-#pragma mark - Private
+#pragma mark - VGCustomTableViewCellDelegate
+
+-(void) cellOpenMore: (VGCustomTableViewCell *) cell {
+    VGDetailViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"VGDetailViewController"];
+    NSIndexPath* noteIndex = [self.tableView indexPathForCell:cell];
+    Bank* bank = [self.fetchedResultsController objectAtIndexPath:noteIndex];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 
 -(void) cellOpenMapAnnotation: (VGCustomTableViewCell*) cell {
@@ -133,6 +145,7 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+#pragma mark - Private
 
 - (void)configureCell:(VGCustomTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     

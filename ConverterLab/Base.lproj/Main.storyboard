@@ -15,6 +15,12 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="0.10954653709999999" green="0.1139914773" blue="0.10709907289999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" id="GLy-zB-tm5">
+                            <rect key="frame" x="0.0" y="298" width="320" height="37"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </activityIndicatorView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="206" id="tW9-qz-Vmn" customClass="VGCustomTableViewCell">
                                 <rect key="frame" x="0.0" y="92" width="320" height="206"/>
@@ -150,6 +156,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
                     </refreshControl>
+                    <connections>
+                        <outlet property="loadIndicator" destination="GLy-zB-tm5" id="HGd-KR-gV7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QWg-5r-Id5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -192,6 +201,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oou-Cn-6KP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="899" y="416"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Uxj-ki-gLr">
+            <objects>
+                <viewController storyboardIdentifier="VGDetailViewController" id="Q1s-DB-8jw" customClass="VGDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xRd-G1-kGZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="7K6-L6-zCl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0GL-Xd-jv4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QpN-rd-M68" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1297" y="418"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SjJ-c5-oCf">

@@ -26,6 +26,7 @@
 
 @protocol VGCustomTableViewCellDelegate <NSObject>
 
--(void) cellOpenMapAnnotation: (VGCustomTableViewCell*) cell;
+-(void) cellOpenMapAnnotation: (VGCustomTableViewCell *) cell;
+-(void) cellOpenMore: (VGCustomTableViewCell *) cell;
 
 @end
