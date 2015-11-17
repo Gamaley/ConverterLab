@@ -382,6 +382,11 @@
                                     <constraint firstItem="15o-x1-QcQ" firstAttribute="bottom" secondItem="chx-lO-7Bd" secondAttribute="bottomMargin" id="sur-hr-irD"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B6u-Hi-MUc">
+                                <rect key="frame" x="245" y="500" width="52" height="52"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.81269728539999997" green="0.14108760070000001" blue="0.47970990670000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
