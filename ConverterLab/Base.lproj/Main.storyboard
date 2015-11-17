@@ -303,7 +303,7 @@
                                             <constraint firstAttribute="height" constant="461" id="Y2B-pp-4gQ"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" id="1YH-CW-IOF">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" id="1YH-CW-IOF" customClass="VGDetailTableViewCell">
                                                 <rect key="frame" x="0.0" y="28" width="304" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1YH-CW-IOF" id="MZP-Gc-fMu">
@@ -334,13 +334,6 @@
                                                                     <color key="textColor" red="0.81269728535353536" green="0.14108760074008325" blue="0.4797099066523679" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPD-Sm-JAG">
-                                                                    <rect key="frame" x="182" y="6" width="19" height="17"/>
-                                                                    <animations/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8JD-03-iZf">
                                                                     <rect key="frame" x="215" y="1" width="15" height="18"/>
                                                                     <animations/>
@@ -360,8 +353,18 @@
                                                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 </tableViewCellContentView>
                                                 <animations/>
+                                                <connections>
+                                                    <outlet property="askCurrencyLabel" destination="eaQ-Cc-leG" id="k7j-lJ-t5s"/>
+                                                    <outlet property="bidCurrencyLabel" destination="ZGy-t8-rif" id="7oY-ta-nvR"/>
+                                                    <outlet property="nameCurrencyLabel" destination="5mQ-fF-PfW" id="Vuh-0F-XxW"/>
+                                                    <outlet property="shadowView" destination="26g-hr-oPi" id="QtZ-dl-KQS"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Q1s-DB-8jw" id="OX0-bT-VpZ"/>
+                                            <outlet property="delegate" destination="Q1s-DB-8jw" id="B4I-qv-h8B"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <animations/>

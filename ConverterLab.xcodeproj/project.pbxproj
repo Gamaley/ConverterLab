@@ -12,6 +12,7 @@
 		872541031BFA23190046508C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 872541021BFA23190046508C /* CoreLocation.framework */; };
 		872541071BFA3A450046508C /* VGMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 872541061BFA3A450046508C /* VGMapAnnotation.m */; };
 		8725410C1BFB4E290046508C /* VGDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8725410B1BFB4E290046508C /* VGDetailViewController.m */; };
+		872541111BFB62480046508C /* VGDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 872541101BFB62480046508C /* VGDetailTableViewCell.m */; };
 		873F50EA1BF4AE9A00A6BA52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F50E91BF4AE9A00A6BA52 /* main.m */; };
 		873F50ED1BF4AE9A00A6BA52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F50EC1BF4AE9A00A6BA52 /* AppDelegate.m */; };
 		873F50F01BF4AE9A00A6BA52 /* VGTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F50EF1BF4AE9A00A6BA52 /* VGTableViewController.m */; };
@@ -57,6 +58,8 @@
 		872541061BFA3A450046508C /* VGMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VGMapAnnotation.m; path = "Map Annotation/VGMapAnnotation.m"; sourceTree = "<group>"; };
 		8725410A1BFB4E290046508C /* VGDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VGDetailViewController.h; path = DetailViewController/VGDetailViewController.h; sourceTree = "<group>"; };
 		8725410B1BFB4E290046508C /* VGDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VGDetailViewController.m; path = DetailViewController/VGDetailViewController.m; sourceTree = "<group>"; };
+		8725410F1BFB62480046508C /* VGDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VGDetailTableViewCell.h; path = TableViewCell/DetailTableViewCell/VGDetailTableViewCell.h; sourceTree = "<group>"; };
+		872541101BFB62480046508C /* VGDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VGDetailTableViewCell.m; path = TableViewCell/DetailTableViewCell/VGDetailTableViewCell.m; sourceTree = "<group>"; };
 		873F50E51BF4AE9900A6BA52 /* ConverterLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConverterLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		873F50E91BF4AE9A00A6BA52 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		873F50EB1BF4AE9A00A6BA52 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -177,6 +180,24 @@
 			name = DetailViewController;
 			sourceTree = "<group>";
 		};
+		8725410D1BFB61DD0046508C /* MainTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				873F510A1BF4C23500A6BA52 /* VGCustomTableViewCell.h */,
+				873F510B1BF4C23500A6BA52 /* VGCustomTableViewCell.m */,
+			);
+			name = MainTableViewCell;
+			sourceTree = "<group>";
+		};
+		8725410E1BFB61EE0046508C /* DetailTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8725410F1BFB62480046508C /* VGDetailTableViewCell.h */,
+				872541101BFB62480046508C /* VGDetailTableViewCell.m */,
+			);
+			name = DetailTableViewCell;
+			sourceTree = "<group>";
+		};
 		873F50DC1BF4AE9900A6BA52 = {
 			isa = PBXGroup;
 			children = (
@@ -250,8 +271,8 @@
 		873F51091BF4C1EE00A6BA52 /* CustomCell */ = {
 			isa = PBXGroup;
 			children = (
-				873F510A1BF4C23500A6BA52 /* VGCustomTableViewCell.h */,
-				873F510B1BF4C23500A6BA52 /* VGCustomTableViewCell.m */,
+				8725410E1BFB61EE0046508C /* DetailTableViewCell */,
+				8725410D1BFB61DD0046508C /* MainTableViewCell */,
 			);
 			name = CustomCell;
 			sourceTree = "<group>";
@@ -520,6 +541,7 @@
 				873F51551BF4DB9800A6BA52 /* AFSecurityPolicy.m in Sources */,
 				873F50EA1BF4AE9A00A6BA52 /* main.m in Sources */,
 				873F51521BF4DB9800A6BA52 /* AFHTTPRequestOperationManager.m in Sources */,
+				872541111BFB62480046508C /* VGDetailTableViewCell.m in Sources */,
 				873F51681BF4FEF200A6BA52 /* Region.m in Sources */,
 				873F513B1BF4DB8A00A6BA52 /* UIProgressView+AFNetworking.m in Sources */,
 				873F516A1BF4FEF200A6BA52 /* City.m in Sources */,
