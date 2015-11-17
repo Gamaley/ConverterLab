@@ -222,13 +222,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NgH-Qo-tg0">
                                         <rect key="frame" x="8" y="8" width="304" height="236"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Приват-Банк" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJ0-bV-v9U">
-                                                <rect key="frame" x="8" y="18" width="288" height="44"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                                <color key="textColor" red="0.81269728539999997" green="0.14108760070000001" blue="0.47970990670000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Круглосуточно (без выходных)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVo-XL-Gk7">
                                                 <rect key="frame" x="8" y="206" width="288" height="11"/>
                                                 <animations/>
@@ -236,15 +229,22 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.72381756760000004" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Закарпатская область" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B60-Z0-oHH">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Закарпатская область" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="B60-Z0-oHH">
                                                 <rect key="frame" x="8" y="99" width="288" height="21"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.72381756760000004" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Адрес: ул. Джамбула 30а" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Au-Mb-pvy">
-                                                <rect key="frame" x="8" y="167" width="288" height="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ужгород, Украина" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FkD-TT-Rra">
+                                                <rect key="frame" x="8" y="118" width="288" height="21"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.72381756760000004" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Адрес: ул. Джамбула 30а" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3Au-Mb-pvy">
+                                                <rect key="frame" x="8" y="147" width="288" height="40"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.72249788849999996" colorSpace="calibratedRGB"/>
@@ -257,11 +257,11 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.72381756760000004" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ужгород, Украина" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FkD-TT-Rra">
-                                                <rect key="frame" x="8" y="118" width="288" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Приват-Банк" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VJ0-bV-v9U">
+                                                <rect key="frame" x="8" y="35" width="288" height="44"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.72381756760000004" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                <color key="textColor" red="0.81269728539999997" green="0.14108760070000001" blue="0.47970990670000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -350,9 +350,9 @@
                                                         </view>
                                                     </subviews>
                                                     <animations/>
-                                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 </tableViewCellContentView>
                                                 <animations/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <connections>
                                                     <outlet property="askCurrencyLabel" destination="eaQ-Cc-leG" id="k7j-lJ-t5s"/>
                                                     <outlet property="bidCurrencyLabel" destination="ZGy-t8-rif" id="7oY-ta-nvR"/>
@@ -395,9 +395,14 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="800"/>
                     <connections>
+                        <outlet property="addressLabel" destination="3Au-Mb-pvy" id="kX3-Lm-ACC"/>
+                        <outlet property="cityLabel" destination="FkD-TT-Rra" id="8EX-V3-HBw"/>
                         <outlet property="currencyTableView" destination="15o-x1-QcQ" id="x1t-nY-GZr"/>
                         <outlet property="detailInfoView" destination="NgH-Qo-tg0" id="v7T-Qw-fvG"/>
                         <outlet property="nameCurrencyView" destination="n0C-Qh-vtb" id="UPD-NQ-raO"/>
+                        <outlet property="phoneLabel" destination="ikx-9m-erB" id="I7U-Ba-0H3"/>
+                        <outlet property="regionLabel" destination="B60-Z0-oHH" id="LTY-Oj-XB0"/>
+                        <outlet property="titleLabel" destination="VJ0-bV-v9U" id="CWr-kI-KBl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QpN-rd-M68" userLabel="First Responder" sceneMemberID="firstResponder"/>

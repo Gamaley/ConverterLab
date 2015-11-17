@@ -125,6 +125,11 @@
     VGDetailViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"VGDetailViewController"];
     NSIndexPath* noteIndex = [self.tableView indexPathForCell:cell];
     Bank* bank = [self.fetchedResultsController objectAtIndexPath:noteIndex];
+    vc.titleString = bank.title;
+    vc.regionString = bank.region;
+    vc.cityString = [NSString stringWithFormat:@"%@, Украина",bank.city];
+    vc.addressString = bank.address;
+    vc.phoneString = [NSString stringWithFormat:@"Горячая линия:  %@",bank.phone];
     
     [self.navigationController pushViewController:vc animated:YES];
 }

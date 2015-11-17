@@ -21,7 +21,11 @@
 @implementation VGDetailTableViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    
+    self.nameCurrencyLabel.text = self.nameCurrencyString;
+    self.bidCurrencyLabel.text = self.bidCurrencyString;
+    self.askCurrencyLabel.text = self.askCurrencyString;
+  
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

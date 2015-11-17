@@ -15,6 +15,12 @@
 @property (weak, nonatomic) IBOutlet UIView *detailInfoView;
 @property (weak, nonatomic) IBOutlet UIView *nameCurrencyView;
 @property (weak, nonatomic) IBOutlet UITableView *currencyTableView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *regionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *cityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+@property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
+
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
@@ -32,6 +38,15 @@
 }
 
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.titleLabel.text = self.titleString;
+    self.regionLabel.text = self.regionString;
+    self.cityLabel.text = self.cityString;
+    self.addressLabel.text = self.addressString;
+    self.phoneLabel.text = self.phoneString;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -47,6 +62,11 @@
 #pragma mark - Private
 
 -(void) settingsView {
+    
+    self.currencyTableView.layer.masksToBounds = NO;
+    self.currencyTableView.layer.shadowOffset = CGSizeMake(-2, 4);
+    self.currencyTableView.layer.shadowRadius = 3;
+    self.currencyTableView.layer.shadowOpacity = 0.5;
     
     self.detailInfoView.layer.masksToBounds = NO;
     self.detailInfoView.layer.shadowOffset = CGSizeMake(-2, 4);
