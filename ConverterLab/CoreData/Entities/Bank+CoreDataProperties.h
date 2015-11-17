@@ -2,7 +2,7 @@
 //  Bank+CoreDataProperties.h
 //  ConverterLab
 //
-//  Created by Vladyslav on 12.11.15.
+//  Created by Vladyslav on 17.11.15.
 //  Copyright © 2015 Vlad. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *region;
 @property (nullable, nonatomic, retain) NSString *title;
 @property (nullable, nonatomic, retain) NSSet<City *> *cities;
+@property (nullable, nonatomic, retain) NSSet<Currency *> *currencies;
 
 @end
 
@@ -31,6 +32,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeCitiesObject:(City *)value;
 - (void)addCities:(NSSet<City *> *)values;
 - (void)removeCities:(NSSet<City *> *)values;
+
+- (void)addCurrenciesObject:(Currency *)value;
+- (void)removeCurrenciesObject:(Currency *)value;
+- (void)addCurrencies:(NSSet<Currency *> *)values;
+- (void)removeCurrencies:(NSSet<Currency *> *)values;
 
 @end
 

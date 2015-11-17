@@ -8,19 +8,27 @@
         <attribute name="region" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="cities" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="City" inverseName="banks" inverseEntity="City" syncable="YES"/>
+        <relationship name="currencies" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Currency" inverseName="bank" inverseEntity="Currency" syncable="YES"/>
     </entity>
     <entity name="City" representedClassName="City" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="banks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Bank" inverseName="cities" inverseEntity="Bank" syncable="YES"/>
         <relationship name="region" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Region" inverseName="cities" inverseEntity="Region" syncable="YES"/>
     </entity>
+    <entity name="Currency" representedClassName="Currency" syncable="YES">
+        <attribute name="ask" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="bid" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="bank" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Bank" inverseName="currencies" inverseEntity="Bank" syncable="YES"/>
+    </entity>
     <entity name="Region" representedClassName="Region" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="cities" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="City" inverseName="region" inverseEntity="City" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Bank" positionX="16" positionY="-133" width="128" height="148"/>
-        <element name="City" positionX="-225" positionY="-90" width="128" height="88"/>
+        <element name="Bank" positionX="-108" positionY="9" width="128" height="163"/>
+        <element name="City" positionX="-288" positionY="110" width="128" height="88"/>
         <element name="Region" positionX="-441" positionY="5" width="128" height="73"/>
+        <element name="Currency" positionX="79" positionY="36" width="128" height="103"/>
     </elements>
 </model>

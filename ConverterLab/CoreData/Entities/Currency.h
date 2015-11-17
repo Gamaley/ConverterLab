@@ -1,5 +1,5 @@
 //
-//  Bank.h
+//  Currency.h
 //  ConverterLab
 //
 //  Created by Vladyslav on 17.11.15.
@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class City, Currency;
+@class Bank;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Bank : NSManagedObject
+@interface Currency : NSManagedObject
 
 // Insert code here to declare functionality of your managed object subclass
 
@@ -21,4 +21,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 NS_ASSUME_NONNULL_END
 
-#import "Bank+CoreDataProperties.h"
+#import "Currency+CoreDataProperties.h"

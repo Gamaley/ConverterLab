@@ -9,6 +9,7 @@
 #import "VGDetailViewController.h"
 #import "VGDataManager.h"
 #import "VGDetailTableViewCell.h"
+#import "Currency.h"
 
 @interface VGDetailViewController () <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
 
@@ -24,6 +25,7 @@
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 
 @end
 
@@ -78,6 +80,13 @@
     self.nameCurrencyView.layer.shadowRadius = 3;
     self.nameCurrencyView.layer.shadowOpacity = 0.5;
     
+    UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_share.png"] style:UIBarButtonItemStylePlain target:self action:@selector(shareAction:)];
+    self.navigationItem.rightBarButtonItem = rightBarButton;
+   // self.currencyArray = [[NSMutableArray alloc] init];
+}
+
+-(void) shareAction: (UIBarButtonItem *) sender {
+    NSLog(@"dfsfs");
 }
 
 - (NSFetchedResultsController *)fetchedResultsController
@@ -118,8 +127,8 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-    return [sectionInfo numberOfObjects];
+    //id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
+    return [self.currencyArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -130,19 +139,16 @@
         cell = [[VGDetailTableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:Identifier];
     }
     //cell.delegate = self;
-   // [self configureCell:cell atIndexPath:indexPath];
+    [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
 
 - (void)configureCell:(VGDetailTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     
-//    Bank *aBank = [self.fetchedResultsController objectAtIndexPath:indexPath];
-//    cell.titleString = aBank.title;
-//    cell.regionString = aBank.region;
-//    cell.cityString = aBank.city;
-//    cell.phoneString = aBank.phone;
-//    cell.addressString = aBank.address;
-//    cell.linkString = aBank.link;
+    Currency *aCurrency = [self.currencyArray objectAtIndex:indexPath.row];
+    cell.nameCurrencyString = aCurrency.name;
+    cell.askCurrencyString = [aCurrency.ask stringValue];
+    cell.bidCurrencyString = [aCurrency.bid stringValue];
     [cell awakeFromNib];
     
 }

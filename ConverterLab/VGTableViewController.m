@@ -131,6 +131,9 @@
     vc.addressString = bank.address;
     vc.phoneString = [NSString stringWithFormat:@"Горячая линия:  %@",bank.phone];
     
+    vc.currencyArray = [bank.currencies allObjects];
+   // NSLog(@"%@",currencyArray);
+    
     [self.navigationController pushViewController:vc animated:YES];
 }
 

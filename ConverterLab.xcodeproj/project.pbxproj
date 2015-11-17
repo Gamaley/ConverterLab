@@ -13,6 +13,10 @@
 		872541071BFA3A450046508C /* VGMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 872541061BFA3A450046508C /* VGMapAnnotation.m */; };
 		8725410C1BFB4E290046508C /* VGDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8725410B1BFB4E290046508C /* VGDetailViewController.m */; };
 		872541111BFB62480046508C /* VGDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 872541101BFB62480046508C /* VGDetailTableViewCell.m */; };
+		8725411A1BFB720E0046508C /* Currency+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 872541131BFB720E0046508C /* Currency+CoreDataProperties.m */; };
+		8725411B1BFB720E0046508C /* Currency.m in Sources */ = {isa = PBXBuildFile; fileRef = 872541151BFB720E0046508C /* Currency.m */; };
+		8725411C1BFB720E0046508C /* Bank+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 872541171BFB720E0046508C /* Bank+CoreDataProperties.m */; };
+		8725411D1BFB720E0046508C /* Bank.m in Sources */ = {isa = PBXBuildFile; fileRef = 872541191BFB720E0046508C /* Bank.m */; };
 		873F50EA1BF4AE9A00A6BA52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F50E91BF4AE9A00A6BA52 /* main.m */; };
 		873F50ED1BF4AE9A00A6BA52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F50EC1BF4AE9A00A6BA52 /* AppDelegate.m */; };
 		873F50F01BF4AE9A00A6BA52 /* VGTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F50EF1BF4AE9A00A6BA52 /* VGTableViewController.m */; };
@@ -44,8 +48,6 @@
 		873F51681BF4FEF200A6BA52 /* Region.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F515E1BF4FEF200A6BA52 /* Region.m */; };
 		873F51691BF4FEF200A6BA52 /* City+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F51601BF4FEF200A6BA52 /* City+CoreDataProperties.m */; };
 		873F516A1BF4FEF200A6BA52 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F51621BF4FEF200A6BA52 /* City.m */; };
-		873F517D1BF5158C00A6BA52 /* Bank+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F517A1BF5158C00A6BA52 /* Bank+CoreDataProperties.m */; };
-		873F517E1BF5158C00A6BA52 /* Bank.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F517C1BF5158C00A6BA52 /* Bank.m */; };
 		873F51821BF625BB00A6BA52 /* VGMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F51811BF625BB00A6BA52 /* VGMapViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +62,14 @@
 		8725410B1BFB4E290046508C /* VGDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VGDetailViewController.m; path = DetailViewController/VGDetailViewController.m; sourceTree = "<group>"; };
 		8725410F1BFB62480046508C /* VGDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VGDetailTableViewCell.h; path = TableViewCell/DetailTableViewCell/VGDetailTableViewCell.h; sourceTree = "<group>"; };
 		872541101BFB62480046508C /* VGDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VGDetailTableViewCell.m; path = TableViewCell/DetailTableViewCell/VGDetailTableViewCell.m; sourceTree = "<group>"; };
+		872541121BFB720E0046508C /* Currency+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Currency+CoreDataProperties.h"; path = "CoreData/Entities/Currency+CoreDataProperties.h"; sourceTree = "<group>"; };
+		872541131BFB720E0046508C /* Currency+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Currency+CoreDataProperties.m"; path = "CoreData/Entities/Currency+CoreDataProperties.m"; sourceTree = "<group>"; };
+		872541141BFB720E0046508C /* Currency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Currency.h; path = CoreData/Entities/Currency.h; sourceTree = "<group>"; };
+		872541151BFB720E0046508C /* Currency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Currency.m; path = CoreData/Entities/Currency.m; sourceTree = "<group>"; };
+		872541161BFB720E0046508C /* Bank+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bank+CoreDataProperties.h"; path = "CoreData/Entities/Bank+CoreDataProperties.h"; sourceTree = "<group>"; };
+		872541171BFB720E0046508C /* Bank+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Bank+CoreDataProperties.m"; path = "CoreData/Entities/Bank+CoreDataProperties.m"; sourceTree = "<group>"; };
+		872541181BFB720E0046508C /* Bank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bank.h; path = CoreData/Entities/Bank.h; sourceTree = "<group>"; };
+		872541191BFB720E0046508C /* Bank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bank.m; path = CoreData/Entities/Bank.m; sourceTree = "<group>"; };
 		873F50E51BF4AE9900A6BA52 /* ConverterLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConverterLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		873F50E91BF4AE9A00A6BA52 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		873F50EB1BF4AE9A00A6BA52 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -122,10 +132,6 @@
 		873F51601BF4FEF200A6BA52 /* City+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "City+CoreDataProperties.m"; path = "CoreData/Entities/City+CoreDataProperties.m"; sourceTree = "<group>"; };
 		873F51611BF4FEF200A6BA52 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = City.h; path = CoreData/Entities/City.h; sourceTree = "<group>"; };
 		873F51621BF4FEF200A6BA52 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = City.m; path = CoreData/Entities/City.m; sourceTree = "<group>"; };
-		873F51791BF5158C00A6BA52 /* Bank+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bank+CoreDataProperties.h"; path = "CoreData/Entities/Bank+CoreDataProperties.h"; sourceTree = "<group>"; };
-		873F517A1BF5158C00A6BA52 /* Bank+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Bank+CoreDataProperties.m"; path = "CoreData/Entities/Bank+CoreDataProperties.m"; sourceTree = "<group>"; };
-		873F517B1BF5158C00A6BA52 /* Bank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bank.h; path = CoreData/Entities/Bank.h; sourceTree = "<group>"; };
-		873F517C1BF5158C00A6BA52 /* Bank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bank.m; path = CoreData/Entities/Bank.m; sourceTree = "<group>"; };
 		873F51801BF625BB00A6BA52 /* VGMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VGMapViewController.h; path = MapViewController/VGMapViewController.h; sourceTree = "<group>"; };
 		873F51811BF625BB00A6BA52 /* VGMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VGMapViewController.m; path = MapViewController/VGMapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -196,6 +202,17 @@
 				872541101BFB62480046508C /* VGDetailTableViewCell.m */,
 			);
 			name = DetailTableViewCell;
+			sourceTree = "<group>";
+		};
+		8725411E1BFB72180046508C /* Currency */ = {
+			isa = PBXGroup;
+			children = (
+				872541121BFB720E0046508C /* Currency+CoreDataProperties.h */,
+				872541131BFB720E0046508C /* Currency+CoreDataProperties.m */,
+				872541141BFB720E0046508C /* Currency.h */,
+				872541151BFB720E0046508C /* Currency.m */,
+			);
+			name = Currency;
 			sourceTree = "<group>";
 		};
 		873F50DC1BF4AE9900A6BA52 = {
@@ -387,9 +404,10 @@
 		873F515A1BF4FBD300A6BA52 /* DataEntities */ = {
 			isa = PBXGroup;
 			children = (
+				873F516F1BF4FF1100A6BA52 /* Organization */,
+				8725411E1BFB72180046508C /* Currency */,
 				873F516D1BF4FEFD00A6BA52 /* Region */,
 				873F516E1BF4FF0700A6BA52 /* City */,
-				873F516F1BF4FF1100A6BA52 /* Organization */,
 			);
 			name = DataEntities;
 			sourceTree = "<group>";
@@ -419,10 +437,10 @@
 		873F516F1BF4FF1100A6BA52 /* Organization */ = {
 			isa = PBXGroup;
 			children = (
-				873F51791BF5158C00A6BA52 /* Bank+CoreDataProperties.h */,
-				873F517A1BF5158C00A6BA52 /* Bank+CoreDataProperties.m */,
-				873F517B1BF5158C00A6BA52 /* Bank.h */,
-				873F517C1BF5158C00A6BA52 /* Bank.m */,
+				872541161BFB720E0046508C /* Bank+CoreDataProperties.h */,
+				872541171BFB720E0046508C /* Bank+CoreDataProperties.m */,
+				872541181BFB720E0046508C /* Bank.h */,
+				872541191BFB720E0046508C /* Bank.m */,
 			);
 			name = Organization;
 			sourceTree = "<group>";
@@ -517,9 +535,7 @@
 				873F510C1BF4C23500A6BA52 /* VGCustomTableViewCell.m in Sources */,
 				872541071BFA3A450046508C /* VGMapAnnotation.m in Sources */,
 				873F513D1BF4DB8A00A6BA52 /* UIWebView+AFNetworking.m in Sources */,
-				873F517D1BF5158C00A6BA52 /* Bank+CoreDataProperties.m in Sources */,
 				873F51531BF4DB9800A6BA52 /* AFHTTPSessionManager.m in Sources */,
-				873F517E1BF5158C00A6BA52 /* Bank.m in Sources */,
 				873F50F01BF4AE9A00A6BA52 /* VGTableViewController.m in Sources */,
 				873F51541BF4DB9800A6BA52 /* AFNetworkReachabilityManager.m in Sources */,
 				873F51691BF4FEF200A6BA52 /* City+CoreDataProperties.m in Sources */,
@@ -531,9 +547,11 @@
 				873F51591BF4DB9800A6BA52 /* AFURLSessionManager.m in Sources */,
 				873F50ED1BF4AE9A00A6BA52 /* AppDelegate.m in Sources */,
 				873F51391BF4DB8A00A6BA52 /* UIButton+AFNetworking.m in Sources */,
+				8725411D1BFB720E0046508C /* Bank.m in Sources */,
 				873F51361BF4DB8A00A6BA52 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				873F513A1BF4DB8A00A6BA52 /* UIImageView+AFNetworking.m in Sources */,
 				873F513C1BF4DB8A00A6BA52 /* UIRefreshControl+AFNetworking.m in Sources */,
+				8725411A1BFB720E0046508C /* Currency+CoreDataProperties.m in Sources */,
 				873F511C1BF4DA1100A6BA52 /* VGServerManager.m in Sources */,
 				873F51371BF4DB8A00A6BA52 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				873F51171BF4D82800A6BA52 /* VGDataManager.m in Sources */,
@@ -542,7 +560,9 @@
 				873F50EA1BF4AE9A00A6BA52 /* main.m in Sources */,
 				873F51521BF4DB9800A6BA52 /* AFHTTPRequestOperationManager.m in Sources */,
 				872541111BFB62480046508C /* VGDetailTableViewCell.m in Sources */,
+				8725411C1BFB720E0046508C /* Bank+CoreDataProperties.m in Sources */,
 				873F51681BF4FEF200A6BA52 /* Region.m in Sources */,
+				8725411B1BFB720E0046508C /* Currency.m in Sources */,
 				873F513B1BF4DB8A00A6BA52 /* UIProgressView+AFNetworking.m in Sources */,
 				873F516A1BF4FEF200A6BA52 /* City.m in Sources */,
 				873F51581BF4DB9800A6BA52 /* AFURLResponseSerialization.m in Sources */,

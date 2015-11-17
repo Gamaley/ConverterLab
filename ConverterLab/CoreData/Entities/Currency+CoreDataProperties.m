@@ -1,5 +1,5 @@
 //
-//  Bank+CoreDataProperties.m
+//  Currency+CoreDataProperties.m
 //  ConverterLab
 //
 //  Created by Vladyslav on 17.11.15.
@@ -9,17 +9,13 @@
 //  to delete and recreate this implementation file for your updated model.
 //
 
-#import "Bank+CoreDataProperties.h"
+#import "Currency+CoreDataProperties.h"
 
-@implementation Bank (CoreDataProperties)
+@implementation Currency (CoreDataProperties)
 
-@dynamic address;
-@dynamic city;
-@dynamic link;
-@dynamic phone;
-@dynamic region;
-@dynamic title;
-@dynamic cities;
-@dynamic currencies;
+@dynamic name;
+@dynamic ask;
+@dynamic bid;
+@dynamic bank;
 
 @end

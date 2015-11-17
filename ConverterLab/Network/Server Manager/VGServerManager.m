@@ -13,6 +13,7 @@
 #import "Bank.h"
 #import "VGDataManager.h"
 #import "Reachability.h"
+#import "Currency.h"
 
 
 
@@ -51,10 +52,32 @@
      
             NSMutableSet *citySet = [[NSMutableSet alloc] init];
              NSMutableSet *regionSet = [[NSMutableSet alloc] init];
+           // NSMutableSet *currencySet = [[NSMutableSet alloc] init];
+            NSDictionary *currencyDictionary = [responseObject objectForKey:@"currencies"];
+          
 
             for (NSDictionary* i in [responseObject objectForKey:@"organizations"]) {
                 
                 Bank *aBank = [NSEntityDescription insertNewObjectForEntityForName:@"Bank" inManagedObjectContext:[VGDataManager sharedManager].managedObjectContext];
+                
+                NSDictionary *currenciesDictionary = [i valueForKey:@"currencies"];
+                
+                
+                for (NSString* value in [currenciesDictionary allKeys]) {
+                    Currency *aCurrency = [NSEntityDescription insertNewObjectForEntityForName:@"Currency" inManagedObjectContext:[VGDataManager sharedManager].managedObjectContext];
+                    
+                    NSString *currencyName = [[currencyDictionary valueForKey:value] capitalizedString];
+                    double ask = [[[[i valueForKey:@"currencies"] valueForKey:value] valueForKey:@"ask"] doubleValue];
+                    double bid = [[[[i valueForKey:@"currencies"] valueForKey:value] valueForKey:@"bid"] doubleValue];
+                    //NSLog(@"%@",currencyName);
+                    aCurrency.name = currencyName;
+                    aCurrency.ask = @(ask);
+                    aCurrency.bid = @(bid);
+                    [aBank addCurrenciesObject:aCurrency];
+                }
+                
+                
+            
               
                 aBank.city = [[responseObject objectForKey:@"cities"] valueForKey:[i valueForKey:@"cityId"]];
                 aBank.region = [[responseObject objectForKey:@"regions"] valueForKey:[i valueForKey:@"regionId"]];
@@ -113,3 +136,28 @@
 }
 
 @end
+
+
+
+//                NSDictionary *valuesArray = (NSDictionary *)[dict allValues];
+//                NSMutableDictionary *askBid = [[NSMutableDictionary alloc] init];
+// NSDictionary *ddd = [[i valueForKey:@"currencies"] valueForKey:[valuesArray firstObject]];
+// NSArray *askBid = [dict allKeys];
+// for (int j = 0; j < [dict count]; j++) {
+
+// NSString *sdtr = [currencyDictionary valueForKey:@"dict"];
+//NSString* ssss = [[[i valueForKey:@"currencies"] valueForKey:@"EUR"] valueForKey:@"ask"];
+// }
+
+//                for (NSDictionary* j in [i valueForKey:@"currencies"]) {
+//                    Currency *aCurrency = [NSEntityDescription insertNewObjectForEntityForName:@"Currency" inManagedObjectContext:[VGDataManager sharedManager].managedObjectContext];
+////                    if ([j isEqualToDictionary:[currencyDictionary objectForKey:j]] ) {
+////
+////                    }
+//                    NSString *str = [[currencyDictionary valueForKey:j] capitalizedString];//[j valueForKey:@"currencies"];
+//                    //NSString *askStr =
+//                   // NSLog(@"%@",str);
+//
+//                    aCurrency.name = [i valueForKey:j];//[[j allKeys] objectAtIndex:<#(NSUInteger)#>]
+//                    //NSDictionary *curr = [j valueForKey:[i valueForKey:@"currencies"]];
+//                }

@@ -392,6 +392,7 @@
                             <constraint firstAttribute="trailing" secondItem="chx-lO-7Bd" secondAttribute="trailing" id="xsz-WO-u48"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="G7R-B4-A4G"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="800"/>
                     <connections>

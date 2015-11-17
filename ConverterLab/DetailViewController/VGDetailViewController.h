@@ -15,5 +15,6 @@
 @property (strong, nonatomic) NSString *cityString;
 @property (strong, nonatomic) NSString *addressString;
 @property (strong, nonatomic) NSString *phoneString;
+@property (strong, nonatomic) NSArray *currencyArray;
 
 @end
