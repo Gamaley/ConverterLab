@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Converter Lab-->
@@ -145,6 +146,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Converter Lab" id="uSB-NX-AbK">
+                        <barButtonItem key="backBarButtonItem" title=" " id="qyX-kr-OZe"/>
                         <barButtonItem key="rightBarButtonItem" image="ic_search" id="fxj-0S-S96">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -177,7 +179,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r1G-l6-5Lz">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <animations/>
                                 <connections>
                                     <outlet property="delegate" destination="xKX-vm-FNE" id="mQ9-Tu-sxp"/>
@@ -211,15 +213,193 @@
                         <viewControllerLayoutGuide type="bottom" id="7K6-L6-zCl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0GL-Xd-jv4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="chx-lO-7Bd">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NgH-Qo-tg0">
+                                        <rect key="frame" x="8" y="8" width="304" height="236"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Приват-Банк" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJ0-bV-v9U">
+                                                <rect key="frame" x="8" y="18" width="288" height="44"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                <color key="textColor" red="0.81269728539999997" green="0.14108760070000001" blue="0.47970990670000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Круглосуточно (без выходных)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVo-XL-Gk7">
+                                                <rect key="frame" x="8" y="206" width="288" height="11"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="11"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.72381756760000004" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Закарпатская область" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B60-Z0-oHH">
+                                                <rect key="frame" x="8" y="99" width="288" height="21"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.72381756760000004" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Адрес: ул. Джамбула 30а" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Au-Mb-pvy">
+                                                <rect key="frame" x="8" y="167" width="288" height="16"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.72249788849999996" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Горячая линия:  0800-345-32-13" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikx-9m-erB">
+                                                <rect key="frame" x="8" y="181" width="288" height="28"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.72381756760000004" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ужгород, Украина" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FkD-TT-Rra">
+                                                <rect key="frame" x="8" y="118" width="288" height="21"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.72381756760000004" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="236" id="Zdy-CA-ZSp"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n0C-Qh-vtb">
+                                        <rect key="frame" x="8" y="252" width="304" height="71"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Название валюты" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bt9-q0-5Kb">
+                                                <rect key="frame" x="8" y="25" width="148" height="21"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.72249788851351349" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Покупка / Продажа" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9HU-ej-Op1">
+                                                <rect key="frame" x="221" y="8" width="75" height="55"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.72381756760000004" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="71" id="Ez7-AP-IEe"/>
+                                        </constraints>
+                                    </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="15o-x1-QcQ">
+                                        <rect key="frame" x="8" y="331" width="304" height="461"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="461" id="Y2B-pp-4gQ"/>
+                                        </constraints>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" id="1YH-CW-IOF">
+                                                <rect key="frame" x="0.0" y="28" width="304" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1YH-CW-IOF" id="MZP-Gc-fMu">
+                                                    <rect key="frame" x="0.0" y="0.0" width="304" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="26g-hr-oPi">
+                                                            <rect key="frame" x="0.0" y="2" width="304" height="39"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Доллар США" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mQ-fF-PfW">
+                                                                    <rect key="frame" x="8" y="2" width="151" height="35"/>
+                                                                    <animations/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.72249788849999996" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="24.3456" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGy-t8-rif">
+                                                                    <rect key="frame" x="232" y="2" width="64" height="15"/>
+                                                                    <animations/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                    <color key="textColor" red="0.24593345599999999" green="0.53582702019999995" blue="0.43468320020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="25.6784" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaQ-Cc-leG">
+                                                                    <rect key="frame" x="232" y="23" width="64" height="13"/>
+                                                                    <animations/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                    <color key="textColor" red="0.81269728535353536" green="0.14108760074008325" blue="0.4797099066523679" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPD-Sm-JAG">
+                                                                    <rect key="frame" x="182" y="6" width="19" height="17"/>
+                                                                    <animations/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8JD-03-iZf">
+                                                                    <rect key="frame" x="215" y="1" width="15" height="18"/>
+                                                                    <animations/>
+                                                                    <state key="normal" image="ic_arrow_drop_up"/>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xri-aP-E6K">
+                                                                    <rect key="frame" x="215" y="21" width="15" height="18"/>
+                                                                    <animations/>
+                                                                    <state key="normal" image="ic_arrow_down"/>
+                                                                </button>
+                                                            </subviews>
+                                                            <animations/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </view>
+                                                    </subviews>
+                                                    <animations/>
+                                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </tableViewCellContentView>
+                                                <animations/>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstItem="n0C-Qh-vtb" firstAttribute="leading" secondItem="chx-lO-7Bd" secondAttribute="leadingMargin" id="18I-pk-els"/>
+                                    <constraint firstItem="NgH-Qo-tg0" firstAttribute="trailing" secondItem="n0C-Qh-vtb" secondAttribute="trailing" id="Jjb-4f-V3O"/>
+                                    <constraint firstItem="15o-x1-QcQ" firstAttribute="top" secondItem="n0C-Qh-vtb" secondAttribute="bottom" constant="8" symbolic="YES" id="N4l-km-bIO"/>
+                                    <constraint firstItem="n0C-Qh-vtb" firstAttribute="leading" secondItem="15o-x1-QcQ" secondAttribute="leading" id="TWs-uY-6S9"/>
+                                    <constraint firstItem="n0C-Qh-vtb" firstAttribute="centerX" secondItem="chx-lO-7Bd" secondAttribute="centerX" id="VDX-gn-Rf0"/>
+                                    <constraint firstItem="NgH-Qo-tg0" firstAttribute="trailing" secondItem="chx-lO-7Bd" secondAttribute="trailingMargin" id="dtn-4p-LN5"/>
+                                    <constraint firstItem="n0C-Qh-vtb" firstAttribute="top" secondItem="NgH-Qo-tg0" secondAttribute="bottom" constant="8" symbolic="YES" id="eHo-gp-0FY"/>
+                                    <constraint firstItem="NgH-Qo-tg0" firstAttribute="top" secondItem="chx-lO-7Bd" secondAttribute="topMargin" id="esa-G2-RaA"/>
+                                    <constraint firstItem="NgH-Qo-tg0" firstAttribute="leading" secondItem="n0C-Qh-vtb" secondAttribute="leading" id="gJl-rk-cUj"/>
+                                    <constraint firstItem="n0C-Qh-vtb" firstAttribute="trailing" secondItem="15o-x1-QcQ" secondAttribute="trailing" id="qSf-F2-SlA"/>
+                                    <constraint firstItem="15o-x1-QcQ" firstAttribute="bottom" secondItem="chx-lO-7Bd" secondAttribute="bottomMargin" id="sur-hr-irD"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="chx-lO-7Bd" firstAttribute="bottom" secondItem="7K6-L6-zCl" secondAttribute="top" id="0DI-yt-7n8"/>
+                            <constraint firstItem="chx-lO-7Bd" firstAttribute="leading" secondItem="0GL-Xd-jv4" secondAttribute="leading" id="7aM-0S-ONz"/>
+                            <constraint firstItem="chx-lO-7Bd" firstAttribute="top" secondItem="0GL-Xd-jv4" secondAttribute="top" id="FUs-VK-uyd"/>
+                            <constraint firstAttribute="trailing" secondItem="chx-lO-7Bd" secondAttribute="trailing" id="xsz-WO-u48"/>
+                        </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="800"/>
+                    <connections>
+                        <outlet property="currencyTableView" destination="15o-x1-QcQ" id="x1t-nY-GZr"/>
+                        <outlet property="detailInfoView" destination="NgH-Qo-tg0" id="v7T-Qw-fvG"/>
+                        <outlet property="nameCurrencyView" destination="n0C-Qh-vtb" id="UPD-NQ-raO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QpN-rd-M68" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1297" y="418"/>
+            <point key="canvasLocation" x="1234" y="532"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SjJ-c5-oCf">
@@ -230,6 +410,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.13833252876668772" green="0.21562384507463295" blue="0.24792850378787878" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -246,6 +427,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_arrow_down" width="12" height="6"/>
+        <image name="ic_arrow_drop_up" width="12" height="6"/>
         <image name="ic_dots_active" width="28" height="8"/>
         <image name="ic_dots_unactive" width="28" height="8"/>
         <image name="ic_link_floating" width="24" height="12"/>

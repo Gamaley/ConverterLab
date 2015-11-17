@@ -9,6 +9,9 @@
 #import "VGDetailViewController.h"
 
 @interface VGDetailViewController ()
+@property (weak, nonatomic) IBOutlet UIView *detailInfoView;
+@property (weak, nonatomic) IBOutlet UIView *nameCurrencyView;
+@property (weak, nonatomic) IBOutlet UITableView *currencyTableView;
 
 @end
 
@@ -16,12 +19,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self settingsView];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Private
+
+-(void) settingsView {
+    
+    self.detailInfoView.layer.masksToBounds = NO;
+    self.detailInfoView.layer.shadowOffset = CGSizeMake(-2, 4);
+    self.detailInfoView.layer.shadowRadius = 3;
+    self.detailInfoView.layer.shadowOpacity = 0.5;
+    
+    self.nameCurrencyView.layer.masksToBounds = NO;
+    self.nameCurrencyView.layer.shadowOffset = CGSizeMake(-2, 4);
+    self.nameCurrencyView.layer.shadowRadius = 3;
+    self.nameCurrencyView.layer.shadowOpacity = 0.5;
+    
 }
 
 /*
