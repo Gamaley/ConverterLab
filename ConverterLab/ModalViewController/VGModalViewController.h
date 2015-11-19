@@ -16,5 +16,6 @@
 @property (weak, nonatomic)  NSString *usdCurrencyString;
 @property (weak, nonatomic)  NSString *eurCurrencyString;
 @property (weak, nonatomic)  NSString *rubCurrencyString;
+@property (strong, nonatomic) NSString *linkString;
 
 @end

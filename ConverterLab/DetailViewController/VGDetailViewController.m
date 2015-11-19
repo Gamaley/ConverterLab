@@ -174,6 +174,7 @@
     self.modal.titleString = self.titleString;
     self.modal.regionString = self.regionString;
     self.modal.cityString = self.cityString;
+    self.modal.linkString = self.linkString;
     
     for (Currency* i in self.currencyArray) {
         if ([i.engName isEqualToString:@"USD"]) {

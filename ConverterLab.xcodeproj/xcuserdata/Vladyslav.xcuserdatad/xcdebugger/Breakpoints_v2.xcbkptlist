@@ -266,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ConverterLab/DetailViewController/VGDetailViewController.m"
-            timestampString = "469639955.018484"
+            timestampString = "469641716.874482"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "-shareAction:"
             landmarkType = "5">
             <Locations>

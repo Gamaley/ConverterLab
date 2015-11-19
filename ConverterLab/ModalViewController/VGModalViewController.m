@@ -51,9 +51,9 @@
     
     //NSLog(@"ds");
     
-    NSString *emailTitle = @"Test Email";
+    NSString *emailTitle = [NSString stringWithFormat:@"Информация курса валют по банку: %@",self.titleString];
     // Email Content
-    NSString *messageBody = @"iOS programming is so fun!";
+    NSString *messageBody = [NSString stringWithFormat:@"Банк: %@\nUSD - %@ \nEUR - %@ \nПерейти на страничку описания: %@",self.titleString, self.eurCurrency.text, self.eurCurrency.text, self.linkString];
     // To address
     //NSArray *toRecipents = [NSArray arrayWithObject:@"support@appcoda.com"];
     
