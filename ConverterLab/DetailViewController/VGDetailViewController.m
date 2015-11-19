@@ -13,10 +13,10 @@
 #import "VGModalViewController.h"
 #import "VGMapAnnotation.h"
 #import "VGMapViewController.h"
-#import <MessageUI/MessageUI.h>
 
 
-@interface VGDetailViewController () <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, MFMailComposeViewControllerDelegate>
+
+@interface VGDetailViewController () <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *detailInfoView;
 @property (weak, nonatomic) IBOutlet UIView *nameCurrencyView;
@@ -144,7 +144,7 @@
 
 -(void) shareAction: (UIBarButtonItem *) sender {
     
-    
+    /*
     NSString *emailTitle = @"Test Email";
     // Email Content
     NSString *messageBody = @"iOS programming is so fun!";
@@ -159,8 +159,8 @@
     
     // Present mail view controller on screen
     [self presentViewController:mc animated:YES completion:NULL];
-
-    /*
+ */
+    
         self.modal = [self.storyboard instantiateViewControllerWithIdentifier:@"VGModalViewController"];
     //UIViewController * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HalfModal"];
     //vc.view.backgroundColor = [UIColor redColor];
@@ -235,7 +235,7 @@
 //            self.modal = nil;
 //        }];
    // }
-    */
+   
    // NSLog(@"dfsfs");
 }
 
@@ -322,31 +322,7 @@
     
 }
 
-#pragma mark - MFMailComposeViewControllerDelegate
 
-- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
-{
-    switch (result)
-    {
-        case MFMailComposeResultCancelled:
-            NSLog(@"Mail cancelled");
-            break;
-        case MFMailComposeResultSaved:
-            NSLog(@"Mail saved");
-            break;
-        case MFMailComposeResultSent:
-            NSLog(@"Mail sent");
-            break;
-        case MFMailComposeResultFailed:
-            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
-            break;
-        default:
-            break;
-    }
-    
-    // Close the Mail Interface
-    [self dismissViewControllerAnimated:YES completion:NULL];
-}
 
 
 @end

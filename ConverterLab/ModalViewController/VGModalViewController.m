@@ -7,14 +7,16 @@
 //
 
 #import "VGModalViewController.h"
+#import <MessageUI/MessageUI.h>
 
-@interface VGModalViewController ()
+@interface VGModalViewController () <MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *regionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *cityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *usdCurrency;
 @property (weak, nonatomic) IBOutlet UILabel *eurCurrency;
 @property (weak, nonatomic) IBOutlet UILabel *rubCurrency;
+@property (weak ,nonatomic) IBOutlet UIView *infoView;
 
 @end
 
@@ -43,7 +45,26 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)dismissViewControllerAction:(UIButton *)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    //NSLog(@"ds");
+    
+    NSString *emailTitle = @"Test Email";
+    // Email Content
+    NSString *messageBody = @"iOS programming is so fun!";
+    // To address
+    //NSArray *toRecipents = [NSArray arrayWithObject:@"support@appcoda.com"];
+    
+    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+    mc.mailComposeDelegate = self;
+    [mc setSubject:emailTitle];
+    [mc setMessageBody:messageBody isHTML:NO];
+    //[mc setToRecipients:toRecipents];
+    
+    // Present mail view controller on screen
+    [self presentViewController:mc animated:YES completion:NULL];
+    
+    
+    //[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*
@@ -55,5 +76,44 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [touches anyObject];
+    CGPoint point = [touch locationInView:self.infoView];
+    BOOL isTouched = [self.infoView pointInside:point withEvent:event];
+    
+    if (!isTouched) {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    }
+
+    
+    
+}
+
+#pragma mark - MFMailComposeViewControllerDelegate
+
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            break;
+        default:
+            break;
+    }
+    
+    // Close the Mail Interface
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
 
 @end
