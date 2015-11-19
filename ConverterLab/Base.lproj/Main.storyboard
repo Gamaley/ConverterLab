@@ -37,7 +37,7 @@
                                                     <rect key="frame" x="0.0" y="140" width="304" height="49"/>
                                                     <animations/>
                                                     <items/>
-                                                    <color key="barTintColor" red="0.64893211253777616" green="0.72286133571497813" blue="0.76678898358585856" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="barTintColor" red="0.6470588235294118" green="0.72156862745098038" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="s7N-cD-8to" id="FAq-9y-uUM"/>
                                                     </connections>
@@ -157,6 +157,7 @@
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="vvv-SF-EZ5">
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <attributedString key="attributedTitle"/>
                     </refreshControl>
                     <connections>
                         <outlet property="loadIndicator" destination="GLy-zB-tm5" id="HGd-KR-gV7"/>
@@ -202,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oou-Cn-6KP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="899" y="416"/>
+            <point key="canvasLocation" x="869" y="416"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Uxj-ki-gLr">
@@ -295,7 +296,7 @@
                                             <constraint firstAttribute="height" constant="71" id="Ez7-AP-IEe"/>
                                         </constraints>
                                     </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="15o-x1-QcQ">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="15o-x1-QcQ">
                                         <rect key="frame" x="8" y="331" width="304" height="461"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -303,7 +304,7 @@
                                             <constraint firstAttribute="height" constant="461" id="Y2B-pp-4gQ"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" id="1YH-CW-IOF" customClass="VGDetailTableViewCell">
+                                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" id="1YH-CW-IOF" customClass="VGDetailTableViewCell">
                                                 <rect key="frame" x="0.0" y="28" width="304" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1YH-CW-IOF" id="MZP-Gc-fMu">
@@ -382,11 +383,74 @@
                                     <constraint firstItem="15o-x1-QcQ" firstAttribute="bottom" secondItem="chx-lO-7Bd" secondAttribute="bottomMargin" id="sur-hr-irD"/>
                                 </constraints>
                             </scrollView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B6u-Hi-MUc">
-                                <rect key="frame" x="245" y="500" width="52" height="52"/>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3y3-Am-4ud">
+                                <rect key="frame" x="145" y="350" width="143" height="140"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PsK-Ke-FC5">
+                                        <rect key="frame" x="103" y="100" width="40" height="40"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.84313725490000002" green="0.84313725490000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="ic_phone_floating"/>
+                                        <connections>
+                                            <action selector="phoheAction:" destination="Q1s-DB-8jw" eventType="touchUpInside" id="QUW-fZ-fZR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXa-M4-Nob">
+                                        <rect key="frame" x="103" y="50" width="40" height="40"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.84313725490000002" green="0.84313725490000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="ic_link_floating"/>
+                                        <connections>
+                                            <action selector="linkAction:" destination="Q1s-DB-8jw" eventType="touchUpInside" id="xH9-57-3Ek"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GP9-Sa-OAA">
+                                        <rect key="frame" x="103" y="0.0" width="40" height="40"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.84313725490000002" green="0.84313725490000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="ic_mark_floating"/>
+                                        <connections>
+                                            <action selector="mapAction:" destination="Q1s-DB-8jw" eventType="touchUpInside" id="GS5-tB-Uf2"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Позвонить" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8w-hU-B4l">
+                                        <rect key="frame" x="0.0" y="109" width="95" height="21"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.3294117647" green="0.43137254899999999" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Карта" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UG4-8f-IeZ">
+                                        <rect key="frame" x="25" y="9" width="70" height="21"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.3294117647" green="0.43137254899999999" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Сайт" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWU-lL-alh">
+                                        <rect key="frame" x="25" y="60" width="70" height="21"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.3294117647" green="0.43137254899999999" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBR-ey-4CL">
+                                <rect key="frame" x="241" y="500" width="55" height="55"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.81269728539999997" green="0.14108760070000001" blue="0.47970990670000002" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
+                                <state key="normal" image="ic_hamburger"/>
+                                <state key="selected" image="ic_close"/>
+                                <connections>
+                                    <action selector="optionsActionHamburger:" destination="Q1s-DB-8jw" eventType="touchUpInside" id="wO3-HC-oEe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -405,7 +469,12 @@
                         <outlet property="cityLabel" destination="FkD-TT-Rra" id="8EX-V3-HBw"/>
                         <outlet property="currencyTableView" destination="15o-x1-QcQ" id="x1t-nY-GZr"/>
                         <outlet property="detailInfoView" destination="NgH-Qo-tg0" id="v7T-Qw-fvG"/>
+                        <outlet property="hamburgerButton" destination="yBR-ey-4CL" id="Us8-hx-HdB"/>
+                        <outlet property="hamburgerMenuView" destination="3y3-Am-4ud" id="c3V-DQ-tJR"/>
+                        <outlet property="linkButton" destination="ZXa-M4-Nob" id="vH5-Je-PBF"/>
+                        <outlet property="mapButton" destination="GP9-Sa-OAA" id="21a-TV-rJa"/>
                         <outlet property="nameCurrencyView" destination="n0C-Qh-vtb" id="UPD-NQ-raO"/>
+                        <outlet property="phoneButton" destination="PsK-Ke-FC5" id="4E7-eG-OB3"/>
                         <outlet property="phoneLabel" destination="ikx-9m-erB" id="I7U-Ba-0H3"/>
                         <outlet property="regionLabel" destination="B60-Z0-oHH" id="LTY-Oj-XB0"/>
                         <outlet property="titleLabel" destination="VJ0-bV-v9U" id="CWr-kI-KBl"/>
@@ -413,7 +482,122 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QpN-rd-M68" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1234" y="532"/>
+            <point key="canvasLocation" x="1280" y="532"/>
+        </scene>
+        <!--Modal View Controller-->
+        <scene sceneID="BpT-5f-809">
+            <objects>
+                <viewController storyboardIdentifier="VGModalViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="formSheet" id="cJb-qb-pP6" customClass="VGModalViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0c9-Ae-dzc"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZA4-Um-bEb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dQX-w5-GKJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="behind_alert_view.png" translatesAutoresizingMaskIntoConstraints="NO" id="8Tl-g1-SpX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <animations/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hwm-Hy-CQ4">
+                                <rect key="frame" x="14" y="89" width="292" height="370"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezc-v1-6gV">
+                                        <rect key="frame" x="0.0" y="317" width="292" height="53"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.6470588235294118" green="0.72156862745098038" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="SHARE">
+                                            <color key="titleColor" red="0.81269728539999997" green="0.14108760070000001" blue="0.47970990670000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dismissViewControllerAction:" destination="cJb-qb-pP6" eventType="touchUpInside" id="gvW-9d-erP"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Закарпатская область" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AUI-HN-6Gf">
+                                        <rect key="frame" x="8" y="66" width="282" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.72381756760000004" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ужгород, Украина" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xad-hQ-A7G">
+                                        <rect key="frame" x="8" y="85" width="282" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.72381756760000004" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Приват-Банк" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7MQ-w3-bwo">
+                                        <rect key="frame" x="8" y="22" width="282" height="44"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <color key="textColor" red="0.81269728539999997" green="0.14108760070000001" blue="0.47970990670000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="USD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wpb-Es-Mx5">
+                                        <rect key="frame" x="20" y="138" width="71" height="38"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                                        <color key="textColor" red="0.81269728539999997" green="0.14108760070000001" blue="0.47970990670000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="EUR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axa-KC-dHH">
+                                        <rect key="frame" x="20" y="184" width="71" height="38"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                                        <color key="textColor" red="0.81269728539999997" green="0.14108760070000001" blue="0.47970990670000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RUB" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ech-WF-6W6">
+                                        <rect key="frame" x="20" y="230" width="71" height="38"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                                        <color key="textColor" red="0.81269728539999997" green="0.14108760070000001" blue="0.47970990670000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="22.34/23.45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wc5-Us-VfI">
+                                        <rect key="frame" x="155" y="144" width="112" height="25"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.72445101351351349" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="22.34/23.45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fxa-qk-DCl">
+                                        <rect key="frame" x="155" y="236" width="112" height="25"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.72445101349999996" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="22.34/23.45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wq-sP-zpB">
+                                        <rect key="frame" x="155" y="190" width="112" height="25"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.72445101349999996" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="xad-hQ-A7G" id="Exk-ns-hiz"/>
+                        <outlet property="eurCurrency" destination="9wq-sP-zpB" id="CCV-LD-JDs"/>
+                        <outlet property="regionLabel" destination="AUI-HN-6Gf" id="VZk-Vh-o4e"/>
+                        <outlet property="rubCurrency" destination="Fxa-qk-DCl" id="312-Il-4Sy"/>
+                        <outlet property="titleLabel" destination="7MQ-w3-bwo" id="qvd-KP-pl1"/>
+                        <outlet property="usdCurrency" destination="wc5-Us-VfI" id="gxj-uR-Xrg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rKa-JR-lVm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1607" y="416"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SjJ-c5-oCf">
@@ -441,15 +625,20 @@
         </scene>
     </scenes>
     <resources>
+        <image name="behind_alert_view.png" width="320" height="460"/>
         <image name="ic_arrow_down" width="12" height="6"/>
         <image name="ic_arrow_drop_up" width="12" height="6"/>
+        <image name="ic_close" width="22" height="22"/>
         <image name="ic_dots_active" width="28" height="8"/>
         <image name="ic_dots_unactive" width="28" height="8"/>
+        <image name="ic_hamburger" width="28" height="20"/>
         <image name="ic_link_floating" width="24" height="12"/>
         <image name="ic_link_unactive" width="26" height="14"/>
         <image name="ic_mark_active" width="16" height="22"/>
+        <image name="ic_mark_floating" width="14" height="20"/>
         <image name="ic_mark_unactive" width="16" height="22"/>
         <image name="ic_phone_active" width="20" height="20"/>
+        <image name="ic_phone_floating" width="18" height="18"/>
         <image name="ic_phone_unactive" width="20" height="20"/>
         <image name="ic_search" width="20" height="20"/>
     </resources>

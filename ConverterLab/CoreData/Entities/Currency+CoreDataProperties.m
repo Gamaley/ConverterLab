@@ -14,6 +14,7 @@
 @implementation Currency (CoreDataProperties)
 
 @dynamic name;
+@dynamic engName;
 @dynamic ask;
 @dynamic bid;
 @dynamic bank;

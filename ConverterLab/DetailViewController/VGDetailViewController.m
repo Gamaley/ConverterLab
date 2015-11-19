@@ -10,8 +10,13 @@
 #import "VGDataManager.h"
 #import "VGDetailTableViewCell.h"
 #import "Currency.h"
+#import "VGModalViewController.h"
+#import "VGMapAnnotation.h"
+#import "VGMapViewController.h"
+#import <MessageUI/MessageUI.h>
 
-@interface VGDetailViewController () <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
+
+@interface VGDetailViewController () <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, MFMailComposeViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *detailInfoView;
 @property (weak, nonatomic) IBOutlet UIView *nameCurrencyView;
@@ -21,15 +26,46 @@
 @property (weak, nonatomic) IBOutlet UILabel *cityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 @property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
+@property (weak, nonatomic) IBOutlet UIView *hamburgerMenuView;
+@property (weak, nonatomic) IBOutlet UIButton *hamburgerButton;
+@property (weak, nonatomic) IBOutlet UIButton *linkButton;
+@property (weak, nonatomic) IBOutlet UIButton *mapButton;
+@property (weak, nonatomic) IBOutlet UIButton *phoneButton;
 
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) VGModalViewController *modal;
 
 
 @end
 
 @implementation VGDetailViewController
+- (IBAction)mapAction:(UIButton *)sender {
+    VGMapViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"VGMapViewController"];
+    vc.mapAnnotation = self.mapAnnotation;
+    [self.navigationController pushViewController:vc animated:YES];
+
+}
+
+- (IBAction)linkAction:(UIButton *)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.linkString]];
+}
+
+- (IBAction)phoheAction:(UIButton *)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",self.phoneString]]];
+}
+
+- (IBAction)optionsActionHamburger:(UIButton *)sender {
+    if (self.hamburgerMenuView.isHidden) {
+        [self.hamburgerButton setSelected:YES];
+        [self.hamburgerMenuView setHidden: NO];
+    } else {
+        [self.hamburgerMenuView setHidden: YES];
+        [self.hamburgerButton setSelected:NO];
+    }
+    
+}
 
 -(NSManagedObjectContext*) managedObjectContext {
     
@@ -51,7 +87,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    //[self setModalPresentationStyle:UIModalPresentationCurrentContext];
     [self settingsView];
     
 }
@@ -80,14 +116,147 @@
     self.nameCurrencyView.layer.shadowRadius = 3;
     self.nameCurrencyView.layer.shadowOpacity = 0.5;
     
+    self.hamburgerButton.layer.shadowOffset = CGSizeMake(1, 0);
+    self.hamburgerButton.layer.cornerRadius = self.hamburgerButton.frame.size.width/2;
+    self.hamburgerButton.layer.shadowRadius = 5;
+    self.hamburgerButton.layer.shadowOpacity = .25;
+    
+    self.mapButton.layer.shadowOffset = CGSizeMake(1, 0);
+    self.mapButton.layer.cornerRadius = self.hamburgerButton.frame.size.width/2;
+    self.mapButton.layer.shadowRadius = 5;
+    self.mapButton.layer.shadowOpacity = .25;
+    
+    self.linkButton.layer.shadowOffset = CGSizeMake(1, 0);
+    self.linkButton.layer.cornerRadius = self.hamburgerButton.frame.size.width/2;
+    self.linkButton.layer.shadowRadius = 5;
+    self.linkButton.layer.shadowOpacity = .25;
+
+    self.phoneButton.layer.shadowOffset = CGSizeMake(1, 0);
+    self.phoneButton.layer.cornerRadius = self.hamburgerButton.frame.size.width/2;
+    self.phoneButton.layer.shadowRadius = 5;
+    self.phoneButton.layer.shadowOpacity = .25;
+
+    
     UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_share.png"] style:UIBarButtonItemStylePlain target:self action:@selector(shareAction:)];
     self.navigationItem.rightBarButtonItem = rightBarButton;
    // self.currencyArray = [[NSMutableArray alloc] init];
 }
 
 -(void) shareAction: (UIBarButtonItem *) sender {
-    NSLog(@"dfsfs");
+    
+    
+    NSString *emailTitle = @"Test Email";
+    // Email Content
+    NSString *messageBody = @"iOS programming is so fun!";
+    // To address
+    //NSArray *toRecipents = [NSArray arrayWithObject:@"support@appcoda.com"];
+    
+    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+    mc.mailComposeDelegate = self;
+    [mc setSubject:emailTitle];
+    [mc setMessageBody:messageBody isHTML:NO];
+    //[mc setToRecipients:toRecipents];
+    
+    // Present mail view controller on screen
+    [self presentViewController:mc animated:YES completion:NULL];
+
+    /*
+        self.modal = [self.storyboard instantiateViewControllerWithIdentifier:@"VGModalViewController"];
+    //UIViewController * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HalfModal"];
+    //vc.view.backgroundColor = [UIColor redColor];
+    //[VGDetailViewController setPresentationStyleForSelfController:self presentingController:self.modal];
+    //[self setModalPresentationStyle:UIModalPresentationCurrentContext];
+   // self.modalPresentationCapturesStatusBarAppearance = NO;
+    //self.modal.providesPresentationContextTransitionStyle = YES;
+    //self.modal.definesPresentationContext = YES;
+    [self.modal setModalPresentationStyle:UIModalPresentationOverCurrentContext];
+    
+    self.modal.titleString = self.titleString;
+    self.modal.regionString = self.regionString;
+    self.modal.cityString = self.cityString;
+    
+    for (Currency* i in self.currencyArray) {
+        if ([i.engName isEqualToString:@"USD"]) {
+            self.modal.usdCurrencyString = [NSString stringWithFormat:@"%@/%@",i.bid,i.ask];
+        } else if ([i.engName isEqualToString:@"EUR"]) {
+           self.modal.eurCurrencyString = [NSString stringWithFormat:@"%@/%@",i.bid,i.ask];
+        } else if ([i.engName isEqualToString:@"RUB"]) {
+           self.modal.rubCurrencyString = [NSString stringWithFormat:@"%@/%@",i.bid,i.ask];
+        }
+    }
+    //self.modal.usdCurrencyString
+// 859364184080 модуль лэвун
+//    self.providesPresentationContextTransitionStyle = YES;
+//    self.definesPresentationContext = YES;
+//    
+//    [self setModalPresentationStyle:UIModalPresentationOverCurrentContext];
+
+    //[self.navigationController popToViewController:self.modal animated:YES];
+    [self presentViewController:self.modal animated:YES completion:^{}];
+   // UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(self.detailInfoView.frame.origin.x + 10, self.detailInfoView.frame.origin.y + 100, self.detailInfoView.frame.size.width - 20, self.detailInfoView.frame.size.height + 100)];
+    //contentView.backgroundColor = [UIColor blackColor];
+    //[self.view addSubview:contentView];//[[UIView alloc] initWithFrame: CGRectMake(10, 80, self.view.size.width-20, self.view.size.height-200)];
+    //[self.navigationController.view addSubview:contentView];
+//    self.modal = [self.storyboard instantiateViewControllerWithIdentifier:@"HalfModal"];
+//
+//    
+//    if ([self.childViewControllers count] == 0) {
+//        self.modal = [self.storyboard instantiateViewControllerWithIdentifier:@"HalfModal"];
+//        self.modal.view.frame = CGRectMake(0, 400, 320, 280);
+//        [self.view addSubview:self.modal.view];
+//        [self.presentingViewController addChildViewController:self.modal];
+//
+//        [self presentViewController:self.modal animated:YES completion:^{
+//            [self.modal didMoveToParentViewController:self];
+//        }];
+    
+//    [self transitionFromViewController:self toViewController:self.modal duration:1 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+//        
+//    } completion:^(BOOL finished) {
+//        
+//    }];
+//        [self transitionFromViewController:self toViewController:self.modal duration:1 options:UIViewAnimationOptionLayoutSubviews animations:^{
+//            self.modal.view.frame = CGRectMake(0, 250, 320, 280);
+//        } completion:^(BOOL finished) {
+//            [self.modal didMoveToParentViewController:self];
+//        }];
+    
+//        [UIView animateWithDuration:1 animations:^{
+//            
+//        } completion:^(BOOL finished) {
+//            [self.modal didMoveToParentViewController:self];
+//        }];
+//    } else {
+//        [UIView animateWithDuration:1 animations:^{
+//            self.modal.view.frame = CGRectMake(0, 400, 320, 280);
+//        } completion:^(BOOL finished) {
+//            [self.modal.view removeFromSuperview];
+//            [self.modal removeFromParentViewController];
+//            self.modal = nil;
+//        }];
+   // }
+    */
+   // NSLog(@"dfsfs");
 }
+
+//+ (void)setPresentationStyleForSelfController:(UIViewController *)selfController presentingController:(UIViewController *)presentingController
+//{
+//    if ([NSProcessInfo instancesRespondToSelector:@selector(isOperatingSystemAtLeastVersion:)])
+//    {
+//        //iOS 8.0 and above
+//        presentingController.providesPresentationContextTransitionStyle = YES;
+//        presentingController.definesPresentationContext = YES;
+//        
+//        [presentingController setModalPresentationStyle:UIModalPresentationOverCurrentContext];
+//    }
+//    else
+//    {
+//        [selfController setModalPresentationStyle:UIModalPresentationCurrentContext];
+//        [selfController.navigationController setModalPresentationStyle:UIModalPresentationCurrentContext];
+//    }
+//}
+
+
 
 - (NSFetchedResultsController *)fetchedResultsController
 {
@@ -151,6 +320,32 @@
     cell.bidCurrencyString = [aCurrency.bid stringValue];
     [cell awakeFromNib];
     
+}
+
+#pragma mark - MFMailComposeViewControllerDelegate
+
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            break;
+        default:
+            break;
+    }
+    
+    // Close the Mail Interface
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 

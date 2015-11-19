@@ -13,6 +13,7 @@
 #import "City.h"
 #import "Region.h"
 #import "Bank.h"
+#import "Currency.h"
 #import "VGDataManager.h"
 #import "VGMapAnnotation.h"
 #import "VGDetailViewController.h"
@@ -131,8 +132,18 @@
     vc.addressString = bank.address;
     vc.phoneString = [NSString stringWithFormat:@"Горячая линия:  %@",bank.phone];
     
-    vc.currencyArray = [bank.currencies allObjects];
-   // NSLog(@"%@",currencyArray);
+    NSMutableArray *sortedArray = [[bank.currencies allObjects] mutableCopy];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    [sortedArray sortUsingDescriptors:@[sortDescriptor]];
+    vc.currencyArray = sortedArray;
+    vc.linkString = bank.link;
+    
+    NSString* address = [NSString stringWithFormat:@"%@ %@",bank.city, bank.address];
+    VGMapAnnotation *annotation = [[VGMapAnnotation alloc] init];
+    annotation.coordinate = [annotation getLocationFromAddressString:address];
+    annotation.title = bank.title;
+    annotation.subtitle = bank.address;
+    vc.mapAnnotation = annotation;
     
     [self.navigationController pushViewController:vc animated:YES];
 }

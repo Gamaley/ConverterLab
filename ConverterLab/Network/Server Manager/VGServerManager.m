@@ -70,6 +70,7 @@
                     double ask = [[[[i valueForKey:@"currencies"] valueForKey:value] valueForKey:@"ask"] doubleValue];
                     double bid = [[[[i valueForKey:@"currencies"] valueForKey:value] valueForKey:@"bid"] doubleValue];
                     //NSLog(@"%@",currencyName);
+                    aCurrency.engName = value;
                     aCurrency.name = currencyName;
                     aCurrency.ask = @(ask);
                     aCurrency.bid = @(bid);

@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Currency (CoreDataProperties)
 
 @property (nullable, nonatomic, retain) NSString *name;
+@property (nullable, nonatomic, retain) NSString *engName;
 @property (nullable, nonatomic, retain) NSNumber *ask;
 @property (nullable, nonatomic, retain) NSNumber *bid;
 @property (nullable, nonatomic, retain) Bank *bank;

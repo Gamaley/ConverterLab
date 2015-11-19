@@ -18,6 +18,7 @@
     <entity name="Currency" representedClassName="Currency" syncable="YES">
         <attribute name="ask" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="bid" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="engName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="bank" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Bank" inverseName="currencies" inverseEntity="Bank" syncable="YES"/>
     </entity>
@@ -27,8 +28,8 @@
     </entity>
     <elements>
         <element name="Bank" positionX="-108" positionY="9" width="128" height="163"/>
-        <element name="City" positionX="-288" positionY="110" width="128" height="88"/>
+        <element name="City" positionX="-281" positionY="110" width="128" height="88"/>
         <element name="Region" positionX="-441" positionY="5" width="128" height="73"/>
-        <element name="Currency" positionX="79" positionY="36" width="128" height="103"/>
+        <element name="Currency" positionX="79" positionY="113" width="128" height="118"/>
     </elements>
 </model>

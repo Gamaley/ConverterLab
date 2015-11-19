@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class VGMapAnnotation;
+
 @interface VGDetailViewController : UIViewController
 
 @property (strong, nonatomic) NSString *titleString;
@@ -15,6 +17,9 @@
 @property (strong, nonatomic) NSString *cityString;
 @property (strong, nonatomic) NSString *addressString;
 @property (strong, nonatomic) NSString *phoneString;
+@property (strong, nonatomic) NSString *linkString;
 @property (strong, nonatomic) NSArray *currencyArray;
+@property (strong, nonatomic) VGMapAnnotation *mapAnnotation;
+
 
 @end

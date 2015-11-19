@@ -17,6 +17,9 @@
 		8725411B1BFB720E0046508C /* Currency.m in Sources */ = {isa = PBXBuildFile; fileRef = 872541151BFB720E0046508C /* Currency.m */; };
 		8725411C1BFB720E0046508C /* Bank+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 872541171BFB720E0046508C /* Bank+CoreDataProperties.m */; };
 		8725411D1BFB720E0046508C /* Bank.m in Sources */ = {isa = PBXBuildFile; fileRef = 872541191BFB720E0046508C /* Bank.m */; };
+		8725412A1BFCFFBA0046508C /* behind_alert_view.png in Resources */ = {isa = PBXBuildFile; fileRef = 872541291BFCFFBA0046508C /* behind_alert_view.png */; };
+		872541311BFD360C0046508C /* VGModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 872541301BFD360C0046508C /* VGModalViewController.m */; };
+		872541331BFDE0EF0046508C /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 872541321BFDE0EF0046508C /* MessageUI.framework */; };
 		873F50EA1BF4AE9A00A6BA52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F50E91BF4AE9A00A6BA52 /* main.m */; };
 		873F50ED1BF4AE9A00A6BA52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F50EC1BF4AE9A00A6BA52 /* AppDelegate.m */; };
 		873F50F01BF4AE9A00A6BA52 /* VGTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F50EF1BF4AE9A00A6BA52 /* VGTableViewController.m */; };
@@ -70,6 +73,10 @@
 		872541171BFB720E0046508C /* Bank+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Bank+CoreDataProperties.m"; path = "CoreData/Entities/Bank+CoreDataProperties.m"; sourceTree = "<group>"; };
 		872541181BFB720E0046508C /* Bank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bank.h; path = CoreData/Entities/Bank.h; sourceTree = "<group>"; };
 		872541191BFB720E0046508C /* Bank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bank.m; path = CoreData/Entities/Bank.m; sourceTree = "<group>"; };
+		872541291BFCFFBA0046508C /* behind_alert_view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = behind_alert_view.png; sourceTree = "<group>"; };
+		8725412F1BFD360C0046508C /* VGModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VGModalViewController.h; path = ModalViewController/VGModalViewController.h; sourceTree = "<group>"; };
+		872541301BFD360C0046508C /* VGModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VGModalViewController.m; path = ModalViewController/VGModalViewController.m; sourceTree = "<group>"; };
+		872541321BFDE0EF0046508C /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		873F50E51BF4AE9900A6BA52 /* ConverterLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConverterLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		873F50E91BF4AE9A00A6BA52 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		873F50EB1BF4AE9A00A6BA52 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -141,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				872541331BFDE0EF0046508C /* MessageUI.framework in Frameworks */,
 				872541031BFA23190046508C /* CoreLocation.framework in Frameworks */,
 				872540F91BFA0C2E0046508C /* SystemConfiguration.framework in Frameworks */,
 				873F51051BF4B0AA00A6BA52 /* MapKit.framework in Frameworks */,
@@ -171,6 +179,7 @@
 		872541081BFA5F050046508C /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				872541291BFCFFBA0046508C /* behind_alert_view.png */,
 				873F50F11BF4AE9A00A6BA52 /* Main.storyboard */,
 				873F50F91BF4AE9A00A6BA52 /* LaunchScreen.storyboard */,
 			);
@@ -215,9 +224,19 @@
 			name = Currency;
 			sourceTree = "<group>";
 		};
+		8725412E1BFD35E00046508C /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				8725412F1BFD360C0046508C /* VGModalViewController.h */,
+				872541301BFD360C0046508C /* VGModalViewController.m */,
+			);
+			name = Modal;
+			sourceTree = "<group>";
+		};
 		873F50DC1BF4AE9900A6BA52 = {
 			isa = PBXGroup;
 			children = (
+				872541321BFDE0EF0046508C /* MessageUI.framework */,
 				873F50E71BF4AE9900A6BA52 /* ConverterLab */,
 				873F50E61BF4AE9900A6BA52 /* Products */,
 			);
@@ -278,6 +297,7 @@
 		873F51081BF4B3BE00A6BA52 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				8725412E1BFD35E00046508C /* Modal */,
 				872541091BFA5F220046508C /* DetailViewController */,
 				873F517F1BF6257600A6BA52 /* MapViewController */,
 				873F51071BF4B3A400A6BA52 /* MainTableViewController */,
@@ -520,6 +540,7 @@
 				873F50FB1BF4AE9A00A6BA52 /* LaunchScreen.storyboard in Resources */,
 				873F50F81BF4AE9A00A6BA52 /* Assets.xcassets in Resources */,
 				873F50F31BF4AE9A00A6BA52 /* Main.storyboard in Resources */,
+				8725412A1BFCFFBA0046508C /* behind_alert_view.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +558,7 @@
 				873F513D1BF4DB8A00A6BA52 /* UIWebView+AFNetworking.m in Sources */,
 				873F51531BF4DB9800A6BA52 /* AFHTTPSessionManager.m in Sources */,
 				873F50F01BF4AE9A00A6BA52 /* VGTableViewController.m in Sources */,
+				872541311BFD360C0046508C /* VGModalViewController.m in Sources */,
 				873F51541BF4DB9800A6BA52 /* AFNetworkReachabilityManager.m in Sources */,
 				873F51691BF4FEF200A6BA52 /* City+CoreDataProperties.m in Sources */,
 				873F51511BF4DB9800A6BA52 /* AFHTTPRequestOperation.m in Sources */,
