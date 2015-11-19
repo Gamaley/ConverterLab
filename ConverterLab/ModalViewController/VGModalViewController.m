@@ -22,8 +22,14 @@
 
 @implementation VGModalViewController
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+//- (void)viewDidAppear:(BOOL)animated {
+//    [super viewWillAppear:animated];
+// 
+//}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
     self.titleLabel.text = self.titleString;
     self.regionLabel.text = self.regionString;
     self.cityLabel.text = self.cityString;
@@ -33,10 +39,7 @@
     if (!self.rubCurrency.text) {
         NSLog(@"Скрыть RUB Label");
     }
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
 }
 

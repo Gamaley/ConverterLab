@@ -161,7 +161,7 @@
     [self presentViewController:mc animated:YES completion:NULL];
  */
     
-        self.modal = [self.storyboard instantiateViewControllerWithIdentifier:@"VGModalViewController"];
+    self.modal = [self.storyboard instantiateViewControllerWithIdentifier:@"VGModalViewController"];
     //UIViewController * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HalfModal"];
     //vc.view.backgroundColor = [UIColor redColor];
     //[VGDetailViewController setPresentationStyleForSelfController:self presentingController:self.modal];
@@ -177,11 +177,13 @@
     
     for (Currency* i in self.currencyArray) {
         if ([i.engName isEqualToString:@"USD"]) {
-            self.modal.usdCurrencyString = [NSString stringWithFormat:@"%@/%@",i.bid,i.ask];
-        } else if ([i.engName isEqualToString:@"EUR"]) {
-           self.modal.eurCurrencyString = [NSString stringWithFormat:@"%@/%@",i.bid,i.ask];
-        } else if ([i.engName isEqualToString:@"RUB"]) {
-           self.modal.rubCurrencyString = [NSString stringWithFormat:@"%@/%@",i.bid,i.ask];
+            self.modal.usdCurrencyString = [NSString stringWithFormat:@"%1.2f/%1.2f",[i.bid doubleValue],[i.ask doubleValue]];
+        }
+        if ([i.engName isEqualToString:@"EUR"]) {
+            self.modal.eurCurrencyString = [NSString stringWithFormat:@"%1.2f/%1.2f",[i.bid doubleValue],[i.ask doubleValue]];
+        }
+        if ([i.engName isEqualToString:@"RUB"]) {
+            self.modal.rubCurrencyString = [NSString stringWithFormat:@"%1.2f/%1.2f",[i.bid doubleValue],[i.ask doubleValue]];
         }
     }
     //self.modal.usdCurrencyString

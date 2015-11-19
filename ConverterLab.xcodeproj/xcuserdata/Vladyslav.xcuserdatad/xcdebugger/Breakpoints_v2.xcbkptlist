@@ -250,13 +250,61 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ConverterLab/ModalViewController/VGModalViewController.m"
-            timestampString = "469637742.823048"
+            timestampString = "469640186.578697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "-touchesBegan:withEvent:"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ConverterLab/DetailViewController/VGDetailViewController.m"
+            timestampString = "469639955.018484"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
+            landmarkName = "-shareAction:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[VGDetailViewController shareAction:]"
+                  moduleName = "ConverterLab"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/john/Desktop/ThinkMobile/ConverterLab/ConverterLab/DetailViewController/VGDetailViewController.m"
+                  timestampString = "469640252.089645"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "197"
+                  endingLineNumber = "197"
+                  offsetFromSymbolStart = "2172">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__38-[VGDetailViewController shareAction:]_block_invoke"
+                  moduleName = "ConverterLab"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/john/Desktop/ThinkMobile/ConverterLab/ConverterLab/DetailViewController/VGDetailViewController.m"
+                  timestampString = "469640252.090078"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "197"
+                  endingLineNumber = "197"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
