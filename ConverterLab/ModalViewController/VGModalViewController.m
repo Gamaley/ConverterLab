@@ -7,7 +7,12 @@
 //
 
 #import "VGModalViewController.h"
+#import "VGServerManager.h"
 #import <MessageUI/MessageUI.h>
+#import "VGLoginViewController.h"
+#import "VGAccessToken.h"
+#import "VGServerManager.h"
+
 
 @interface VGModalViewController () <MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -18,17 +23,20 @@
 @property (weak, nonatomic) IBOutlet UILabel *rubCurrency;
 @property (weak ,nonatomic) IBOutlet UIView *infoView;
 
+@property (strong, nonatomic) VGAccessToken *accessToken;
+
 @end
+
 
 @implementation VGModalViewController
 
-//- (void)viewDidAppear:(BOOL)animated {
-//    [super viewWillAppear:animated];
-// 
-//}
+#pragma mark - UIViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self];
+    nav.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     
     self.titleLabel.text = self.titleString;
     self.regionLabel.text = self.regionString;
@@ -40,45 +48,66 @@
         NSLog(@"Скрыть RUB Label");
     }
     
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Actions
+
 - (IBAction)dismissViewControllerAction:(UIButton *)sender {
-    
-    //NSLog(@"ds");
-    
-    NSString *emailTitle = [NSString stringWithFormat:@"Информация курса валют по банку: %@",self.titleString];
-    // Email Content
-    NSString *messageBody = [NSString stringWithFormat:@"Банк: %@\nUSD - %@ \nEUR - %@ \nПерейти на страничку описания: %@",self.titleString, self.eurCurrency.text, self.eurCurrency.text, self.linkString];
-    // To address
-    //NSArray *toRecipents = [NSArray arrayWithObject:@"support@appcoda.com"];
-    
-    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
-    mc.mailComposeDelegate = self;
-    [mc setSubject:emailTitle];
-    [mc setMessageBody:messageBody isHTML:NO];
-    //[mc setToRecipients:toRecipents];
-    
-    // Present mail view controller on screen
-    [self presentViewController:mc animated:YES completion:NULL];
-    
-    
-    //[self dismissViewControllerAnimated:YES completion:nil];
+    [self shareOptionsAction];
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - Private
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void) shareOptionsAction {
+    
+    UIAlertController* chooseShare = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction* emailAction = [UIAlertAction actionWithTitle:@"Отправить e-mail" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        NSString *emailTitle = [NSString stringWithFormat:@"Информация курса валют по банку: %@",self.titleString];
+        NSString *messageBody = [NSString stringWithFormat:@"Банк: %@\nUSD - %@ \nEUR - %@ \nПерейти на страничку описания: %@",self.titleString, self.eurCurrency.text, self.eurCurrency.text, self.linkString];
+        MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+        mc.mailComposeDelegate = self;
+        [mc setSubject:emailTitle];
+        [mc setMessageBody:messageBody isHTML:NO];
+        [self presentViewController:mc animated:YES completion:NULL];
+        
+        
+    }];
+    
+    UIAlertAction* vkontakteAction = [UIAlertAction actionWithTitle:@"Поделиться Вконтакте" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        NSString *message = [NSString stringWithFormat:@"Информация курса валют по банку: %@\nБанк: %@\nUSD - %@ \nEUR - %@ \nПерейти на страничку описания: %@",self.titleString,self.titleString, self.eurCurrency.text, self.eurCurrency.text, self.linkString];
+        
+        [[VGServerManager sharedManager]postText:message onMyWallVKOnSuccess:^(id result) {
+            UIAlertController* postSend = [UIAlertController alertControllerWithTitle:@"Сообщение отправлено!" message:nil preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* emailAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {}];
+            [postSend addAction:emailAction];
+            [self presentViewController:postSend animated:YES completion:^{}];
+            
+            NSLog(@"%@",result);
+        } onFailure:^(NSError *error) {
+            NSLog(@"%@",[error localizedDescription]);
+        }];
+        
+    }];
+    
+    UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"Отмена" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {return;}];
+    
+    [chooseShare addAction:emailAction];
+    [chooseShare addAction:vkontakteAction];
+    [chooseShare addAction:cancel];
+    
+    [self presentViewController:chooseShare animated:YES completion:^{
+        
+    }];
 }
-*/
+
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
@@ -114,9 +143,8 @@
         default:
             break;
     }
-    
-    // Close the Mail Interface
-    [self dismissViewControllerAnimated:YES completion:NULL];
+
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

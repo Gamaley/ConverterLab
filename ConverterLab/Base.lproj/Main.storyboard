@@ -58,7 +58,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2j-0G-iYF">
-                                                    <rect key="frame" x="450" y="152" width="55" height="37"/>
+                                                    <rect key="frame" x="447" y="152" width="55" height="37"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="37" id="Pwy-jS-IIE"/>
@@ -89,7 +89,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrr-HX-bmW">
-                                                    <rect key="frame" x="79" y="152" width="55" height="37"/>
+                                                    <rect key="frame" x="82" y="152" width="55" height="37"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="37" id="5XE-3v-yjd"/>
@@ -110,9 +110,9 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="wrr-HX-bmW" secondAttribute="bottom" id="1qX-CR-G8r"/>
                                                 <constraint firstItem="ZmJ-H3-o0d" firstAttribute="leading" secondItem="vqV-vk-Nfo" secondAttribute="leading" constant="8" id="Hph-Gm-rkM"/>
-                                                <constraint firstItem="wrr-HX-bmW" firstAttribute="leading" secondItem="ZmJ-H3-o0d" secondAttribute="trailing" constant="16" id="Jwf-7U-vDu"/>
+                                                <constraint firstItem="wrr-HX-bmW" firstAttribute="leading" secondItem="ZmJ-H3-o0d" secondAttribute="trailing" constant="19" id="Jwf-7U-vDu"/>
                                                 <constraint firstAttribute="trailing" secondItem="oQM-vK-fhF" secondAttribute="trailing" constant="8" id="KKk-jv-CHM"/>
-                                                <constraint firstItem="oQM-vK-fhF" firstAttribute="leading" secondItem="e2j-0G-iYF" secondAttribute="trailing" constant="16" id="TV1-K3-2sv"/>
+                                                <constraint firstItem="oQM-vK-fhF" firstAttribute="leading" secondItem="e2j-0G-iYF" secondAttribute="trailing" constant="19" id="TV1-K3-2sv"/>
                                                 <constraint firstAttribute="bottom" secondItem="oQM-vK-fhF" secondAttribute="bottom" id="ZRm-9B-J3y"/>
                                                 <constraint firstItem="D3z-yi-s1i" firstAttribute="leading" secondItem="vqV-vk-Nfo" secondAttribute="leading" id="cz4-mp-T4E"/>
                                                 <constraint firstAttribute="bottom" secondItem="D3z-yi-s1i" secondAttribute="bottom" id="hd9-CD-kh8"/>
@@ -214,6 +214,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
                         <attributedString key="attributedTitle"/>
+                        <connections>
+                            <action selector="refreshControl:" destination="s7N-cD-8to" eventType="valueChanged" id="YTE-NH-D9L"/>
+                        </connections>
                     </refreshControl>
                     <connections>
                         <outlet property="loadIndicator" destination="GLy-zB-tm5" id="HGd-KR-gV7"/>

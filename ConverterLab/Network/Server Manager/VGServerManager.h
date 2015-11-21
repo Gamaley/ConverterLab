@@ -7,12 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+@class VGAccessToken;
 
 @interface VGServerManager : NSObject
 
+@property (assign, nonatomic) BOOL tokenExist;
+
 +(VGServerManager*) sharedManager;
 
--(void) getBankOnSuccess:(void(^)(NSArray* banks)) success onFailure:(void(^)(NSError* error)) failure;
+-(void) getBankOnSuccess:(void(^)(id banks)) success onFailure:(void(^)(NSError* error)) failure;
 
+-(void) authorizeUserWithController: (UIViewController *) controller andCompletitionBlock: (void (^) (VGAccessToken *userToken)) completition;
+
+-(void) postText:(NSString *) text onMyWallVKOnSuccess:(void(^)(id result)) success onFailure:(void(^)(NSError* error)) failure;
 
 @end

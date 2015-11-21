@@ -52,6 +52,8 @@
 		873F51691BF4FEF200A6BA52 /* City+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F51601BF4FEF200A6BA52 /* City+CoreDataProperties.m */; };
 		873F516A1BF4FEF200A6BA52 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F51621BF4FEF200A6BA52 /* City.m */; };
 		873F51821BF625BB00A6BA52 /* VGMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F51811BF625BB00A6BA52 /* VGMapViewController.m */; };
+		87CED8E31BFF6F8800145EA3 /* VGAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 87CED8E21BFF6F8800145EA3 /* VGAccessToken.m */; };
+		87CED8E71BFF704000145EA3 /* VGLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87CED8E61BFF704000145EA3 /* VGLoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -141,6 +143,10 @@
 		873F51621BF4FEF200A6BA52 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = City.m; path = CoreData/Entities/City.m; sourceTree = "<group>"; };
 		873F51801BF625BB00A6BA52 /* VGMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VGMapViewController.h; path = MapViewController/VGMapViewController.h; sourceTree = "<group>"; };
 		873F51811BF625BB00A6BA52 /* VGMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VGMapViewController.m; path = MapViewController/VGMapViewController.m; sourceTree = "<group>"; };
+		87CED8E11BFF6F8800145EA3 /* VGAccessToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VGAccessToken.h; path = AccessToken/VGAccessToken.h; sourceTree = "<group>"; };
+		87CED8E21BFF6F8800145EA3 /* VGAccessToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VGAccessToken.m; path = AccessToken/VGAccessToken.m; sourceTree = "<group>"; };
+		87CED8E51BFF704000145EA3 /* VGLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VGLoginViewController.h; path = LoginViewController/VGLoginViewController.h; sourceTree = "<group>"; };
+		87CED8E61BFF704000145EA3 /* VGLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VGLoginViewController.m; path = LoginViewController/VGLoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +164,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		870829D51C0085C300A605EA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				873F51091BF4C1EE00A6BA52 /* CustomCell */,
+				872541041BFA39FE0046508C /* MapAnnotation */,
+				87CED8E01BFF6F4900145EA3 /* AccessToken */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		872540FE1BFA10F00046508C /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,7 +195,6 @@
 		872541081BFA5F050046508C /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				872541291BFCFFBA0046508C /* behind_alert_view.png */,
 				873F50F11BF4AE9A00A6BA52 /* Main.storyboard */,
 				873F50F91BF4AE9A00A6BA52 /* LaunchScreen.storyboard */,
 			);
@@ -224,19 +239,18 @@
 			name = Currency;
 			sourceTree = "<group>";
 		};
-		8725412E1BFD35E00046508C /* Modal */ = {
+		8725412E1BFD35E00046508C /* ModalShareViewController */ = {
 			isa = PBXGroup;
 			children = (
 				8725412F1BFD360C0046508C /* VGModalViewController.h */,
 				872541301BFD360C0046508C /* VGModalViewController.m */,
 			);
-			name = Modal;
+			name = ModalShareViewController;
 			sourceTree = "<group>";
 		};
 		873F50DC1BF4AE9900A6BA52 = {
 			isa = PBXGroup;
 			children = (
-				872541321BFDE0EF0046508C /* MessageUI.framework */,
 				873F50E71BF4AE9900A6BA52 /* ConverterLab */,
 				873F50E61BF4AE9900A6BA52 /* Products */,
 			);
@@ -253,11 +267,10 @@
 		873F50E71BF4AE9900A6BA52 /* ConverterLab */ = {
 			isa = PBXGroup;
 			children = (
-				872541041BFA39FE0046508C /* MapAnnotation */,
+				870829D51C0085C300A605EA /* Models */,
 				873F51181BF4D9AE00A6BA52 /* Network */,
 				873F51121BF4D79E00A6BA52 /* CoreData */,
 				873F51111BF4D75A00A6BA52 /* Libs */,
-				873F51091BF4C1EE00A6BA52 /* CustomCell */,
 				873F51081BF4B3BE00A6BA52 /* ViewControllers */,
 				873F51061BF4B39700A6BA52 /* AppDelegate */,
 				872541081BFA5F050046508C /* Storyboards */,
@@ -269,6 +282,7 @@
 		873F50E81BF4AE9A00A6BA52 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				872541291BFCFFBA0046508C /* behind_alert_view.png */,
 				873F50F71BF4AE9A00A6BA52 /* Assets.xcassets */,
 				873F50FC1BF4AE9A00A6BA52 /* Info.plist */,
 				873F50E91BF4AE9A00A6BA52 /* main.m */,
@@ -297,7 +311,8 @@
 		873F51081BF4B3BE00A6BA52 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8725412E1BFD35E00046508C /* Modal */,
+				87CED8E41BFF6FFB00145EA3 /* LoginVewController */,
+				8725412E1BFD35E00046508C /* ModalShareViewController */,
 				872541091BFA5F220046508C /* DetailViewController */,
 				873F517F1BF6257600A6BA52 /* MapViewController */,
 				873F51071BF4B3A400A6BA52 /* MainTableViewController */,
@@ -317,6 +332,7 @@
 		873F51111BF4D75A00A6BA52 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				872541321BFDE0EF0046508C /* MessageUI.framework */,
 				873F51041BF4B0AA00A6BA52 /* MapKit.framework */,
 				872540F81BFA0C2E0046508C /* SystemConfiguration.framework */,
 				872541021BFA23190046508C /* CoreLocation.framework */,
@@ -474,6 +490,24 @@
 			name = MapViewController;
 			sourceTree = "<group>";
 		};
+		87CED8E01BFF6F4900145EA3 /* AccessToken */ = {
+			isa = PBXGroup;
+			children = (
+				87CED8E11BFF6F8800145EA3 /* VGAccessToken.h */,
+				87CED8E21BFF6F8800145EA3 /* VGAccessToken.m */,
+			);
+			name = AccessToken;
+			sourceTree = "<group>";
+		};
+		87CED8E41BFF6FFB00145EA3 /* LoginVewController */ = {
+			isa = PBXGroup;
+			children = (
+				87CED8E51BFF704000145EA3 /* VGLoginViewController.h */,
+				87CED8E61BFF704000145EA3 /* VGLoginViewController.m */,
+			);
+			name = LoginVewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -551,10 +585,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87CED8E31BFF6F8800145EA3 /* VGAccessToken.m in Sources */,
 				8725410C1BFB4E290046508C /* VGDetailViewController.m in Sources */,
 				873F50F61BF4AE9A00A6BA52 /* ConverterLab.xcdatamodeld in Sources */,
 				873F510C1BF4C23500A6BA52 /* VGCustomTableViewCell.m in Sources */,
 				872541071BFA3A450046508C /* VGMapAnnotation.m in Sources */,
+				87CED8E71BFF704000145EA3 /* VGLoginViewController.m in Sources */,
 				873F513D1BF4DB8A00A6BA52 /* UIWebView+AFNetworking.m in Sources */,
 				873F51531BF4DB9800A6BA52 /* AFHTTPSessionManager.m in Sources */,
 				873F50F01BF4AE9A00A6BA52 /* VGTableViewController.m in Sources */,

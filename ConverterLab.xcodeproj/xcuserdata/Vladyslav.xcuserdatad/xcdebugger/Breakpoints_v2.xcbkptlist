@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ConverterLab/VGTableViewController.m"
-            timestampString = "469616675.016309"
+            timestampString = "469796635.240859"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ConverterLab/VGTableViewController.m"
-            timestampString = "469616675.016309"
+            timestampString = "469796635.240859"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "-viewWillAppear:"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ConverterLab/VGTableViewController.m"
-            timestampString = "469616675.016309"
+            timestampString = "469796635.240859"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "-loadView"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,75 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ConverterLab/Network/Server Manager/VGServerManager.m"
-            timestampString = "469466184.195567"
+            timestampString = "469796635.240859"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "-getBankOnSuccess:onFailure:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[VGServerManager getBankOnSuccess:onFailure:]"
-                  moduleName = "ConverterLab"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/john/Desktop/ThinkMobile/ConverterLab/ConverterLab/Network/Server%20Manager/VGServerManager.m"
-                  timestampString = "469375529.249227"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "295">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__46-[VGServerManager getBankOnSuccess:onFailure:]_block_invoke"
-                  moduleName = "ConverterLab"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/john/Desktop/ThinkMobile/ConverterLab/ConverterLab/Network/Server%20Manager/VGServerManager.m"
-                  timestampString = "469375529.249893"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "102">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ConverterLab/Network/Server Manager/VGServerManager.m"
-            timestampString = "469466184.195567"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "-getBankOnSuccess:onFailure:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ConverterLab/Network/Server Manager/VGServerManager.m"
-            timestampString = "469466184.195567"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "-getBankOnSuccess:onFailure:"
             landmarkType = "5">
          </BreakpointContent>
@@ -169,142 +105,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ConverterLab/Network/Server Manager/VGServerManager.m"
-            timestampString = "469618115.20849"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "-getBankOnSuccess:onFailure:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ConverterLab/Network/Server Manager/VGServerManager.m"
-            timestampString = "469618115.20849"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "-getBankOnSuccess:onFailure:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__46-[VGServerManager getBankOnSuccess:onFailure:]_block_invoke"
-                  moduleName = "ConverterLab"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/john/Desktop/ThinkMobile/ConverterLab/ConverterLab/Network/Server%20Manager/VGServerManager.m"
-                  timestampString = "469474770.151394"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "77"
-                  endingLineNumber = "77"
-                  offsetFromSymbolStart = "1720">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__46-[VGServerManager getBankOnSuccess:onFailure:]_block_invoke"
-                  moduleName = "ConverterLab"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/john/Desktop/ThinkMobile/ConverterLab/ConverterLab/Network/Server%20Manager/VGServerManager.m"
-                  timestampString = "469474770.151692"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "77"
-                  endingLineNumber = "77"
-                  offsetFromSymbolStart = "1770">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ConverterLab/VGTableViewController.m"
-            timestampString = "469616675.016309"
+            timestampString = "469796635.240859"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "@implementation VGTableViewController"
             landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ConverterLab/ModalViewController/VGModalViewController.m"
-            timestampString = "469640186.578697"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "-touchesBegan:withEvent:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ConverterLab/DetailViewController/VGDetailViewController.m"
-            timestampString = "469641716.874482"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
-            landmarkName = "-shareAction:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[VGDetailViewController shareAction:]"
-                  moduleName = "ConverterLab"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/john/Desktop/ThinkMobile/ConverterLab/ConverterLab/DetailViewController/VGDetailViewController.m"
-                  timestampString = "469640252.089645"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "197"
-                  endingLineNumber = "197"
-                  offsetFromSymbolStart = "2172">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__38-[VGDetailViewController shareAction:]_block_invoke"
-                  moduleName = "ConverterLab"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/john/Desktop/ThinkMobile/ConverterLab/ConverterLab/DetailViewController/VGDetailViewController.m"
-                  timestampString = "469640252.090078"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "197"
-                  endingLineNumber = "197"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

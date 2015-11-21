@@ -10,12 +10,12 @@
 
 @interface VGModalViewController : UIViewController
 
-@property (weak, nonatomic)  NSString *titleString;
-@property (weak, nonatomic)  NSString *regionString;
-@property (weak, nonatomic)  NSString *cityString;
-@property (weak, nonatomic)  NSString *usdCurrencyString;
-@property (weak, nonatomic)  NSString *eurCurrencyString;
-@property (weak, nonatomic)  NSString *rubCurrencyString;
-@property (strong, nonatomic) NSString *linkString;
+@property (strong, nonatomic)  NSString *titleString;
+@property (strong, nonatomic)  NSString *regionString;
+@property (strong, nonatomic)  NSString *cityString;
+@property (strong, nonatomic)  NSString *usdCurrencyString;
+@property (strong, nonatomic)  NSString *eurCurrencyString;
+@property (strong, nonatomic)  NSString *rubCurrencyString;
+@property (strong, nonatomic)  NSString *linkString;
 
 @end

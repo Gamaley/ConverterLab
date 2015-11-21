@@ -13,10 +13,11 @@
 #import "VGModalViewController.h"
 #import "VGMapAnnotation.h"
 #import "VGMapViewController.h"
+#import "VGServerManager.h"
 
 
 
-@interface VGDetailViewController () <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
+@interface VGDetailViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *detailInfoView;
 @property (weak, nonatomic) IBOutlet UIView *nameCurrencyView;
@@ -33,14 +34,17 @@
 @property (weak, nonatomic) IBOutlet UIButton *phoneButton;
 
 
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) VGModalViewController *modal;
+@property (assign ,nonatomic) BOOL firstTimeAppear;
 
 
 @end
 
 @implementation VGDetailViewController
+
+
+#pragma mark - Actions
+
 - (IBAction)mapAction:(UIButton *)sender {
     VGMapViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"VGMapViewController"];
     vc.mapAnnotation = self.mapAnnotation;
@@ -67,14 +71,7 @@
     
 }
 
--(NSManagedObjectContext*) managedObjectContext {
-    
-    if (!_managedObjectContext) {
-        _managedObjectContext = [[VGDataManager sharedManager] managedObjectContext];
-    }
-    return _managedObjectContext;
-}
-
+#pragma mark - UIViewController
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -85,16 +82,22 @@
     self.phoneLabel.text = self.phoneString;
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self setModalPresentationStyle:UIModalPresentationCurrentContext];
     [self settingsView];
+    
+    if (![VGServerManager sharedManager].tokenExist) {
+        [[VGServerManager sharedManager] authorizeUserWithController:self andCompletitionBlock:^(VGAccessToken *userToken) {
+            NSLog(@"Ура! Токен получен!");
+            
+        }];
+    }
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Private
@@ -139,36 +142,12 @@
     
     UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_share.png"] style:UIBarButtonItemStylePlain target:self action:@selector(shareAction:)];
     self.navigationItem.rightBarButtonItem = rightBarButton;
-   // self.currencyArray = [[NSMutableArray alloc] init];
 }
 
+
 -(void) shareAction: (UIBarButtonItem *) sender {
-    
-    /*
-    NSString *emailTitle = @"Test Email";
-    // Email Content
-    NSString *messageBody = @"iOS programming is so fun!";
-    // To address
-    //NSArray *toRecipents = [NSArray arrayWithObject:@"support@appcoda.com"];
-    
-    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
-    mc.mailComposeDelegate = self;
-    [mc setSubject:emailTitle];
-    [mc setMessageBody:messageBody isHTML:NO];
-    //[mc setToRecipients:toRecipents];
-    
-    // Present mail view controller on screen
-    [self presentViewController:mc animated:YES completion:NULL];
- */
-    
+
     self.modal = [self.storyboard instantiateViewControllerWithIdentifier:@"VGModalViewController"];
-    //UIViewController * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HalfModal"];
-    //vc.view.backgroundColor = [UIColor redColor];
-    //[VGDetailViewController setPresentationStyleForSelfController:self presentingController:self.modal];
-    //[self setModalPresentationStyle:UIModalPresentationCurrentContext];
-   // self.modalPresentationCapturesStatusBarAppearance = NO;
-    //self.modal.providesPresentationContextTransitionStyle = YES;
-    //self.modal.definesPresentationContext = YES;
     [self.modal setModalPresentationStyle:UIModalPresentationOverCurrentContext];
     
     self.modal.titleString = self.titleString;
@@ -187,119 +166,16 @@
             self.modal.rubCurrencyString = [NSString stringWithFormat:@"%1.2f/%1.2f",[i.bid doubleValue],[i.ask doubleValue]];
         }
     }
-    //self.modal.usdCurrencyString
-// 859364184080 модуль лэвун
-//    self.providesPresentationContextTransitionStyle = YES;
-//    self.definesPresentationContext = YES;
-//    
-//    [self setModalPresentationStyle:UIModalPresentationOverCurrentContext];
 
-    //[self.navigationController popToViewController:self.modal animated:YES];
     [self presentViewController:self.modal animated:YES completion:^{}];
-   // UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(self.detailInfoView.frame.origin.x + 10, self.detailInfoView.frame.origin.y + 100, self.detailInfoView.frame.size.width - 20, self.detailInfoView.frame.size.height + 100)];
-    //contentView.backgroundColor = [UIColor blackColor];
-    //[self.view addSubview:contentView];//[[UIView alloc] initWithFrame: CGRectMake(10, 80, self.view.size.width-20, self.view.size.height-200)];
-    //[self.navigationController.view addSubview:contentView];
-//    self.modal = [self.storyboard instantiateViewControllerWithIdentifier:@"HalfModal"];
-//
-//    
-//    if ([self.childViewControllers count] == 0) {
-//        self.modal = [self.storyboard instantiateViewControllerWithIdentifier:@"HalfModal"];
-//        self.modal.view.frame = CGRectMake(0, 400, 320, 280);
-//        [self.view addSubview:self.modal.view];
-//        [self.presentingViewController addChildViewController:self.modal];
-//
-//        [self presentViewController:self.modal animated:YES completion:^{
-//            [self.modal didMoveToParentViewController:self];
-//        }];
-    
-//    [self transitionFromViewController:self toViewController:self.modal duration:1 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
-//        
-//    } completion:^(BOOL finished) {
-//        
-//    }];
-//        [self transitionFromViewController:self toViewController:self.modal duration:1 options:UIViewAnimationOptionLayoutSubviews animations:^{
-//            self.modal.view.frame = CGRectMake(0, 250, 320, 280);
-//        } completion:^(BOOL finished) {
-//            [self.modal didMoveToParentViewController:self];
-//        }];
-    
-//        [UIView animateWithDuration:1 animations:^{
-//            
-//        } completion:^(BOOL finished) {
-//            [self.modal didMoveToParentViewController:self];
-//        }];
-//    } else {
-//        [UIView animateWithDuration:1 animations:^{
-//            self.modal.view.frame = CGRectMake(0, 400, 320, 280);
-//        } completion:^(BOOL finished) {
-//            [self.modal.view removeFromSuperview];
-//            [self.modal removeFromParentViewController];
-//            self.modal = nil;
-//        }];
-   // }
-   
-   // NSLog(@"dfsfs");
+
 }
 
-//+ (void)setPresentationStyleForSelfController:(UIViewController *)selfController presentingController:(UIViewController *)presentingController
-//{
-//    if ([NSProcessInfo instancesRespondToSelector:@selector(isOperatingSystemAtLeastVersion:)])
-//    {
-//        //iOS 8.0 and above
-//        presentingController.providesPresentationContextTransitionStyle = YES;
-//        presentingController.definesPresentationContext = YES;
-//        
-//        [presentingController setModalPresentationStyle:UIModalPresentationOverCurrentContext];
-//    }
-//    else
-//    {
-//        [selfController setModalPresentationStyle:UIModalPresentationCurrentContext];
-//        [selfController.navigationController setModalPresentationStyle:UIModalPresentationCurrentContext];
-//    }
-//}
-
-
-
-- (NSFetchedResultsController *)fetchedResultsController
-{
-    if (_fetchedResultsController != nil) {
-        return _fetchedResultsController;
-    }
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Bank" inManagedObjectContext:self.managedObjectContext];
-    [fetchRequest setEntity:entity];
-    [fetchRequest setFetchBatchSize:20];
-    
-//    if (self.searchController.isActive) {
-//        NSString *titleString = self.searchController.searchBar.text;
-//        NSString *regionString = self.searchController.searchBar.text;
-//        NSPredicate* predicate = [NSPredicate predicateWithFormat:@"city contains[cd] %@ OR title contains[cd] %@ OR region contains[cd] %@",self.searchController.searchBar.text, titleString,regionString];
-//        [fetchRequest setPredicate:predicate];
-//    }
-    
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES];
-    [fetchRequest setSortDescriptors:@[sortDescriptor]];
-    
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil/*@"Master"*/];
-    aFetchedResultsController.delegate = self;
-    self.fetchedResultsController = aFetchedResultsController;
-    
-    NSError *error = nil;
-    if (![self.fetchedResultsController performFetch:&error]) {
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
-    
-    return _fetchedResultsController;
-}
 
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    //id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
     return [self.currencyArray count];
 }
 
@@ -310,7 +186,7 @@
     if (!cell) {
         cell = [[VGDetailTableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:Identifier];
     }
-    //cell.delegate = self;
+    
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }

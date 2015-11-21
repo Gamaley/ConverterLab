@@ -14,8 +14,14 @@
 #import "VGDataManager.h"
 #import "Reachability.h"
 #import "Currency.h"
+#import "VGLoginViewController.h"
+#import "VGAccessToken.h"
 
+@interface VGServerManager ()
 
+@property (strong, nonatomic) VGAccessToken *accessToken;
+
+@end
 
 @implementation VGServerManager
 
@@ -31,7 +37,26 @@
 }
 
 
--(void) getBankOnSuccess:(void(^)(NSArray* banks)) success onFailure:(void(^)(NSError* error)) failure {
+-(void) authorizeUserWithController: (UIViewController *) controller andCompletitionBlock: (void (^) (VGAccessToken *userToken)) completition {
+    
+    VGLoginViewController *vc = [[VGLoginViewController alloc] initWithCompletitionBlock:^(VGAccessToken *token) {
+        
+        if (token) {
+        self.accessToken = token;
+        }
+        
+        if (completition) {
+            self.tokenExist = YES;
+            completition(self.accessToken);
+        }
+        
+    }];
+    
+    [controller presentViewController:vc animated:YES completion:nil];
+
+}
+
+-(void) getBankOnSuccess:(void(^)(id banks)) success onFailure:(void(^)(NSError* error)) failure {
     
     static NSString *getBanksJSON = @"http://resources.finance.ua/ru/public/currency-cash.json";
     AFHTTPRequestOperationManager* manager = [AFHTTPRequestOperationManager manager];
@@ -77,9 +102,6 @@
                     [aBank addCurrenciesObject:aCurrency];
                 }
                 
-                
-            
-              
                 aBank.city = [[responseObject objectForKey:@"cities"] valueForKey:[i valueForKey:@"cityId"]];
                 aBank.region = [[responseObject objectForKey:@"regions"] valueForKey:[i valueForKey:@"regionId"]];
                 aBank.link = [i valueForKey:@"link"];
@@ -121,7 +143,7 @@
                 }
                 
             }
-            
+            success(@"Success");
         }
         
         
@@ -136,29 +158,29 @@
     
 }
 
+
+
+-(void) postText:(NSString *) text onMyWallVKOnSuccess:(void(^)(id result)) success onFailure:(void(^)(NSError* error)) failure {
+    
+    NSDictionary *params = @{@"owner_id": self.accessToken.userID, @"message" : text, @"access_token" : self.accessToken.token};
+    
+    AFHTTPRequestOperationManager* manager = [AFHTTPRequestOperationManager manager];
+    NSString *postString = @"https://api.vk.com/method/wall.post";
+    
+    [manager POST:postString parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        if (success) {
+            success(responseObject);
+        }
+        
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        
+        if (failure) {
+            failure(error);
+        }
+        
+    }];
+    
+}
+
 @end
-
-
-
-//                NSDictionary *valuesArray = (NSDictionary *)[dict allValues];
-//                NSMutableDictionary *askBid = [[NSMutableDictionary alloc] init];
-// NSDictionary *ddd = [[i valueForKey:@"currencies"] valueForKey:[valuesArray firstObject]];
-// NSArray *askBid = [dict allKeys];
-// for (int j = 0; j < [dict count]; j++) {
-
-// NSString *sdtr = [currencyDictionary valueForKey:@"dict"];
-//NSString* ssss = [[[i valueForKey:@"currencies"] valueForKey:@"EUR"] valueForKey:@"ask"];
-// }
-
-//                for (NSDictionary* j in [i valueForKey:@"currencies"]) {
-//                    Currency *aCurrency = [NSEntityDescription insertNewObjectForEntityForName:@"Currency" inManagedObjectContext:[VGDataManager sharedManager].managedObjectContext];
-////                    if ([j isEqualToDictionary:[currencyDictionary objectForKey:j]] ) {
-////
-////                    }
-//                    NSString *str = [[currencyDictionary valueForKey:j] capitalizedString];//[j valueForKey:@"currencies"];
-//                    //NSString *askStr =
-//                   // NSLog(@"%@",str);
-//
-//                    aCurrency.name = [i valueForKey:j];//[[j allKeys] objectAtIndex:<#(NSUInteger)#>]
-//                    //NSDictionary *curr = [j valueForKey:[i valueForKey:@"currencies"]];
-//                }

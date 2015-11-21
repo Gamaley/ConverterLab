@@ -29,11 +29,25 @@
 @property (strong, nonatomic) UISearchController *searchController;
 @property (strong, nonatomic) NSString *searchString;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadIndicator;
+//@property (weak, nonatomic) IBOutlet UIRefreshControl *refreshControl;
+
 
 @end
 
 @implementation VGTableViewController
 
+#pragma mark - Actions
+
+- (IBAction)refreshControl:(UIRefreshControl *)sender {
+        [[VGServerManager sharedManager] getBankOnSuccess:^(NSArray *banks) {
+            NSLog(@"dsfds");
+            [self viewWillAppear:YES];
+            [self.refreshControl endRefreshing];
+             [self.tableView reloadData];
+        } onFailure:^(NSError *error) {}];
+   
+   
+}
 
 -(IBAction)showSearchBar:(id)sender {
     [UIView animateWithDuration:0.3 animations:^{
@@ -41,14 +55,6 @@
     }];
 }
 
-
--(NSManagedObjectContext*) managedObjectContext {
-    
-    if (!_managedObjectContext) {
-        _managedObjectContext = [[VGDataManager sharedManager] managedObjectContext];
-    }
-    return _managedObjectContext;
-}
 
 
 #pragma mark - UIViewController
@@ -101,24 +107,6 @@
     return cell;
 }
 
-
-#warning Удалить UITabBarDelegate didSelectItem
-
-#pragma mark - UITabBarDelegate
-
-- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
-    
-    if (item.tag == 1) {
-        NSLog(@"11");
-    } else if (item.tag == 2) {
-        NSLog(@"22");
-    } else if (item.tag == 3) {
-        NSLog(@"33");
-    } else if (item.tag == 4) {
-        NSLog(@"44");
-    }
-
-}
 
 #pragma mark - VGCustomTableViewCellDelegate
 
@@ -180,8 +168,15 @@
 }
 
 
-- (NSFetchedResultsController *)fetchedResultsController
-{
+-(NSManagedObjectContext*) managedObjectContext {
+    if (!_managedObjectContext) {
+        _managedObjectContext = [[VGDataManager sharedManager] managedObjectContext];
+    }
+    return _managedObjectContext;
+}
+
+
+- (NSFetchedResultsController *)fetchedResultsController {
     if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
     }
@@ -295,6 +290,7 @@
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView endUpdates];
 }
+
 
 
 @end
