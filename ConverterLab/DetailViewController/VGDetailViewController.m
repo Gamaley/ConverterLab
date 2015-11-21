@@ -87,6 +87,13 @@
     [super viewDidLoad];
     [self settingsView];
     
+    
+    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
+    if (networkStatus == NotReachable) {
+        return;
+    }
+    
     if (![VGServerManager sharedManager].tokenExist) {
         [[VGServerManager sharedManager] authorizeUserWithController:self andCompletitionBlock:^(VGAccessToken *userToken) {}];
     }

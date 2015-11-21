@@ -12,7 +12,6 @@
 #import "Region.h"
 #import "Bank.h"
 #import "VGDataManager.h"
-#import "Reachability.h"
 #import "Currency.h"
 #import "VGLoginViewController.h"
 #import "VGAccessToken.h"

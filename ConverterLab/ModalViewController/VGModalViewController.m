@@ -82,8 +82,6 @@
             UIAlertAction* emailAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {}];
             [postSend addAction:emailAction];
             [self presentViewController:postSend animated:YES completion:^{}];
-            
-            NSLog(@"%@",result);
         } onFailure:^(NSError *error) {
             NSLog(@"%@",[error localizedDescription]);
         }];
