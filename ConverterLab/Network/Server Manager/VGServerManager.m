@@ -166,6 +166,11 @@
 
 -(void) postText:(NSString *) text onMyWallVKOnSuccess:(void(^)(id result)) success onFailure:(void(^)(NSError* error)) failure {
     
+    if (!self.accessToken.token) {
+        self.tokenExist = NO;
+        return;
+    }
+    
     NSDictionary *params = @{@"owner_id": self.accessToken.userID, @"message" : text, @"access_token" : self.accessToken.token};
     
     AFHTTPRequestOperationManager* manager = [AFHTTPRequestOperationManager manager];

@@ -88,10 +88,7 @@
     [self settingsView];
     
     if (![VGServerManager sharedManager].tokenExist) {
-        [[VGServerManager sharedManager] authorizeUserWithController:self andCompletitionBlock:^(VGAccessToken *userToken) {
-            NSLog(@"Ура! Токен получен!");
-            
-        }];
+        [[VGServerManager sharedManager] authorizeUserWithController:self andCompletitionBlock:^(VGAccessToken *userToken) {}];
     }
     
 }
