@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "VGDataManager.h"
-#import "VGServerManager.h"
 
 
 @interface AppDelegate ()
@@ -19,7 +18,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
     return YES;
 }
 

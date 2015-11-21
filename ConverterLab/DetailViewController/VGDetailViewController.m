@@ -37,8 +37,8 @@
 @property (strong, nonatomic) VGModalViewController *modal;
 @property (assign ,nonatomic) BOOL firstTimeAppear;
 
-
 @end
+
 
 @implementation VGDetailViewController
 
