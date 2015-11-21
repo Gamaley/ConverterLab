@@ -23,6 +23,8 @@
 
 @end
 
+
+
 @implementation VGServerManager
 
 +(VGServerManager*) sharedManager {
@@ -35,6 +37,7 @@
     
     return manager;
 }
+
 
 
 -(void) authorizeUserWithController: (UIViewController *) controller andCompletitionBlock: (void (^) (VGAccessToken *userToken)) completition {
@@ -55,6 +58,8 @@
     [controller presentViewController:vc animated:YES completion:nil];
 
 }
+
+
 
 -(void) getBankOnSuccess:(void(^)(id banks)) success onFailure:(void(^)(NSError* error)) failure {
     
@@ -77,7 +82,7 @@
      
             NSMutableSet *citySet = [[NSMutableSet alloc] init];
              NSMutableSet *regionSet = [[NSMutableSet alloc] init];
-           // NSMutableSet *currencySet = [[NSMutableSet alloc] init];
+    
             NSDictionary *currencyDictionary = [responseObject objectForKey:@"currencies"];
           
 
@@ -94,7 +99,6 @@
                     NSString *currencyName = [[currencyDictionary valueForKey:value] capitalizedString];
                     double ask = [[[[i valueForKey:@"currencies"] valueForKey:value] valueForKey:@"ask"] doubleValue];
                     double bid = [[[[i valueForKey:@"currencies"] valueForKey:value] valueForKey:@"bid"] doubleValue];
-                    //NSLog(@"%@",currencyName);
                     aCurrency.engName = value;
                     aCurrency.name = currencyName;
                     aCurrency.ask = @(ask);

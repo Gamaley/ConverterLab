@@ -29,7 +29,6 @@
 @property (strong, nonatomic) UISearchController *searchController;
 @property (strong, nonatomic) NSString *searchString;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadIndicator;
-//@property (weak, nonatomic) IBOutlet UIRefreshControl *refreshControl;
 
 
 @end
@@ -39,8 +38,9 @@
 #pragma mark - Actions
 
 - (IBAction)refreshControl:(UIRefreshControl *)sender {
+    
+        //Работает криво, нужно пофиксить
         [[VGServerManager sharedManager] getBankOnSuccess:^(NSArray *banks) {
-            NSLog(@"dsfds");
             [self viewWillAppear:YES];
             [self.refreshControl endRefreshing];
              [self.tableView reloadData];
@@ -73,18 +73,9 @@
     [super viewDidLoad];
     [self.loadIndicator startAnimating];
     [self.loadIndicator setAnimatingWithStateOfTask:nil];
-    NSArray* pathArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString* docunentDirectory = [pathArray objectAtIndex:0];
-    
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     
 }
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
 
 
 #pragma mark - UITableViewDataSource
@@ -133,13 +124,17 @@
     annotation.subtitle = bank.address;
     vc.mapAnnotation = annotation;
     
+    if (self.searchController.isActive) {
+        [self.searchController setActive:NO];
+    }
+    
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 
 -(void) cellOpenMapAnnotation: (VGCustomTableViewCell*) cell {
     VGMapAnnotation *annotation = [[VGMapAnnotation alloc] init];
-    
+
     NSIndexPath* noteIndex = [self.tableView indexPathForCell:cell];
     Bank* bank = [self.fetchedResultsController objectAtIndexPath:noteIndex];
     NSString* address = [NSString stringWithFormat:@"%@ %@",bank.city, bank.address];
@@ -148,6 +143,10 @@
     annotation.title = bank.title;
     annotation.subtitle = bank.address;
     vc.mapAnnotation = annotation;
+    
+    if (self.searchController.isActive) {
+        [self.searchController setActive:NO];
+    }
     
     [self.navigationController pushViewController:vc animated:YES];
 }

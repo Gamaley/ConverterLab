@@ -6,11 +6,10 @@
 //  Copyright © 2015 Vlad. All rights reserved.
 //
 
+#import <MessageUI/MessageUI.h>
 #import "VGModalViewController.h"
 #import "VGServerManager.h"
-#import <MessageUI/MessageUI.h>
 #import "VGLoginViewController.h"
-#import "VGAccessToken.h"
 #import "VGServerManager.h"
 
 
@@ -23,7 +22,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *rubCurrency;
 @property (weak ,nonatomic) IBOutlet UIView *infoView;
 
-@property (strong, nonatomic) VGAccessToken *accessToken;
 
 @end
 
@@ -48,11 +46,6 @@
         NSLog(@"Скрыть RUB Label");
     }
     
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Actions

@@ -96,10 +96,6 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
 #pragma mark - Private
 
 -(void) settingsView {
@@ -139,7 +135,6 @@
     self.phoneButton.layer.shadowRadius = 5;
     self.phoneButton.layer.shadowOpacity = .25;
 
-    
     UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_share.png"] style:UIBarButtonItemStylePlain target:self action:@selector(shareAction:)];
     self.navigationItem.rightBarButtonItem = rightBarButton;
 }
@@ -147,6 +142,7 @@
 
 -(void) shareAction: (UIBarButtonItem *) sender {
 
+    // Пока реализовано через сторибоард. В ближайшее время исправлю, и доделаю через код.
     self.modal = [self.storyboard instantiateViewControllerWithIdentifier:@"VGModalViewController"];
     [self.modal setModalPresentationStyle:UIModalPresentationOverCurrentContext];
     
@@ -179,6 +175,7 @@
     return [self.currencyArray count];
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString* Identifier = @"DetailCell";
     VGDetailTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:Identifier];
@@ -190,6 +187,7 @@
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
+
 
 - (void)configureCell:(VGDetailTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     

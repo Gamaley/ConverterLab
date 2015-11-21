@@ -9,7 +9,7 @@
 #import "VGLoginViewController.h"
 #import "VGAccessToken.h"
 #import "VGServerManager.h"
-#import "AFNetworking.h"
+
 
 @interface VGLoginViewController () <UIWebViewDelegate>
 @property (copy, nonatomic) VGCompletitionBlock completitionBlock;
@@ -34,7 +34,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
     self.view.backgroundColor = [UIColor lightGrayColor];
     UIWebView *webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
     webView.backgroundColor = [UIColor lightGrayColor];
@@ -47,11 +46,6 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     [webView loadRequest:request];
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
 }
 
 
@@ -111,8 +105,6 @@
         return NO;
     }
     
-    NSLog(@"%@",[request URL]);
-
     return YES;
 }
 

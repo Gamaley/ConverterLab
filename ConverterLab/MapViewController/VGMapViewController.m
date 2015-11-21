@@ -33,10 +33,6 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
 #pragma mark - Private
 
 -(MKMapRect) getZoomMapRect {
