@@ -32,7 +32,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *linkButton;
 @property (weak, nonatomic) IBOutlet UIButton *mapButton;
 @property (weak, nonatomic) IBOutlet UIButton *phoneButton;
-
+@property (weak, nonatomic) IBOutlet UIView *hamburgerView;
 
 @property (strong, nonatomic) VGModalViewController *modal;
 @property (assign ,nonatomic) BOOL firstTimeAppear;
@@ -62,11 +62,13 @@
 
 - (IBAction)optionsActionHamburger:(UIButton *)sender {
     if (self.hamburgerMenuView.isHidden) {
-        [self.hamburgerButton setSelected:YES];
-        [self.hamburgerMenuView setHidden: NO];
+        self.hamburgerView.hidden = NO;
+        self.hamburgerMenuView.hidden = NO;
+        self.hamburgerButton.selected = YES;
     } else {
-        [self.hamburgerMenuView setHidden: YES];
-        [self.hamburgerButton setSelected:NO];
+        self.hamburgerMenuView.hidden = YES;
+        self.hamburgerButton.selected = NO;
+        self.hamburgerView.hidden = YES;
     }
     
 }
@@ -80,6 +82,23 @@
     self.cityLabel.text = self.cityString;
     self.addressLabel.text = self.addressString;
     self.phoneLabel.text = self.phoneString;
+    
+    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 70)];
+    titleView.autoresizesSubviews = NO;
+    UILabel *titleNavigationLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 3, 200, 50)];
+    UILabel *cityNavigationLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 20, 200, 50)];
+    titleNavigationLabel.text = self.titleString;
+    cityNavigationLabel.text = self.cityString;
+    titleNavigationLabel.font = [UIFont systemFontOfSize:18.f];
+    cityNavigationLabel.font = [UIFont systemFontOfSize:12.f];
+    cityNavigationLabel.textColor = [UIColor whiteColor];
+    titleNavigationLabel.textColor = [UIColor whiteColor];
+    [titleView addSubview:titleNavigationLabel];
+    [titleView addSubview:cityNavigationLabel];
+    titleView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
+    
+    self.navigationItem.titleView = titleView;
+
 }
 
 

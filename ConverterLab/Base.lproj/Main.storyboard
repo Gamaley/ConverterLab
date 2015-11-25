@@ -264,7 +264,7 @@
             </objects>
             <point key="canvasLocation" x="1629.375" y="439.43661971830983"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Hello-->
         <scene sceneID="Uxj-ki-gLr">
             <objects>
                 <viewController storyboardIdentifier="VGDetailViewController" id="Q1s-DB-8jw" customClass="VGDetailViewController" sceneMemberID="viewController">
@@ -517,6 +517,11 @@
                                             <outlet property="delegate" destination="Q1s-DB-8jw" id="B4I-qv-h8B"/>
                                         </connections>
                                     </tableView>
+                                    <view hidden="YES" alpha="0.75" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZxL-VI-lXi">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBR-ey-4CL">
                                         <rect key="frame" x="525" y="500" width="55" height="55"/>
                                         <animations/>
@@ -623,7 +628,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="yBR-ey-4CL" secondAttribute="trailing" id="zNV-0S-oK8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="G7R-B4-A4G"/>
+                    <navigationItem key="navigationItem" title="Hello" id="G7R-B4-A4G"/>
                     <connections>
                         <outlet property="addressLabel" destination="3Au-Mb-pvy" id="kX3-Lm-ACC"/>
                         <outlet property="cityLabel" destination="FkD-TT-Rra" id="8EX-V3-HBw"/>
@@ -631,6 +636,7 @@
                         <outlet property="detailInfoView" destination="NgH-Qo-tg0" id="v7T-Qw-fvG"/>
                         <outlet property="hamburgerButton" destination="yBR-ey-4CL" id="Us8-hx-HdB"/>
                         <outlet property="hamburgerMenuView" destination="3y3-Am-4ud" id="c3V-DQ-tJR"/>
+                        <outlet property="hamburgerView" destination="ZxL-VI-lXi" id="Oeg-a0-goQ"/>
                         <outlet property="linkButton" destination="ZXa-M4-Nob" id="vH5-Je-PBF"/>
                         <outlet property="mapButton" destination="GP9-Sa-OAA" id="21a-TV-rJa"/>
                         <outlet property="nameCurrencyView" destination="n0C-Qh-vtb" id="UPD-NQ-raO"/>
@@ -659,7 +665,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7E-t8-cUc">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="behind_alert_view.png" translatesAutoresizingMaskIntoConstraints="NO" id="8Tl-g1-SpX">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="behind_alert_view" translatesAutoresizingMaskIntoConstraints="NO" id="8Tl-g1-SpX">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                         <animations/>
                                     </imageView>
@@ -807,7 +813,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="behind_alert_view.png" width="320" height="460"/>
+        <image name="behind_alert_view" width="320" height="460"/>
         <image name="ic_arrow_down" width="12" height="6"/>
         <image name="ic_arrow_drop_up" width="12" height="6"/>
         <image name="ic_close" width="22" height="22"/>

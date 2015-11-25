@@ -17,7 +17,6 @@
 		8725411B1BFB720E0046508C /* Currency.m in Sources */ = {isa = PBXBuildFile; fileRef = 872541151BFB720E0046508C /* Currency.m */; };
 		8725411C1BFB720E0046508C /* Bank+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 872541171BFB720E0046508C /* Bank+CoreDataProperties.m */; };
 		8725411D1BFB720E0046508C /* Bank.m in Sources */ = {isa = PBXBuildFile; fileRef = 872541191BFB720E0046508C /* Bank.m */; };
-		8725412A1BFCFFBA0046508C /* behind_alert_view.png in Resources */ = {isa = PBXBuildFile; fileRef = 872541291BFCFFBA0046508C /* behind_alert_view.png */; };
 		872541311BFD360C0046508C /* VGModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 872541301BFD360C0046508C /* VGModalViewController.m */; };
 		872541331BFDE0EF0046508C /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 872541321BFDE0EF0046508C /* MessageUI.framework */; };
 		873F50EA1BF4AE9A00A6BA52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F50E91BF4AE9A00A6BA52 /* main.m */; };
@@ -75,7 +74,6 @@
 		872541171BFB720E0046508C /* Bank+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Bank+CoreDataProperties.m"; path = "CoreData/Entities/Bank+CoreDataProperties.m"; sourceTree = "<group>"; };
 		872541181BFB720E0046508C /* Bank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bank.h; path = CoreData/Entities/Bank.h; sourceTree = "<group>"; };
 		872541191BFB720E0046508C /* Bank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bank.m; path = CoreData/Entities/Bank.m; sourceTree = "<group>"; };
-		872541291BFCFFBA0046508C /* behind_alert_view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = behind_alert_view.png; sourceTree = "<group>"; };
 		8725412F1BFD360C0046508C /* VGModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VGModalViewController.h; path = ModalViewController/VGModalViewController.h; sourceTree = "<group>"; };
 		872541301BFD360C0046508C /* VGModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VGModalViewController.m; path = ModalViewController/VGModalViewController.m; sourceTree = "<group>"; };
 		872541321BFDE0EF0046508C /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -282,7 +280,6 @@
 		873F50E81BF4AE9A00A6BA52 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				872541291BFCFFBA0046508C /* behind_alert_view.png */,
 				873F50F71BF4AE9A00A6BA52 /* Assets.xcassets */,
 				873F50FC1BF4AE9A00A6BA52 /* Info.plist */,
 				873F50E91BF4AE9A00A6BA52 /* main.m */,
@@ -574,7 +571,6 @@
 				873F50FB1BF4AE9A00A6BA52 /* LaunchScreen.storyboard in Resources */,
 				873F50F81BF4AE9A00A6BA52 /* Assets.xcassets in Resources */,
 				873F50F31BF4AE9A00A6BA52 /* Main.storyboard in Resources */,
-				8725412A1BFCFFBA0046508C /* behind_alert_view.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
