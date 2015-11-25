@@ -13,6 +13,7 @@
 #import "VGServerManager.h"
 
 
+
 @interface VGModalViewController () <MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *regionLabel;
@@ -45,6 +46,9 @@
     if (!self.rubCurrency.text) {
         NSLog(@"Скрыть RUB Label");
     }
+    // Не убирал реализацию через сторибоард. Вьюху там поставил скрытой. 
+    //Просто добавил появление экрана диалога в этом методе ниже.
+    [self customView];
     
 }
 
@@ -55,6 +59,81 @@
 }
 
 #pragma mark - Private
+
+-(void) customView {
+    
+    UIView *shareView = [[UIView alloc] initWithFrame:CGRectMake(18, 100, 288, 354)];
+    shareView.autoresizesSubviews = NO;
+    shareView.backgroundColor = [UIColor whiteColor];
+    UIColor *titleColour = [UIColor colorWithRed:207/255.0 green:36/255.0 blue:122/255.0 alpha:1.0];
+    
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 4, 282, 44)];
+    UILabel *regionLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 66, 282, 21)];
+    UILabel *cityLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 85, 282, 21)];
+    UILabel *usdLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 138, 71, 38)];
+    UILabel *eurLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 184, 71, 38)];
+    UILabel *rubLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 230, 71, 38)];
+    UILabel *usdAskBidLabel = [[UILabel alloc] initWithFrame:CGRectMake(134, 144, 135, 25)];
+    UILabel *eurAskBidLabel = [[UILabel alloc] initWithFrame:CGRectMake(134, 190, 135, 25)];
+    UILabel *rubAskBidLabel = [[UILabel alloc] initWithFrame:CGRectMake(134, 236, 135, 25)];
+    UIButton *shareButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 317, 288, 37)];
+    
+    [shareButton addTarget:self action:@selector(share) forControlEvents:UIControlEventTouchUpInside];
+    
+    titleLabel.textColor = titleColour;
+    usdLabel.textColor = titleLabel.textColor;
+    eurLabel.textColor = titleLabel.textColor;
+    rubLabel.textColor = titleLabel.textColor;
+    
+    titleLabel.font = [UIFont boldSystemFontOfSize:22.f];
+    usdLabel.font = [UIFont boldSystemFontOfSize:21.f];
+    eurLabel.font = usdLabel.font;
+    rubLabel.font = usdLabel.font;
+    regionLabel.font = [UIFont systemFontOfSize:15.f];
+    cityLabel.font = regionLabel.font;
+    usdAskBidLabel.font = [UIFont systemFontOfSize:17.f];
+    eurAskBidLabel.font = usdAskBidLabel.font;
+    rubAskBidLabel.font = usdAskBidLabel.font;
+    
+    [shareButton setTitleColor:titleLabel.textColor forState:UIControlStateNormal];
+    shareButton.backgroundColor = [UIColor colorWithRed:165/255.0 green:184/255.0 blue:196/255.0 alpha:1.f];
+    [shareButton setTitle:@"SHARE" forState:UIControlStateNormal];
+    
+    usdLabel.text = @"USD";
+    eurLabel.text = @"EUR";
+    rubLabel.text = @"RUB";
+    
+    usdAskBidLabel.text = self.usdCurrencyString;
+    eurAskBidLabel.text = self.eurCurrencyString;
+    rubAskBidLabel.text = self.rubCurrencyString;
+    
+    titleLabel.text = self.titleString;
+    cityLabel.text = self.cityString;
+    regionLabel.text = self.regionString;
+    
+    
+    
+    [shareView addSubview:titleLabel];
+    [shareView addSubview:regionLabel];
+    [shareView addSubview:cityLabel];
+    [shareView addSubview:usdLabel];
+    [shareView addSubview:eurLabel];
+    [shareView addSubview:rubLabel];
+    [shareView addSubview:usdAskBidLabel];
+    [shareView addSubview:eurAskBidLabel];
+    [shareView addSubview:rubAskBidLabel];
+    [shareView addSubview:shareButton];
+    
+    
+    
+    shareView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
+    
+    [self.view addSubview:shareView];
+}
+
+-(void) share {
+    [self shareOptionsAction];
+}
 
 - (void) shareOptionsAction {
     

@@ -83,6 +83,7 @@
     self.addressLabel.text = self.addressString;
     self.phoneLabel.text = self.phoneString;
     
+    
     UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 70)];
     titleView.autoresizesSubviews = NO;
     UILabel *titleNavigationLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 3, 200, 50)];
